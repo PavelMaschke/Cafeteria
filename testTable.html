@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="assets/testStyle.css">
+    <script src="assets/script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+
+    <title>Cafeteria</title>
+
+  </head>
+  <body>
+
+    <table>
+      <tr>
+        <th>Artikel</th>
+        <th colspan = "2">noch Vorhanden</th>
+      </tr>
+
+      <tr>
+        <td>Äpfel</td>
+        <td><button type="button" onclick="buttonRemove(10)">-</button><p id="p10"> 0 </p><button type="button" onclick="buttonAdd(10)">+</button></td>
+        <td class="stck">Stck.</td>
+       </tr>
+
+       <tr>
+         <td>Bananen</td>
+         <td><button type="button" onclick="buttonRemove(20)">-</button><p id="p20"> 0 </p><button type="button" onclick="buttonAdd(20)">+</button></td>
+         <td class="stck">Stck.</td>
+       </tr>
+
+       <tr>
+         <td>Möhren</td>
+         <td><button type="button" onclick="buttonRemove(30)">-</button><p id="p30"> 0 </p><button type="button" onclick="buttonAdd(30)">+</button></td>
+         <td class="stck">Stck.</td>
+       </tr>
+
+       <tr>
+         <td>Tomaten</td>
+         <td><button type="button" onclick="buttonRemove(40)">-</button><p id="p40"> 0 </p><button type="button" onclick="buttonAdd(40)">+</button></td>
+         <td class="stck">Stck.</td>
+       </tr>
+
+       <tr>
+         <td>Gurken</td>
+         <td><button type="button" onclick="buttonRemove(50)">-</button><p id="p50"> 0 </p><button type="button" onclick="buttonAdd(50)">+</button></td>
+         <td class="stck">Stck.</td>
+       </tr>
+
+       <tr>
+         <td>Paprika</td>
+         <td><button type="button" onclick="buttonRemove(60)">-</button><p id="p60"> 0 </p><button type="button" onclick="buttonAdd(60)">+</button></td>
+         <td class="stck">Stck.</td>
+       </tr>
+
+       <tr>
+         <td>Eisbergsalat</td>
+         <td><button type="button" onclick="buttonRemove(70)">-</button><p id="p70"> 0 </p><button type="button" onclick="buttonAdd(70)">+</button></td>
+         <td class="stck">Stck.</td>
+       </tr>
+    </table>
+
+    <button type="button" onclick="buttonSave()">Save</button>
+
+
+
+
+    <table>
+      <tr>
+        <th>Artikel</th>
+        <th>zu bestellen</th>
+        <th style="width: auto;">noch Vorhanden</th>
+        <th style="width: auto;">normaler Bestand</th>
+        <th style="width: auto;"></th>
+      </tr>
+
+      <tr>
+        <td>Äpfel</td>
+        <td><button type="button" onclick="buttonRemove(11)">-</button><p id="p11"> 0 </p><button type="button" onclick="buttonAdd(11)">+</button></td>
+        <td><p id="pn11">0</p></td>
+        <td><p id="pb11">15</p></td>
+        <td class="stck">Stck.</td>
+      </tr>
+
+      <tr>
+        <td>Bananen</td>
+        <td><button type="button" onclick="buttonRemove(21)">-</button><p id="p21"> 0 </p><button type="button" onclick="buttonAdd(21)">+</button></td>
+        <td><p id="pn21">0</p></td>
+        <td><p id="pb21">15</p></td>
+        <td class="stck">Stck.</td>
+      </tr>
+
+      <tr>
+        <td>Möhren</td>
+        <td><button type="button" onclick="buttonRemove(31)">-</button><p id="p31"> 0 </p><button type="button" onclick="buttonAdd(31)">+</button></td>
+        <td><p id="pn31">0</p></td>
+        <td><p id="pb31">20</p></td>
+        <td class="stck">Stck.</td>
+      </tr>
+
+      <tr>
+        <td>Tomaten</td>
+        <td><button type="button" onclick="buttonRemove(41)">-</button><p id="p41"> 0 </p><button type="button" onclick="buttonAdd(41)">+</button></td>
+        <td><p id="pn41">0</p></td>
+        <td><p id="pb41">15</p></td>
+        <td class="stck">Stck.</td>
+      </tr>
+
+      <tr>
+        <td>Gurken</td>
+        <td><button type="button" onclick="buttonRemove(51)">-</button><p id="p51"> 0 </p><button type="button" onclick="buttonAdd(51)">+</button></td>
+        <td><p id="pn51">0</p></td>
+        <td><p id="pb51">5</p></td>
+        <td class="stck">Stck.</td>
+      </tr>
+
+      <tr>
+        <td>Paprika</td>
+        <td><button type="button" onclick="buttonRemove(61)">-</button><p id="p61"> 0 </p><button type="button" onclick="buttonAdd(61)">+</button></td>
+        <td><p id="pn61">0</p></td>
+        <td><p id="pb61">10</p></td>
+        <td class="stck">Stck.</td>
+      </tr>
+
+      <tr>
+        <td>Eisbergsalat</td>
+        <td><button type="button" onclick="buttonRemove(71)">-</button><p id="p71"> 0 </p><button type="button" onclick="buttonAdd(71)">+</button></td>
+        <td><p id="pn71">0</p></td>
+        <td><p id="pb71">5</p></td>
+        <td class="stck">Stck.</td>
+      </tr>
+    </table>
+
+
+  </body>
+</html>
