@@ -1,9 +1,12 @@
 @media only screen and (min-width: 700px){
 /*
-//    Destop
+//    Desktop
 */
+    
 
+    
   html{
+    background-color: #d9d9d9
     font-family: "Arial", sans-serif;
   }
 
@@ -22,7 +25,11 @@
     text-align: center;
   }
 
-
+.header {
+    background-color: white;
+    padding-top:4%;
+}
+    
   td.stck{
     text-align: center;
     width: 70px;
