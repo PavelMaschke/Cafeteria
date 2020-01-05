@@ -7,7 +7,8 @@ const db = mysql.createConnection({
   host    : 'localhost', //keine Ahnung
   user    : 'cafeteria',
   password: '123456789',
-  database: 'cafeteriadb'
+  database: 'cafeteriadb',
+  insecureAuth : true
 });
 
 //connect
