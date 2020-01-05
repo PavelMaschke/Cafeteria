@@ -4,10 +4,10 @@ const mysql = require('mysql');
 const app = express();
 
 const db = mysql.createConnection({
-  host    : 'localhost', //keine Ahnung
+  host    : 'localhost',
   user    : 'cafeteria',
-  password: '123456789',
-  database: 'cafeteriadb'
+  password: 'HWHBEYFPMAFkrxuip6qufuAz',
+  database: 'cafeteria'
 });
 
 //connect
