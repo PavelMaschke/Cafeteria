@@ -49,6 +49,6 @@ app.get('/', function(req, res) {
 //});
 
 
-app.listen(3306, function(){
-        console.log('Running on 3306');
+app.listen(3000, function(){
+        console.log('Running on 3000');
 });
