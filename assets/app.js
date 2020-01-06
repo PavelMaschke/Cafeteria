@@ -15,7 +15,7 @@ db.connect(function(err){
   if(err) throw err;
   console.log('connected');
 
-  let sql = 'CREATE TABLE bestand (id int AUTO_INCREMENT, produkt VARCHAR(255), anzahl int, PRIMARY KEY id)';
+  let sql = 'CREATE TABLE bestand (id int AUTO_INCREMENT, produkt VARCHAR(255), anzahl int, PRIMARY KEY id);';
   db.query(sql, function(err){
     if(err) throw err;
     console.log('table created');
