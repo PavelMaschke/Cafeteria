@@ -2,11 +2,11 @@
 /*
 //    Desktop
 */
-    
 
-    
+
+
   html{
-    background-color: #d9d9d9
+    background-color: #d9d9d9;
     font-family: "Arial", sans-serif;
   }
 
@@ -29,7 +29,7 @@
     background-color: white;
     padding-top:4%;
 }
-    
+
 .navi{
     text-decoration: none;
     padding:20px;
@@ -41,7 +41,7 @@
         width:33%;
         float:left;
     }
-    
+
   td.stck{
     text-align: center;
     width: 70px;
@@ -155,7 +155,7 @@
     background-color: white;
     padding-top:4%;
 }
-    
+
 .navi{
     text-decoration: none;
     padding:20px;
@@ -163,7 +163,7 @@
     background-color: burlywood;
     }
 
-    
+
   td.stck{
     text-align: center;
     width: 70px;
