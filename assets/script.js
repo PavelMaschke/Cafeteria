@@ -1,3 +1,4 @@
+var app = require('./app');
 var totalRows = 7;
 
 function buttonAdd(row) {
@@ -14,24 +15,32 @@ function buttonRemove(row) {
 }
 
 function buttonSave() {
-  nochVorhanden();
-  zuBestellen();
-
-  //Auf app.js -> loadToDB();
+  aufDBpacken();
+  //vonDBladen();
 }
 
-function nochVorhanden() {
+//zuBestellen(); sollte auferufen werden wenn die Bestelllistenseite geöffnet wird
+
+function aufDBpacken() {
   for (var i = 1; i <= totalRows; i++)
   { //Alle Reihen durchgehen
-    document.getElementById('pn' + i + '1').innerHTML = document.getElementById('p' + i + '0').innerHTML;
+    //document.getElementById('pn' + i + '1').innerHTML = document.getElementById('p' + i + '0').innerHTML; //weg
+
+    let anzahl = document.getElementById('p' + i + '0').innerHTML;
+    let sql = 'UPDATE bestand SET anzahl = '+ anzahl +' WHERE id = ' + i;
+    app.doQuery(sql);
+
   }
 }
 
-function zuBestellen() {
+function vonDBladen() {
   for (var i = 1; i <= totalRows; i++)
   { //Alle Reihen durchgehen
     var bestand = document.getElementById('pb' + i + '1').innerHTML;
-    var vorhanden = document.getElementById('pn' + i + '1').innerHTML;
+    //var vorhanden = document.getElementById('pn' + i + '1').innerHTML; //weg
+
+    let sql = 'SELECT anzahl FROM bestand WHERE id = ' + i;
+    var vorhanden = app.doQuery(sql);
 
     document.getElementById('p' + i + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
   }

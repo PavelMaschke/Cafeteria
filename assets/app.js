@@ -15,13 +15,21 @@ db.connect(function(err){
   if(err) throw err;
   console.log('connected');
 
-  let sql = 'CREATE TABLE bestand (id int AUTO_INCREMENT, produkt VARCHAR(255), anzahl int, PRIMARY KEY id);';
+  /*let sql = 'CREATE TABLE bestand (id int AUTO_INCREMENT, produkt VARCHAR(255), anzahl int, PRIMARY KEY id);';
   db.query(sql, function(err){
     if(err) throw err;
     console.log('table created');
-  });
+  });*/
 
 });
+
+module.exports.doQuery = function(sql) {
+  let query = db.query(sql, function(err, results) {
+    if (err) throw err;
+    console.log('the results are ' + results);
+    return results;
+  });
+}
 
 /*app.get('/creadedb', function(req, res) {
   let sql = 'CREATE DATABASE cafeteriadb';
