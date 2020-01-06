@@ -23,7 +23,7 @@ db.connect(function(err){
 
 });
 
-var doQuery = function(sql) {
+function doQuery(sql) {
   let query = db.query(sql, function(err, results) {
     if (err) throw err;
     console.log('the results are ' + results);
