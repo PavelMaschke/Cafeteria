@@ -1,4 +1,3 @@
-var app = require('./app');
 var totalRows = 7;
 
 function buttonAdd(row) {
@@ -28,7 +27,7 @@ function aufDBpacken() {
 
     let anzahl = document.getElementById('p' + i + '0').innerHTML;
     let sql = 'UPDATE bestand SET anzahl = '+ anzahl +' WHERE id = ' + i;
-    app.doQuery(sql);
+    doQuery(sql);
 
   }
 }
@@ -40,7 +39,7 @@ function vonDBladen() {
     //var vorhanden = document.getElementById('pn' + i + '1').innerHTML; //weg
 
     let sql = 'SELECT anzahl FROM bestand WHERE id = ' + i;
-    var vorhanden = app.doQuery(sql);
+    var vorhanden = doQuery(sql);
 
     document.getElementById('p' + i + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
   }
