@@ -19,20 +19,7 @@ db.connect(function(err){
   }
 });
 
-app.get('/creadedb', function(req, res) {
-  let sql = 'CREATE DATABASE cafeteriadb';
 
-  console.log('create DB...');
-
-  db.query(sql, function(err) {
-    if(!!err) {
-      console.log(err);
-    } else {
-      console.log('succesful query')
-    }
-  });
-
-});
 
 //create db
 /*app.get('/createdb', (req, res) => {
@@ -53,4 +40,19 @@ app.get('/creadedb', function(req, res) {
 
 app.listen(3000, function(){
         console.log('Running on 3000');
+});
+
+app.get('/creadedb', function(req, res) {
+  let sql = 'CREATE DATABASE cafeteriadb';
+
+  console.log('create DB...');
+
+  db.query(sql, function(err) {
+    if(!!err) {
+      console.log(err);
+    } else {
+      console.log('succesful query')
+    }
+  });
+
 });
