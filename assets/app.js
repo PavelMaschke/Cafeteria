@@ -19,7 +19,7 @@ db.connect(function(err){
   }
 });
 
-app.get('/creadedb', function(req, res) {
+/*app.get('/creadedb', function(req, res) {
   let sql = 'CREATE DATABASE cafeteriadb';
 
   console.log('create DB...');
@@ -33,7 +33,7 @@ app.get('/creadedb', function(req, res) {
   });
 
 });
-
+*/
 //create db
 /*app.get('/createdb', (req, res) => {
   let sql = 'CREATE DATABASE cafeteriadb';
@@ -46,9 +46,14 @@ app.get('/creadedb', function(req, res) {
 });*/
 
 //create table
-//app.get('/createtable', (req, res) => {
-//  let sql = 'CREATE TABLE bestand(id int AUTO_INCREMENT, produkt VARCHAR(255), anzahl int, PRIMARY KEY id)';
-//});
+app.get('/createtable', (req, res) => {
+  let sql = 'CREATE TABLE bestand(id int AUTO_INCREMENT, produkt VARCHAR(255), anzahl int, PRIMARY KEY id)';
+  db.query(sql,  (err, result) => {
+    if(err) throw err;
+    console.log(result);
+    res.send('database created');
+  });
+});
 
 
 app.listen(3000, function(){
