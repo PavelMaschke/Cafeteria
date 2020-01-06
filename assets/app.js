@@ -1,7 +1,10 @@
-const express = require('express');
-const mysql = require('mysql');
+var express = require('express');
+var bodyParser = require('body-parser');
+var mysql = require('mysql');
 
-const app = express();
+var app = express();
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const db = mysql.createConnection({
   host    : 'localhost', //keine Ahnung
@@ -22,6 +25,16 @@ db.connect(function(err){
   });*/
 
 });
+
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/testStyle.css');
+  res.sendFile(__dirname + '/script.js');
+
+});
+//app.post('/upload', urlencodedParser, function(req, res) {
+
+//});
 
 function doQuery(sql) {
   let query = db.query(sql, function(err, results) {
@@ -73,6 +86,6 @@ function doQuery(sql) {
 
 
 
-app.listen(3000, function(){
-        console.log('Running on 3000');
+app.listen(8080, function(){
+        console.log('Running on 8080');
 });
