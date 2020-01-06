@@ -27,7 +27,7 @@ db.connect(function(err){
 });
 
 app.get('/', function(req, res){
-  res.send('test')
+  res.sendFile(__dirname + '/index.html');
 });
 //app.post('/upload', urlencodedParser, function(req, res) {
 
