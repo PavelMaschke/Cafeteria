@@ -27,7 +27,10 @@ function aufDBpacken() {
 
     let anzahl = document.getElementById('p' + i + '0').innerHTML;
     let sql = 'UPDATE bestand SET anzahl = '+ anzahl +' WHERE id = ' + i;
-    doQuery(sql);
+
+    $.getScript('/app.js', function() {
+      doQuery(sql);
+    })
 
   }
 }
@@ -39,7 +42,11 @@ function vonDBladen() {
     //var vorhanden = document.getElementById('pn' + i + '1').innerHTML; //weg
 
     let sql = 'SELECT anzahl FROM bestand WHERE id = ' + i;
-    var vorhanden = doQuery(sql);
+
+    $.getScript('/app.js', function() {
+      var vorhanden = doQuery(sql);
+    })
+
 
     document.getElementById('p' + i + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
   }
