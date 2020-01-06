@@ -83,6 +83,6 @@ function doQuery(sql) {
 
 
 
-app.listen(3000, function(){
-        console.log('Running on 3000');
+app.listen(8080, function(){
+        console.log('Running on 8080');
 });
