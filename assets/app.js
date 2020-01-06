@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const app = express();
 
 const db = mysql.createConnection({
-  host    : 'localhost',
+  host    : 'localhost', //keine Ahnung
   user    : 'cafeteria',
   password: 'HWHBEYFPMAFkrxuip6qufuAz',
   database: 'cafeteria'
@@ -19,8 +19,10 @@ db.connect(function(err){
   }
 });
 
-app.get('/', function(req, res) {
+app.get('/creadedb', function(req, res) {
   let sql = 'CREATE DATABASE cafeteriadb';
+
+  console.log('create DB...');
 
   db.query(sql, function(err) {
     if(!!err) {
