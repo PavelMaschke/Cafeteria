@@ -1,7 +1,10 @@
-const express = require('express');
-const mysql = require('mysql');
+var express = require('express');
+var bodyParser = require('body-parser');
+var mysql = require('mysql');
 
-const app = express();
+var app = express();
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const db = mysql.createConnection({
   host    : 'localhost', //keine Ahnung
@@ -20,6 +23,13 @@ db.connect(function(err){
     if(err) throw err;
     console.log('table created');
   });*/
+
+});
+
+app.get('/', function(req, res){
+  res.send('test')
+})
+//app.post('/upload', urlencodedParser, function(req, res) {
 
 });
 
