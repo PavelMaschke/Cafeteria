@@ -28,10 +28,10 @@ db.connect(function(err){
 
 app.get('/', function(req, res){
   res.send('test')
-})
+});
 //app.post('/upload', urlencodedParser, function(req, res) {
 
-});
+//});
 
 function doQuery(sql) {
   let query = db.query(sql, function(err, results) {
