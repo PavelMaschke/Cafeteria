@@ -12,11 +12,15 @@ const db = mysql.createConnection({
 
 //connect
 db.connect(function(err){
-  if(!!err){
-    console.log(err);
-  } else {
-    console.log('connected');
-  }
+  if(err) throw err;
+  console.log('connected');
+
+  let sql = 'CREATE TABLE bestand(id int AUTO_INCREMENT, produkt VARCHAR(255), anzahl int, PRIMARY KEY id)';
+  db.query(sql, function(err){
+    if(err) throw err;
+    console.log('table created');
+  });
+
 });
 
 /*app.get('/creadedb', function(req, res) {
@@ -45,15 +49,20 @@ db.connect(function(err){
   });
 });*/
 
+
 //create table
-app.get('/createtable', (req, res) => {
+/*app.get('/createtable', function(req, res) {
   let sql = 'CREATE TABLE bestand(id int AUTO_INCREMENT, produkt VARCHAR(255), anzahl int, PRIMARY KEY id)';
-  db.query(sql,  (err, result) => {
+  db.query(sql, function(err){
     if(err) throw err;
     console.log(result);
     res.send('database created');
   });
-});
+});*/
+
+
+
+
 
 
 app.listen(3000, function(){

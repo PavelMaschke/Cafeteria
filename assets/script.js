@@ -1,13 +1,11 @@
 var totalRows = 7;
 
-function buttonAdd(row)
-{
+function buttonAdd(row) {
   var old = document.getElementById('p' + row).innerHTML
   document.getElementById('p' + row).innerHTML = parseInt(old) + 1;
 }
 
-function buttonRemove(row)
-{
+function buttonRemove(row) {
   var old = document.getElementById('p' + row).innerHTML
   if (old > 0)
   {
@@ -15,32 +13,21 @@ function buttonRemove(row)
   }
 }
 
-function buttonSave()
-{
+function buttonSave() {
   nochVorhanden();
   zuBestellen();
 
-  //var doc = new jsPDF();
-
-
-  //doc.html(document.table, {
-     //callback: function (doc) {
-       //doc.save();
-     //}
-  //});
-  //doc.save('a4.pdf');
+  //Auf app.js -> loadToDB();
 }
 
-function nochVorhanden()
-{
+function nochVorhanden() {
   for (var i = 1; i <= totalRows; i++)
   { //Alle Reihen durchgehen
     document.getElementById('pn' + i + '1').innerHTML = document.getElementById('p' + i + '0').innerHTML;
   }
 }
 
-function zuBestellen()
-{
+function zuBestellen() {
   for (var i = 1; i <= totalRows; i++)
   { //Alle Reihen durchgehen
     var bestand = document.getElementById('pb' + i + '1').innerHTML;
