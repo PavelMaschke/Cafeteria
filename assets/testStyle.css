@@ -132,8 +132,116 @@
   */
 
   html{
+    background-color: #d9d9d9
     font-family: "Arial", sans-serif;
   }
 
+  table{
+    border-spacing: 0px;
+    margin: 100px;
+  }
+
+  th{
+    padding: 20px;
+    width: 180px;
+  }
+
+  td{
+    padding: 15px;
+    text-align: center;
+  }
+
+.header {
+    background-color: white;
+    padding-top:4%;
+}
+    
+.navi{
+    text-decoration: none;
+    padding:20px;
+    display: inline-block;
+    background-color: burlywood;
+    }
+
+    
+  td.stck{
+    text-align: center;
+    width: 70px;
+    padding: 15px 0px;
+  }
+
+  tr:nth-child(even){
+    background-color: #e5e5e5;
+  }
+
+  tr:nth-child(odd){
+    background-color: #f5f5f5;
+  }
+
+  #p10, #p20, #p30, #p40, #p50, #p60, #p70{
+    width: 20px;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+  }
+
+  #pn11, #pn21, #pn31, #pn41, #pn51, #pn61, #pn71{
+    width: 20px;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+  }
+
+  #pb11, #pb21, #pb31, #pb41, #pb51, #pb61, #pb71{
+    width: 20px;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+  }
+
+  #p11, #p21, #p31, #p41, #p51, #p61, #p71{
+    width: 20px;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+  }
+
+  button{
+    margin: 0px 10px;
+    background-color: #fefefe;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  button:hover{
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  button:active{
+    background-color: #d5d5d5;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+  }
 
 }
