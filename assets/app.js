@@ -30,6 +30,16 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 
 });
+
+app.get('/Bestandsliste.html', function(req, res){
+  res.sendFile(__dirname + '/Bestandsliste.html');
+
+});
+
+app.get('/Einkaufsliste.html', function(req, res){
+  res.sendFile(__dirname + '/Einkaufsliste.html');
+
+});
 //app.post('/upload', urlencodedParser, function(req, res) {
 
 //});
