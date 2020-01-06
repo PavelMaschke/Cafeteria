@@ -27,9 +27,7 @@ db.connect(function(err){
 });
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-  res.sendFile(__dirname + '/testStyle.css');
-  res.sendFile(__dirname + '/script.js');
+  res.sendFile(__dirname);
 
 });
 //app.post('/upload', urlencodedParser, function(req, res) {
