@@ -31,6 +31,7 @@ function aufDBpacken() {
 
   }
   sendRequest('/bestandsliste', JSON.stringify(anzahl));
+  console.log(JSON.stringify(anzahl));
 }
 
 function vonDBladen() {
