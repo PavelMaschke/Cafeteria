@@ -30,7 +30,7 @@ function aufDBpacken() {
     //let sql = 'UPDATE bestand SET anzahl = '+ anzahl +' WHERE id = ' + i;
 
   }
-  sendRequest('/bestandsliste', 'x=[1,2,11,5,0]');
+  sendRequest('/bestandsliste', 'x=1&2&11&5&0');
   console.log(JSON.stringify(anzahl));
   console.log(anzahl);
 }
