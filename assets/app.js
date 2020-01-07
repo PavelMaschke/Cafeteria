@@ -31,17 +31,14 @@ db.connect(function(err){
 
 app.get('/', function(req, res){
   res.render('index');
-
 });
 
-app.get('/Bestandsliste.html', function(req, res){
-  res.sendFile(__dirname + '/Bestandsliste.html');
-
+app.get('/bestandsliste', function(req, res){
+  res.render('bestandsliste');
 });
 
-app.get('/Einkaufsliste.html', function(req, res){
-  res.sendFile(__dirname + '/Einkaufsliste.html');
-
+app.get('/einkaufsliste', function(req, res){
+  res.render('einkaufsliste');
 });
 //app.post('/upload', urlencodedParser, function(req, res) {
 

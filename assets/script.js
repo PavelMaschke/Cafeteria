@@ -21,18 +21,17 @@ function buttonSave() {
 //zuBestellen(); sollte auferufen werden wenn die Bestelllistenseite geöffnet wird
 
 function aufDBpacken() {
+  var anzahl;
   for (var i = 1; i <= totalRows; i++)
   { //Alle Reihen durchgehen
     //document.getElementById('pn' + i + '1').innerHTML = document.getElementById('p' + i + '0').innerHTML; //weg
 
-    let anzahl = document.getElementById('p' + i + '0').innerHTML;
-    let sql = 'UPDATE bestand SET anzahl = '+ anzahl +' WHERE id = ' + i;
-
-    $.getScript('/app.js', function() {
-      doQuery(sql);
-    })
+    anzahl[i] = document.getElementById('p' + i + '0').innerHTML + '&';
+    //let sql = 'UPDATE bestand SET anzahl = '+ anzahl +' WHERE id = ' + i;
 
   }
+  console.log(anzahl);
+  sendRequest('/bestandsliste', JSON.stringify(anzahl));
 }
 
 function vonDBladen() {
@@ -41,13 +40,25 @@ function vonDBladen() {
     var bestand = document.getElementById('pb' + i + '1').innerHTML;
     //var vorhanden = document.getElementById('pn' + i + '1').innerHTML; //weg
 
-    let sql = 'SELECT anzahl FROM bestand WHERE id = ' + i;
+    //let sql = 'SELECT anzahl FROM bestand WHERE id = ' + i;
+    //var vorhanden = doQuery(sql);
 
-    $.getScript('/app.js', function() {
-      var vorhanden = doQuery(sql);
-    })
-
-
-    document.getElementById('p' + i + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
+    //document.getElementById('p' + i + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
   }
+}
+
+function sendRequest(url, postData){
+  //für post-requests
+  //var url = "/bestandsliste";
+  var method = "POST";
+  var shouldBeAsync = true;
+  var request = new XMLHttpRequest();
+
+  request.onload = function(){
+
+  }
+
+  request.open(method, url, shouldBeAsync);
+  request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+  request.send(postData);
 }
