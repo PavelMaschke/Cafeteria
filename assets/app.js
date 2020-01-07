@@ -109,9 +109,16 @@ function stringToArray(str){
 }
 
 function queryArrayToDB(arr){
-  var qery = '';
+  var sql = '';
   arr.forEach(function(item, index){
-    query = 'UPDATE bestand SET anzahl = '+ item +' WHERE id = ' + (index + 1) + ';' ;
-    console.log(query);
+    sql = 'UPDATE bestand SET anzahl = '+ item +' WHERE id = ' + (index + 1) + ';' ;
+    console.log(sql);
+
+    //run query
+    let query = db.query(sql, function(err, results) {
+      if (err) throw err;
+      console.log('the results are ' + results);
+    });
+
   });
 }
