@@ -44,7 +44,8 @@ app.get('/einkaufsliste', function(req, res){
 app.post('/bestandsliste', urlencodedParser, function(req, res) {
   console.log(req.body);
   console.log(req.body.x);
-  //StringToArray();
+  let test = stringToArray(req.body.x);
+  console.log(test);
 });
 
 function doQuery(sql) {
@@ -100,3 +101,8 @@ function doQuery(sql) {
 app.listen(8080, function(){
         console.log('Running on 8080');
 });
+
+function stringToArray(str){
+  var  ergebnis= str.split(',');
+  return ergebnis;
+}

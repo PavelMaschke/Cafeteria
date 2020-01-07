@@ -21,7 +21,7 @@ function buttonSave() {
 //zuBestellen(); sollte auferufen werden wenn die Bestelllistenseite geöffnet wird
 
 function aufDBpacken() {
-  var anzahl = '';
+  var anzahl = 'x=';
   for (var i = 1; i <= totalRows; i++)
   { //Alle Reihen durchgehen
     //document.getElementById('pn' + i + '1').innerHTML = document.getElementById('p' + i + '0').innerHTML; //weg
@@ -30,9 +30,8 @@ function aufDBpacken() {
     //let sql = 'UPDATE bestand SET anzahl = '+ anzahl +' WHERE id = ' + i;
 
   }
-  sendRequest('/bestandsliste', 'x=1,2,11,5,0');
-  console.log(JSON.stringify(anzahl));
   console.log(anzahl);
+  sendRequest('/bestandsliste', anzahl);
 }
 
 function vonDBladen() {
