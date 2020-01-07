@@ -30,7 +30,7 @@ function aufDBpacken() {
     //let sql = 'UPDATE bestand SET anzahl = '+ anzahl +' WHERE id = ' + i;
 
   }
-  sendRequest('/bestandsliste', 'hello');
+  sendRequest('/bestandsliste', 12);
   console.log(JSON.stringify(anzahl));
   console.log(anzahl);
 }
@@ -56,6 +56,6 @@ function sendRequest(url, postData){
   var request = new XMLHttpRequest();
 
   request.open(method, url, shouldBeAsync);
-  //request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send(postData);
 }
