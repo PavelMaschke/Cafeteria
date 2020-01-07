@@ -130,7 +130,7 @@ function queryArrayfromDB(){
 
   var tableLength = db.query('SELECT COUNT(anzahl) FROM bestand', function(err, results) {
     if (err) throw err;
-    console.log('the results are ' + results);#
+    console.log('the results are ' + results);
     return results;
   });
 
