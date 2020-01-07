@@ -41,8 +41,8 @@ app.get('/einkaufsliste', function(req, res){
   res.render('einkaufsliste');
 });
 
-app.post('/upload', urlencodedParser, function(req, res) {
-
+app.post('/bestandsliste', urlencodedParser, function(req, res) {
+  console.log(req.body);
 });
 
 function doQuery(sql) {
