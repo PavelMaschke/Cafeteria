@@ -53,7 +53,6 @@ function sendRequest(url, postData){
   //var url = "/bestandsliste";
   var method = "POST";
   var shouldBeAsync = true;
-  var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest
   var request = new XMLHttpRequest();
 
   request.onload = function(){
@@ -66,6 +65,6 @@ function sendRequest(url, postData){
   }
 
   request.open(method, url, shouldBeAsync);
-  request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+  request.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
   request.send(postData);
 }
