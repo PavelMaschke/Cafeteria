@@ -38,6 +38,9 @@ app.get('/bestandsliste', function(req, res){
 });
 
 app.get('/einkaufsliste', function(req, res){
+  let test = queryArrayfromDB();
+  console.log(test);
+
   res.render('einkaufsliste');
 });
 
@@ -117,8 +120,27 @@ function queryArrayToDB(arr){
     //run query
     let query = db.query(sql, function(err, results) {
       if (err) throw err;
-      console.log('the results are ' + results);
     });
-
   });
+}
+
+function queryArrayfromDB(){
+  var arr = [];
+  var tableLength = 0;
+
+  var tableLength = db.query('SELECT COUNT(anzahl) FROM bestand', function(err, results) {
+    if (err) throw err;
+    console.log('the results are ' + results);#
+    return results;
+  });
+
+
+
+
+  //for (var i = 1; i <= tableLength; i++) {
+
+  //}
+
+
+  return 0;
 }
