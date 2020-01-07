@@ -111,7 +111,7 @@ function stringToArray(str){
 function queryArrayToDB(arr){
   var qery = '';
   arr.forEach(function(item, index){
-    query = 'UPDATE bestand SET anzahl = '+ item +' WHERE id = ' + (index + 1);
+    query = 'UPDATE bestand SET anzahl = '+ item +' WHERE id = ' + (index + 1) + ';' ;
     console.log(query);
   });
 }
