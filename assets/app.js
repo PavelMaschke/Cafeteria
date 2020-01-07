@@ -5,6 +5,7 @@ var mysql = require('mysql');
 var app = express();
 
 app.set('view engine', 'ejs');
+app.use('/assets', express.static('assets/'));
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
