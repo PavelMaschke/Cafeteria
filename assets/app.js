@@ -42,7 +42,7 @@ app.get('/einkaufsliste', function(req, res){
 });
 
 app.post('/bestandsliste', urlencodedParser, function(req, res) {
-  console.log(req.body);
+  console.log(req.body[1]);
 });
 
 function doQuery(sql) {
