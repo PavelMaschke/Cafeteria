@@ -65,6 +65,6 @@ function sendRequest(url, postData){
   }
 
   request.open(method, url, shouldBeAsync);
-  request.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
+  request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
   request.send(postData);
 }
