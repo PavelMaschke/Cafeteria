@@ -40,9 +40,10 @@ app.get('/bestandsliste', function(req, res){
 app.get('/einkaufsliste', function(req, res){
   res.render('einkaufsliste');
 });
-//app.post('/upload', urlencodedParser, function(req, res) {
 
-//});
+app.post('/upload', urlencodedParser, function(req, res) {
+
+});
 
 function doQuery(sql) {
   let query = db.query(sql, function(err, results) {

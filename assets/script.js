@@ -26,7 +26,7 @@ function aufDBpacken() {
   { //Alle Reihen durchgehen
     //document.getElementById('pn' + i + '1').innerHTML = document.getElementById('p' + i + '0').innerHTML; //weg
 
-    anzahl[i] = document.getElementById('p' + i + '0').innerHTML + '&';
+    anzahl[i - 1] = document.getElementById('p' + i + '0').innerHTML;
     //let sql = 'UPDATE bestand SET anzahl = '+ anzahl +' WHERE id = ' + i;
 
   }
