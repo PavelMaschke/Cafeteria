@@ -21,17 +21,16 @@ function buttonSave() {
 //zuBestellen(); sollte auferufen werden wenn die Bestelllistenseite geöffnet wird
 
 function aufDBpacken() {
-  var anzahl = [];
+  var anzahl = '';
   for (var i = 1; i <= totalRows; i++)
   { //Alle Reihen durchgehen
     //document.getElementById('pn' + i + '1').innerHTML = document.getElementById('p' + i + '0').innerHTML; //weg
 
-    anzahl[i - 1] = document.getElementById('p' + i + '0').innerHTML;
+    anzahl += document.getElementById('p' + i + '0').innerHTML + ',';
     //let sql = 'UPDATE bestand SET anzahl = '+ anzahl +' WHERE id = ' + i;
 
   }
-  sendRequest('/bestandsliste', JSON.stringify(anzahl));
-  console.log(JSON.stringify(anzahl));
+  sendRequest('/bestandsliste', anzahl);
 }
 
 function vonDBladen() {
