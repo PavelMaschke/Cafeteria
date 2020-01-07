@@ -42,19 +42,19 @@ app.get('/einkaufsliste', function(req, res){
 });
 
 app.post('/bestandsliste', urlencodedParser, function(req, res) {
-  console.log(req.body);
-  console.log(req.body.x);
-  let test = stringToArray(req.body.x);
-  console.log(test);
-});
 
+  let msg = stringToArray(req.body.x);
+  console.log(msg);
+  queryArrayToDB(msg);
+});
+/*
 function doQuery(sql) {
   let query = db.query(sql, function(err, results) {
     if (err) throw err;
     console.log('the results are ' + results);
     return results;
   });
-}
+}*/
 
 /*app.get('/creadedb', function(req, res) {
   let sql = 'CREATE DATABASE cafeteriadb';
@@ -104,5 +104,14 @@ app.listen(8080, function(){
 
 function stringToArray(str){
   var  ergebnis= str.split(',');
+  ergebnis.pop(); //letztes element leer -> löschen
   return ergebnis;
+}
+
+function queryArrayToDB(arr){
+  var qery = '';
+  arr.forEach(function(item, index){
+    query = 'UPDATE bestand SET anzahl = '+ item +' WHERE id = ' + (index + 1);
+    console.log(query);
+  });
 }
