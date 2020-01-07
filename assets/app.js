@@ -4,6 +4,8 @@ var mysql = require('mysql');
 
 var app = express();
 
+app.set('view engine', 'ejs');
+
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const db = mysql.createConnection({
@@ -27,7 +29,7 @@ db.connect(function(err){
 });
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+  res.render('index');
 
 });
 
