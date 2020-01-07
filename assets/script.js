@@ -55,16 +55,7 @@ function sendRequest(url, postData){
   var shouldBeAsync = true;
   var request = new XMLHttpRequest();
 
-  request.onload = function(){
-    var status = request.status;
-    var data = request.responseText;
-
-    console.log(status);
-    console.log(data);
-
-  }
-
   request.open(method, url, shouldBeAsync);
-  request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  //request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
   request.send(postData);
 }
