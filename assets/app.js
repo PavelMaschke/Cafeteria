@@ -127,7 +127,7 @@ function queryArrayToDB(arr){
 function queryArrayfromDB(){
   var arr = [];
 
-  var tableLength = db.query('SELECT COUNT(*) FROM bestand', function(err, results) {
+  var tableLength = db.query('SELECT * FROM bestand', function(err, results) {
     if (err) throw err;
     console.log('the results are ' + results);
     return results;
