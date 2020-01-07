@@ -56,6 +56,11 @@ function sendRequest(url, postData){
   var request = new XMLHttpRequest();
 
   request.onload = function(){
+    var status = request.status;
+    var data = request.responseText;
+
+    console.log(status);
+    console.log(data);
 
   }
 
