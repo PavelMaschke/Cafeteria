@@ -21,7 +21,7 @@ function buttonSave() {
 //zuBestellen(); sollte auferufen werden wenn die Bestelllistenseite geöffnet wird
 
 function aufDBpacken() {
-  var anzahl;
+  var anzahl = [];
   for (var i = 1; i <= totalRows; i++)
   { //Alle Reihen durchgehen
     //document.getElementById('pn' + i + '1').innerHTML = document.getElementById('p' + i + '0').innerHTML; //weg
