@@ -40,13 +40,12 @@ app.post('/bestandsliste', urlencodedParser, function(req, res) {
 });
 
 app.get('/einkaufsliste', function(req, res){
-  //let valuesFromDB = queryStringfromDB();
-  for (var i = 0; i < 10000; i++) {
-    console.log(i);
-  }
 
+  let valuesFromDB = queryStringfromDB(function() {
+    console.log('after callback');
+  });
 
-  res.render('einkaufsliste');
+  res.render('einkaufsliste', {hiddenValue: dbValues});
 });
 
 function stringToArray(str){
@@ -68,7 +67,7 @@ function queryArrayToDB(arr){
   });
 }
 
-function queryStringfromDB(){
+function queryStringfromDB(_callback){
   var arr = [];
   var querySent = [];
   var getData = '';
@@ -90,6 +89,8 @@ function queryStringfromDB(){
 
 
   return getData;
+  console.log('before callback');
+  _callback();
 }
 
 app.listen(8080, function(){
