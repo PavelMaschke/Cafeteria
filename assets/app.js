@@ -87,10 +87,10 @@ function queryStringfromDB(_callback){
     console.log(getData);
   });
 
-
-  return getData;
   console.log('before callback');
   _callback();
+  return getData;
+
 }
 
 app.listen(8080, function(){
