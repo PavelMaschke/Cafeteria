@@ -143,6 +143,11 @@ function queryArrayfromDB(){
     for (var i = 0; i < 7; i++) {
       getData += querySent[i].anzahl.toString() + ',';
     }
+
+    do {
+      getData += querySent[i].anzahl.toString() + ',';
+    } while (querySent[i].anzahl.toString() + ',' != null)
+    
     console.log(getData);
 
   });
