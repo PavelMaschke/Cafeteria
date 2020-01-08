@@ -45,10 +45,9 @@ app.post('/bestandsliste', urlencodedParser, function(req, res) {
 });
 
 app.get('/einkaufsliste', function(req, res){
-  let test = queryArrayfromDB();
-  console.log(test);
+  let valuesFromDB = queryStringfromDB();
 
-  res.render('einkaufsliste');
+  res.render('einkaufsliste', {dbValues: valuesFromDB});
 });
 /*
 function doQuery(sql) {
@@ -124,39 +123,24 @@ function queryArrayToDB(arr){
   });
 }
 
-function queryArrayfromDB(){
+function queryStringfromDB(){
   var arr = [];
   var querySent = [];
   var getData = '';
 
   db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
     if (err) throw err;
-    //console.log('the results are ' + results);
+
     while(results == null){
       //warten bis die query fertig ist
     }
     querySent = results;
-    //console.log(querySent);
-    //console.log('querySent: ' + typeof(querySent))
-    //console.log('querySent2: ' + querySent[1].anzahl)
 
+    //ergebnis der query in String umwandeln
     for (var i = 0; i < 7; i++) {
       getData += querySent[i].anzahl.toString() + ',';
     }
-    //let i = 0;
-
-    /*while (querySent[i].anzahl.toString() + ',' != null) {
-      getData += querySent[i].anzahl.toString() + ',';
-      i++;
-    }*/
-
-    console.log(getData);
-
   });
 
-
-
-
-
-  return 0;
+  return getData;
 }

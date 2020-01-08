@@ -122,7 +122,9 @@
     font-size: 16px;
   }
 
-
+  #hiddenValue{
+    display: none;
+  }
 
 }
 
@@ -242,6 +244,10 @@
     text-align: center;
     display: inline-block;
     font-size: 16px;
+  }
+
+  #hiddenValue{
+    display: none;
   }
 
 }

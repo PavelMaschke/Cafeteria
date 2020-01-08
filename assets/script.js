@@ -33,14 +33,12 @@ function aufDBpacken() {
 function vonDBladen() {
   for (var i = 1; i <= totalRows; i++)
   { //Alle Reihen durchgehen
-    var bestand = document.getElementById('pb' + i + '1').innerHTML;
-    //var vorhanden = document.getElementById('pn' + i + '1').innerHTML; //weg
-
-    //let sql = 'SELECT anzahl FROM bestand WHERE id = ' + i;
-    //var vorhanden = doQuery(sql);
+    //var bestand = document.getElementById('pb' + i + '1').innerHTML;
+    //var vorhanden = str.charAt((i*2) - 1);
 
     //document.getElementById('p' + i + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
   }
+  console.log(document.getElementById('hiddenValue').innerHTML);
 }
 
 function sendRequest(url, postData){
