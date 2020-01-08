@@ -1,7 +1,5 @@
 var totalRows = 7;
 
-vonDBladen();
-
 function buttonAdd(row) {
   var old = document.getElementById('p' + row).innerHTML
   document.getElementById('p' + row).innerHTML = parseInt(old) + 1;
@@ -17,7 +15,7 @@ function buttonRemove(row) {
 
 function buttonSave() {
   aufDBpacken();
-  //vonDBladen();
+  vonDBladen();
 }
 
 //zuBestellen(); sollte auferufen werden wenn die Bestelllistenseite geöffnet wird
