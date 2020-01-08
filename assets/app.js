@@ -144,7 +144,7 @@ function queryArrayfromDB(){
 
   });
 
-  var getData = '';
+  var getData = 'test';
 
   for (var i = 0; i <= querySent.lenght; i++) {
     getData += querySent[i];
