@@ -118,7 +118,7 @@ function queryArrayToDB(arr){
     console.log(sql);
 
     //run query
-    let query = db.query(sql, function(err, results) {
+    db.query(sql, function(err, results) {
       if (err) throw err;
     });
   });
@@ -133,7 +133,7 @@ function queryArrayfromDB(){
     return results;
   });
 
-console.log(tableLength);
+//console.log(tableLength);
 
 
 
