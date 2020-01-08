@@ -143,9 +143,11 @@ function queryArrayfromDB(){
     /*for (var i = 0; i < 7; i++) {
       getData += querySent[i].anzahl.toString() + ',';
     }*/
+    let i = 0;
 
     while (querySent[i].anzahl.toString() + ',' != null) {
       getData += querySent[i].anzahl.toString() + ',';
+      i++;
     }
 
     console.log(getData);
