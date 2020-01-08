@@ -136,9 +136,6 @@ function queryArrayfromDB(){
     while(results == null){
       //warten bis die query fertig ist
     }
-
-
-
     querySent = results;
     //console.log(querySent);
 
@@ -147,7 +144,7 @@ function queryArrayfromDB(){
   var getData;
 
   for (var i = 0; i <= querySent.lenght; i++) {
-    getData += querySent[i].anzahl;
+    getData += querySent[i];
   }
   console.log(getData);
 
