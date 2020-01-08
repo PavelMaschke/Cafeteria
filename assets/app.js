@@ -139,6 +139,7 @@ function queryArrayfromDB(){
     querySent = results;
     //console.log(querySent);
     console.log('querySent: ' + typeof(querySent))
+    console.log('querySent: ' + typeof(querySent[1]))
 
   });
 
