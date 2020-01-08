@@ -130,7 +130,7 @@ function queryArrayfromDB(){
 
 
 
-  db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
+  db.query('SELECT * FROM bestand;', function(err, results, fields) {
     if (err) throw err;
     //console.log('the results are ' + results);
     while(results == null){
@@ -147,7 +147,7 @@ function queryArrayfromDB(){
   var getData = 'test';
 
   for (var i = 0; i <= querySent.lenght; i++) {
-    getData += querySent[i]["anzahl"];
+    getData += querySent[i].anzahl;
   }
   console.log(getData);
 
