@@ -132,15 +132,14 @@ function queryArrayfromDB(){
   db.query('SELECT * FROM bestand;', function(err, results, fields) {
     if (err) throw err;
     //console.log('the results are ' + results);
+    while(results == NULL){
+  
+    }
+
     querySent = results;
+    console.log(querySent);
+
   });
-
-  while(querySent = NULL){
-
-  }
-  console.log(querySent);
-
-
 
   //for (var i = 1; i <= tableLength; i++) {
 
