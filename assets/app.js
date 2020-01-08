@@ -126,25 +126,30 @@ function queryArrayToDB(arr){
 
 function queryArrayfromDB(){
   var arr = [];
-  var querySent;
+  var querySent = [];
 
 
-  db.query('SELECT * FROM bestand;', function(err, results, fields) {
+
+  db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
     if (err) throw err;
     //console.log('the results are ' + results);
     while(results == null){
-
+      //warten bis die query fertig ist
     }
+
+
 
     querySent = results;
     console.log(querySent);
 
   });
 
-  //for (var i = 1; i <= tableLength; i++) {
+  var getData = '';
 
-  //}
-
+  for (var i = 0; i <= querySent.lenght; i++) {
+    getData += querySent[i];
+  }
+  console.log(getData);
 
   return 0;
 }
