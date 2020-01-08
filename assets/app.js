@@ -126,15 +126,16 @@ function queryArrayToDB(arr){
 
 function queryArrayfromDB(){
   var arr = [];
+  var querySent;
 
-  var tableLength = db.query('SELECT * FROM bestand;', function(err, results, fields) {
+
+  db.query('SELECT * FROM bestand;', function(err, results, fields) {
     if (err) throw err;
-    console.log('the results are ' + results);
-    return results;
+    //console.log('the results are ' + results);
+    querySent = results;
   });
 
-//console.log(tableLength);
-
+console.log(querySent);
 
 
 
