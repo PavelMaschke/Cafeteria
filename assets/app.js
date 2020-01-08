@@ -37,18 +37,18 @@ app.get('/bestandsliste', function(req, res){
   res.render('bestandsliste');
 });
 
-app.get('/einkaufsliste', function(req, res){
-  let test = queryArrayfromDB();
-  console.log(test);
-
-  res.render('einkaufsliste');
-});
-
 app.post('/bestandsliste', urlencodedParser, function(req, res) {
 
   let msg = stringToArray(req.body.x);
   console.log(msg);
   queryArrayToDB(msg);
+});
+
+app.get('/einkaufsliste', function(req, res){
+  let test = queryArrayfromDB();
+  console.log(test);
+
+  res.render('einkaufsliste');
 });
 /*
 function doQuery(sql) {
@@ -132,6 +132,8 @@ function queryArrayfromDB(){
     console.log('the results are ' + results);
     return results;
   });
+
+console.log(tableLength);
 
 
 
