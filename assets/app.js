@@ -85,9 +85,10 @@ function queryStringfromDB(){
     }
   });
 
+  console.log(getData);
   return getData;
 }
 
 app.listen(8080, function(){
-        console.log('Running on 8080');
+  console.log('Running on 8080');
 });
