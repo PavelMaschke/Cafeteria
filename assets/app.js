@@ -39,13 +39,7 @@ app.post('/bestandsliste', urlencodedParser, function(req, res) {
   queryArrayToDB(msg);
 });
 
-app.get('/einkaufsliste', function(req, res){
-  //let valuesFromDB = queryStringfromDB();
 
-  console.log(queryStringfromDB());
-
-  res.render('einkaufsliste', {dbValues: queryStringfromDB()});
-});
 
 function stringToArray(str){
   var  ergebnis= str.split(',');
@@ -86,8 +80,14 @@ function queryStringfromDB(){
     console.log(getData);
   });
 
+  app.get('/einkaufsliste', function(req, res){
+    //let valuesFromDB = queryStringfromDB();
 
-  return getData;
+
+    res.render('einkaufsliste', {dbValues: getData});
+  });
+
+  //return getData;
 }
 
 app.listen(8080, function(){
