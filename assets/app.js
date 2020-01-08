@@ -47,9 +47,6 @@ app.post('/bestandsliste', urlencodedParser, function(req, res) {
 app.get('/einkaufsliste', function(req, res){
   let valuesFromDB = queryStringfromDB();
 
-  while(valuesFromDB == null){
-    //warten bis der Wert zugewisen wurde
-  }
   console.log(valuesFromDB);
 
   res.render('einkaufsliste', {dbValues: valuesFromDB});
@@ -145,7 +142,9 @@ function queryStringfromDB(){
     for (var i = 0; i < 7; i++) {
       getData += querySent[i].anzahl.toString() + ',';
     }
+
+    return getData;
   });
 
-  return getData;
+
 }
