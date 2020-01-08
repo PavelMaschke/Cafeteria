@@ -14,7 +14,7 @@ function buttonRemove(row) {
 }
 
 function buttonSave() {
-  aufDBpacken();
+  //aufDBpacken();
   vonDBladen();
 }
 
