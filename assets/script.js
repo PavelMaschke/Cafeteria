@@ -22,15 +22,11 @@ function buttonSave() {
 
 function aufDBpacken() {
   var anzahl = 'x=';
+
   for (var i = 1; i <= totalRows; i++)
-  { //Alle Reihen durchgehen
-    //document.getElementById('pn' + i + '1').innerHTML = document.getElementById('p' + i + '0').innerHTML; //weg
-
+  { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
     anzahl += document.getElementById('p' + i + '0').innerHTML + ',';
-    //let sql = 'UPDATE bestand SET anzahl = '+ anzahl +' WHERE id = ' + i;
-
   }
-  console.log(anzahl);
   sendRequest('/bestandsliste', anzahl);
 }
 
