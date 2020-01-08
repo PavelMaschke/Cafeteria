@@ -84,11 +84,10 @@ function queryStringfromDB(_callback){
     for (var i = 0; i < 7; i++) {
       getData += querySent[i].anzahl.toString() + ',';
     }
-    console.log(getData);
+    console.log('before callback');
+    _callback();
   });
 
-  console.log('before callback');
-  _callback();
   return getData;
 
 }
