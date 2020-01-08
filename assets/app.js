@@ -127,8 +127,7 @@ function queryArrayToDB(arr){
 function queryArrayfromDB(){
   var arr = [];
   var querySent = [];
-
-
+  var getData = '';
 
   db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
     if (err) throw err;
@@ -141,14 +140,16 @@ function queryArrayfromDB(){
     //console.log('querySent: ' + typeof(querySent))
     //console.log('querySent2: ' + querySent[1].anzahl)
 
+    for (var i = 0; i <= querySent.lenght; i++) {
+      getData += querySent[i].anzahl.toString() + ',';
+    }
+    console.log(getData);
+
   });
 
-  var getData = '';
 
-  for (var i = 0; i <= querySent.lenght; i++) {
-    getData += querySent[i].anzahl.toString() + ',';
-  }
-  console.log(getData);
+
+
 
   return 0;
 }
