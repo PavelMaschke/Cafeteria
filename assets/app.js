@@ -138,6 +138,7 @@ function queryArrayfromDB(){
     }
     querySent = results;
     //console.log(querySent);
+    consol.log('querySent: ' + typeof(querySent))
 
   });
 
