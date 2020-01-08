@@ -45,7 +45,7 @@ app.get('/einkaufsliste', function(req, res){
     console.log('after callback');
   });
 
-  res.render('einkaufsliste', {hiddenValue: dbValues});
+  res.render('einkaufsliste', {dbValues: valuesFromDB});
 });
 
 function stringToArray(str){
