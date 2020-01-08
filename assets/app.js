@@ -133,7 +133,7 @@ function queryArrayfromDB(){
     return results;
   });
 
-console.log(tableLength);
+//console.log(tableLength);
 
 
 

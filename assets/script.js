@@ -45,7 +45,6 @@ function vonDBladen() {
 
 function sendRequest(url, postData){
   //für post-requests
-  //var url = "/bestandsliste";
   var method = "POST";
   var shouldBeAsync = true;
   var request = new XMLHttpRequest();
