@@ -146,7 +146,7 @@ function queryArrayfromDB(){
   var getData = '';
 
   for (var i = 0; i <= querySent.lenght; i++) {
-    getData += querySent[i];
+    getData += querySent[i].toString();
   }
   console.log(getData);
 
