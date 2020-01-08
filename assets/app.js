@@ -44,7 +44,7 @@ app.get('/einkaufsliste', function(req, res){
   let valuesFromDB = queryStringfromDB(function() {
     console.log('after callback');
   });
-
+  console.log(valuesFromDB);
   res.render('einkaufsliste', {dbValues: valuesFromDB});
 });
 
