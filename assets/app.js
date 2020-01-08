@@ -2,6 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
 
+var pause = false;
+
 var app = express();
 
 app.set('view engine', 'ejs');
@@ -41,11 +43,11 @@ app.post('/bestandsliste', urlencodedParser, function(req, res) {
 
 app.get('/einkaufsliste', function(req, res){
 
-  let valuesFromDB = queryStringfromDB(function() {
-    console.log('after callback');
-  });
-  console.log(valuesFromDB);
-  res.render('einkaufsliste', {dbValues: valuesFromDB});
+  let valuesFromDB = queryStringfromDB();
+  if (!pause){
+    console.log(valuesFromDB);
+    res.render('einkaufsliste', {dbValues: valuesFromDB});
+  }
 });
 
 function stringToArray(str){
@@ -67,7 +69,8 @@ function queryArrayToDB(arr){
   });
 }
 
-function queryStringfromDB(_callback){
+function queryStringfromDB(){
+  pause = true;
   var arr = [];
   var querySent = [];
   var getData = '';
@@ -84,10 +87,9 @@ function queryStringfromDB(_callback){
     for (var i = 0; i < 7; i++) {
       getData += querySent[i].anzahl.toString() + ',';
     }
-    console.log('before callback');
-    _callback();
   });
 
+  pause = false;
   return getData;
 
 }
