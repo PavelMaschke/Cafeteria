@@ -42,7 +42,7 @@ app.post('/bestandsliste', urlencodedParser, function(req, res) {
 app.get('/einkaufsliste', function(req, res){
   //let valuesFromDB = queryStringfromDB();
   for (var i = 0; i < 10000; i++) {
-    console.log('.');
+    console.log(i);
   }
 
 
