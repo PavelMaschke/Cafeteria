@@ -140,13 +140,13 @@ function queryArrayfromDB(){
     //console.log('querySent: ' + typeof(querySent))
     //console.log('querySent2: ' + querySent[1].anzahl)
 
-    for (var i = 0; i < 7; i++) {
+    /*for (var i = 0; i < 7; i++) {
+      getData += querySent[i].anzahl.toString() + ',';
+    }*/
+
+    while (querySent[i].anzahl.toString() + ',' != null) {
       getData += querySent[i].anzahl.toString() + ',';
     }
-
-    do {
-      getData += querySent[i].anzahl.toString() + ',';
-    } while (querySent[i + 1].anzahl.toString() + ',' != null)
 
     console.log(getData);
 
