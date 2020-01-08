@@ -135,7 +135,10 @@ function queryArrayfromDB(){
     querySent = results;
   });
 
-console.log(querySent);
+  while(querySent = NULL){
+
+  }
+  console.log(querySent);
 
 
 
