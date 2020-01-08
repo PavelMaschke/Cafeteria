@@ -140,14 +140,14 @@ function queryArrayfromDB(){
 
 
     querySent = results;
-    console.log(querySent);
+    //console.log(querySent);
 
   });
 
   var getData = 'test';
 
   for (var i = 0; i <= querySent.lenght; i++) {
-    getData += querySent[i].anzahl;
+    getData += querySent[i].RowDataPacket.anzahl;
   }
   console.log(getData);
 
