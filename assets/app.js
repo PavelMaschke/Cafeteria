@@ -46,8 +46,9 @@ app.post('/bestandsliste', urlencodedParser, function(req, res) {
 
 app.get('/einkaufsliste', function(req, res){
   let valuesFromDB = queryStringfromDB();
+  console.log(valuesFromDB);
 
-  res.render('einkaufsliste', {dbValues: 'test'});
+  res.render('einkaufsliste', {dbValues: valuesFromDB});
 });
 /*
 function doQuery(sql) {
