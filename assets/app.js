@@ -46,6 +46,10 @@ app.post('/bestandsliste', urlencodedParser, function(req, res) {
 
 app.get('/einkaufsliste', function(req, res){
   let valuesFromDB = queryStringfromDB();
+
+  while(valuesFromDB == null){
+    //warten bis der Wert zugewisen wurde
+  }
   console.log(valuesFromDB);
 
   res.render('einkaufsliste', {dbValues: valuesFromDB});
