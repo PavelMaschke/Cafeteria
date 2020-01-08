@@ -83,9 +83,10 @@ function queryStringfromDB(){
     for (var i = 0; i < 7; i++) {
       getData += querySent[i].anzahl.toString() + ',';
     }
+    console.log(getData);
   });
 
-  console.log(getData);
+
   return getData;
 }
 
