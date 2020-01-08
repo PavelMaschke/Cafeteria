@@ -140,8 +140,7 @@ function queryArrayfromDB(){
     //console.log('querySent: ' + typeof(querySent))
     //console.log('querySent2: ' + querySent[1].anzahl)
 
-    for (var i = 0; i <= querySent.lenght; i++) {
-      console.log(querySent.lenght);
+    for (var i = 0; i < 7; i++) {
       getData += querySent[i].anzahl.toString() + ',';
     }
     console.log(getData);
