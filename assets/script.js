@@ -1,5 +1,7 @@
 var totalRows = 7;
 
+vonDBladen();
+
 function buttonAdd(row) {
   var old = document.getElementById('p' + row).innerHTML
   document.getElementById('p' + row).innerHTML = parseInt(old) + 1;
