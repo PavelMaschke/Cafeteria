@@ -148,5 +148,9 @@ function queryStringfromDB(){
     }
   });
 
+  while(getData == null){
+    //warten bis die query fertig ist
+  }
+
   return getData;
 }
