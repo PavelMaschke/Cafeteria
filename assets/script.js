@@ -38,6 +38,7 @@ function vonDBladen() {
 
     //document.getElementById('p' + i + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
   }
+  console.log(hiddenValue);
   console.log(document.getElementById('hiddenValue').innerHTML);
 }
 
