@@ -138,8 +138,8 @@ function queryArrayfromDB(){
     }
     querySent = results;
     //console.log(querySent);
-    console.log('querySent: ' + typeof(querySent))
-    console.log('querySent2: ' + querySent[1].anzahl)
+    //console.log('querySent: ' + typeof(querySent))
+    //console.log('querySent2: ' + querySent[1].anzahl)
 
   });
 
