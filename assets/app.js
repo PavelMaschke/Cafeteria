@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
+var util = require('util');
 
 var app = express();
 
@@ -15,6 +16,9 @@ const db = mysql.createConnection({
   password: 'HWHBEYFPMAFkrxuip6qufuAz',
   database: 'cafeteria'
 });
+
+//damit auf function gewartet werdwen kann
+db.asyncquery = util.promisify(db.query).bind(db);
 
 //connect
 db.connect(function(err){
@@ -34,6 +38,7 @@ app.get('/bestandsliste', function(req, res){
 
 app.post('/bestandsliste', urlencodedParser, function(req, res) {
 
+  
   let msg = stringToArray(req.body.x);
   console.log(msg);
   queryArrayToDB(msg);
@@ -70,12 +75,12 @@ function queryStringfromDB(){
   var querySent = [];
   var getData = '';
 
-  db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
+  db.asyncquery('SELECT anzahl FROM bestand;', function(err, results, fields) {
     if (err) throw err;
 
-    while(results == null){
+     //while(results == null){
       //warten bis die query fertig ist
-    }
+    //}
     querySent = results;
 
     //ergebnis der query in String umwandeln
