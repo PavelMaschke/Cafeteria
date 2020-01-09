@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
+var util = require('util');
 
 var pause = false;
 
@@ -9,14 +10,17 @@ var app = express();
 app.set('view engine', 'ejs');
 app.use('/assets', express.static('assets/'));
 
+
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const db = mysql.createConnection({
-  host    : 'localhost', //keine Ahnung
+  host    : 'localhost', 
   user    : 'cafeteria',
   password: 'HWHBEYFPMAFkrxuip6qufuAz',
   database: 'cafeteria'
 });
+
+db.asyncquery = util.promisify(db.query).bind(db);
 
 //connect
 db.connect(function(err){
@@ -30,8 +34,9 @@ app.get('/', function(req, res){
   res.render('index');
 });
 
-app.get('/bestandsliste', function(req, res){
-  res.render('bestandsliste');
+app.get('/bestandsliste', async function(req, res){
+	console.log(test);
+  	res.render('bestandsliste');
 });
 
 app.post('/bestandsliste', urlencodedParser, function(req, res) {
@@ -41,13 +46,12 @@ app.post('/bestandsliste', urlencodedParser, function(req, res) {
   queryArrayToDB(msg);
 });
 
-app.get('/einkaufsliste', function(req, res){
+app.get('/einkaufsliste', async function(req, res){
 
-  let valuesFromDB = queryStringfromDB();
-  if (!pause){
-    console.log(valuesFromDB);
-    res.render('einkaufsliste', {dbValues: valuesFromDB});
-  }
+  bestand = await db.asyncquery('SELECT anzahl FROM bestand;');
+  console.log(bestand);
+  res.render('einkaufsliste', {dbValues: bestand});
+  
 });
 
 function stringToArray(str){
