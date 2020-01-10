@@ -52,7 +52,7 @@ function addedRows(){
     var anzahl = document.getElementById('p' + i + '0').innerHTML;
     //var produkt = ;
 
-    var sql 'INSERT INTO bestand (produkt, anzahl) VALUES ' + produkt ', ' + anzahl + ';';
+    //var sql 'INSERT INTO bestand (produkt, anzahl) VALUES ' + produkt ', ' + anzahl + ';';
 
     ergebnis = 'new' + (i - totalRows) + '=' + sql + '&';
   }
