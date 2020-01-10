@@ -57,7 +57,7 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
 
 app.get('/einkaufsliste', function(req, res){
 
-  let valuesFromDB = queryStringfromDB();
+  let valuesFromDB = await queryStringfromDB();
   console.log(valuesFromDB);
   res.render('einkaufsliste', {dbValues: valuesFromDB});
 });
@@ -87,7 +87,7 @@ async function queryStringfromDB(){
   var querySent = [];
   var getData = '';
 
-test = await db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
+db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
     if (err) throw err;
 
      //while(results == null){
