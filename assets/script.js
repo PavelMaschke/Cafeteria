@@ -28,20 +28,30 @@ function aufDBpacken() {
   { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
     anzahl += document.getElementById('p' + i + '0').innerHTML + ',';
   }
-  sendRequest('/bestandsliste', anzahl);
-  sendRequest('/addedRows', addedRows());
+  postRequest('/bestandsliste', anzahl);
+  postRequest('/addedRows', addedRows());
 }
 
 function vonDBladen() {
-  val = document.getElementById('hiddenValue').innerHTML;
+  //val = document.getElementById('hiddenValue').innerHTML;
+  var dbVal = getRequest('/einkaufsliste');
+  //var getData '';
 
-  for (var i = 1; i <= totalRows; i++)
+  for (var i = 0; i < totalRows; i++) {
+    //getData += dbVal[i].anzahl.toString() + ',';
+
+    var bestand = document.getElementById('pb' + (i + 1) + '1').innerHTML;
+    var vorhanden = dbVal[i].anzahl.toString();
+    document.getElementById('p' + i + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
+  }
+
+  /*for (var i = 1; i <= totalRows; i++)
   { //Alle Reihen durchgehen
     var bestand = document.getElementById('pb' + i + '1').innerHTML;
     var vorhanden = val.charAt((i*2) - 1);
 
     document.getElementById('p' + i + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
-  }
+  }*/
   //console.log(document.getElementById('hiddenValue').innerHTML);
 }
 
@@ -60,7 +70,7 @@ function addedRows(){
   return ergebnis;
 }
 
-function sendRequest(url, postData){
+function postRequest(url, postData){
   //für post-requests
   var method = "POST";
   var shouldBeAsync = true;
@@ -69,4 +79,12 @@ function sendRequest(url, postData){
   request.open(method, url, shouldBeAsync);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send(postData);
+}
+
+function getRequest(url)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
 }

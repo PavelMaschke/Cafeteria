@@ -83,7 +83,7 @@ function queryArrayToDB(arr){
   });
 }
 
-function queryStringfromDB(){
+/*function queryStringfromDB(){
   var arr = [];
   var querySent = [];
   var getData = '';
@@ -104,7 +104,7 @@ function queryStringfromDB(){
 
   return getData;
 
-}
+}*/
 
 app.listen(8080, function(){
   console.log('Running on 8080');
