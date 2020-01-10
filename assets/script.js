@@ -48,9 +48,6 @@ function vonDBladen() {
 
     document.getElementById('pn' + (i + 1) + '1').innerHTML = vorhanden;
 
-    console.log('vorhanden: ');
-    console.log(vorhanden);
-
     document.getElementById('p' + (i + 1) + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
   }
 
