@@ -38,7 +38,7 @@ app.get('/bestandsliste', function(req, res){
 
 app.post('/bestandsliste', urlencodedParser, function(req, res) {
 
-  
+
   let msg = stringToArray(req.body.x);
   console.log(msg);
   queryArrayToDB(msg);
@@ -47,14 +47,14 @@ app.post('/bestandsliste', urlencodedParser, function(req, res) {
 app.post('/addedRows', urlencodedParser, function(req, res) {
 
   for (var i = 0; i < req.body.length(); i++) {
-    
+
     let sql = stringToArray(req.body['new' + i]);
 
     db.query(sql, function(err, results) {
         if (err) throw err;
     });
   }
-  
+
   console.log(msg);
   queryArrayToDB(msg);
 });
