@@ -93,6 +93,7 @@ db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
       //warten bis die query fertig ist
     }
     querySent = results;
+    console.log('da ' + querySent);
 
 
     //ergebnis der query in String umwandeln
