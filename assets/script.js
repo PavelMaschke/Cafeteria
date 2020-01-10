@@ -15,8 +15,7 @@ function buttonRemove(row) {
 }
 
 function buttonSave() {
-  //aufDBpacken();
-  vonDBladen();
+  aufDBpacken();
 }
 
 //zuBestellen(); sollte auferufen werden wenn die Bestelllistenseite geöffnet wird
@@ -35,10 +34,6 @@ function aufDBpacken() {
 function vonDBladen() {
   //dbVal = document.getElementById('hiddenValue').innerHTML;
   //var getData '';
-
-
-  console.log('dbVal: ');
-  console.log(dbVal);
 
   for (var i = 0; i < totalRows; i++) {
     //getData += dbVal[i].anzahl.toString() + ',';
