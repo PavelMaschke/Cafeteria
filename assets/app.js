@@ -87,7 +87,7 @@ function queryStringfromDB(){
   var querySent = [];
   var getData = '';
 
-  db.asyncquery('SELECT anzahl FROM bestand;', function(err, results, fields) {
+  var test = await db.asyncquery('SELECT anzahl FROM bestand;', function(err, results, fields) {
     if (err) throw err;
 
      //while(results == null){
