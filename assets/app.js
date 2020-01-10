@@ -55,9 +55,11 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
   }
 });
 
-app.get('/einkaufsliste', function(req, res){
+app.get('/einkaufsliste', async function(req, res){
 
-  doStuff(res);
+  let valuesFromDB = await queryStringfromDB();
+  console.log(valuesFromDB);
+  res.render('einkaufsliste', {dbValues: valuesFromDB});
 
 });
 
@@ -81,12 +83,12 @@ function queryArrayToDB(arr){
   });
 }
 
-async function queryStringfromDB(){
+function queryStringfromDB(){
   var arr = [];
   var querySent = [];
   var getData = '';
 
-  var test = await db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
+  var test = db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
     if (err) throw err;
   });
 
@@ -97,12 +99,6 @@ async function queryStringfromDB(){
   console.log('hier ' + getData);
   return getData;
 
-}
-
-async function doStuff(res){
-  let valuesFromDB = await queryStringfromDB();
-  console.log(valuesFromDB);
-  res.render('einkaufsliste', {dbValues: valuesFromDB});
 }
 
 app.listen(8080, function(){
