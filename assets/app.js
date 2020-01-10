@@ -64,11 +64,8 @@ app.get('/einkaufsliste', async function(req, res){
     getData += valuesFromDB[i].anzahl.toString() + ',';
   }
 
-  console.log(getData);
-
   //console.log(valuesFromDB);
   res.render('einkaufsliste', {dbValues: getData});
-  console.log('rendered');
 
 });
 
