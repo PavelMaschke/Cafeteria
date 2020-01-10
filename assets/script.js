@@ -46,6 +46,8 @@ function vonDBladen() {
     var bestand = document.getElementById('pb' + (i + 1) + '1').innerHTML;
     var vorhanden = dbVal.charAt((i*2));
 
+    document.getElementById('pn' + (i + 1) + '1').innerHTML = vorhanden;
+
     console.log('vorhanden: ');
     console.log(vorhanden);
 
