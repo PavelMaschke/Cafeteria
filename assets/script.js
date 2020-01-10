@@ -15,8 +15,8 @@ function buttonRemove(row) {
 }
 
 function buttonSave() {
-  aufDBpacken();
-  //vonDBladen();
+  //aufDBpacken();
+  vonDBladen();
 }
 
 //zuBestellen(); sollte auferufen werden wenn die Bestelllistenseite geöffnet wird
