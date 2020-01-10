@@ -82,18 +82,18 @@ function queryArrayToDB(arr){
   });
 }
 
-function queryStringfromDB(){
+async function queryStringfromDB(){
   var arr = [];
   var querySent = [];
   var getData = '';
 
-db.asyncquery('SELECT anzahl FROM bestand;', function(err, results, fields) {
+test = await db.asyncquery('SELECT anzahl FROM bestand;', function(err, results, fields) {
     if (err) throw err;
 
      //while(results == null){
       //warten bis die query fertig ist
     //}
-    querySent = await results;
+    querySent = results;
 
 
     //ergebnis der query in String umwandeln
