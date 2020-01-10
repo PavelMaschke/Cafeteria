@@ -58,7 +58,7 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
 app.get('/einkaufsliste', function(req, res){
 
   let valuesFromDB = queryStringfromDB();
-  console.log(valuesFromDB);
+  console.log('dort ' + valuesFromDB);
   res.render('einkaufsliste', {dbValues: valuesFromDB});
 });
 
@@ -101,7 +101,7 @@ db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
       getData += querySent[i].anzahl.toString() + ',';
     }
   });
-  console.log(await getData);
+  console.log('hier ' + await getData);
   return await getData;
 
 }
