@@ -55,6 +55,13 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
   }
 });
 
+app.get('/einkaufsliste', function(req, res){
+
+  let valuesFromDB = queryStringfromDB();
+  console.log(valuesFromDB);
+  res.render('einkaufsliste', {dbValues: valuesFromDB});
+});
+
 
 function stringToArray(str){
   var  ergebnis= str.split(',');
