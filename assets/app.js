@@ -68,6 +68,7 @@ app.get('/einkaufsliste', async function(req, res){
 
   //console.log(valuesFromDB);
   res.render('einkaufsliste', {dbValues: getData});
+  console.log('rendered');
 
 });
 
