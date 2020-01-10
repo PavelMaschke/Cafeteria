@@ -9,7 +9,12 @@
     <script src="assets/script.js"></script>
 
     <script>
-      var dbVal = <%= dbValues %>
+      <%var dbVal = [];%>
+      <%dbValues.forEach(function(item){%>
+      <%dbVal.push(item);%>
+      <%});%>
+
+      var test = <%= dbVal %>;
 
     </script>
 
