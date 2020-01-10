@@ -81,7 +81,7 @@ function queryArrayToDB(arr){
   });
 }
 
-function queryStringfromDB(){
+async function queryStringfromDB(){
   var arr = [];
   var querySent = [];
   var getData = '';
