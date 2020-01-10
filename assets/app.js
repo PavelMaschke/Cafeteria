@@ -86,7 +86,7 @@ function queryStringfromDB(){
   var querySent = [];
   var getData = '';
 
-db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
+var test = await db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
   if (err) throw err;
 
    while(results == null){
@@ -101,10 +101,8 @@ db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
     getData += querySent[i].anzahl.toString() + ',';
   }
 });
-  while(getData === ''){
-   //warten bis die query fertig ist
-  }
-  console.log('hier ' + getData);
+
+  console.log('hier ' + test);
   return getData;
 
 }
