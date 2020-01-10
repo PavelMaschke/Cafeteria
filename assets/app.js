@@ -18,6 +18,10 @@ const db = mysql.createConnection({
   database: 'cafeteria'
 });
 
+<<<<<<< HEAD
+=======
+//damit auf function gewartet werdwen kann
+>>>>>>> cc9ad38cbf55902b531a828b16005feab3754c36
 db.asyncquery = util.promisify(db.query).bind(db);
 
 //connect
@@ -39,12 +43,32 @@ app.get('/bestandsliste', async function(req, res){
 
 app.post('/bestandsliste', urlencodedParser, function(req, res) {
 
+  
   let msg = stringToArray(req.body.x);
   console.log(msg);
   queryArrayToDB(msg);
 });
 
+<<<<<<< HEAD
 app.get('/einkaufsliste', async function(req, res){
+=======
+app.post('/addedRows', urlencodedParser, function(req, res) {
+
+  for (var i = 0; i < req.body.length(); i++) {
+    
+    let sql = stringToArray(req.body['new' + i]);
+
+    db.query(sql, function(err, results) {
+        if (err) throw err;
+    });
+  }
+  
+  console.log(msg);
+  queryArrayToDB(msg);
+});
+
+app.get('/einkaufsliste', function(req, res){
+>>>>>>> cc9ad38cbf55902b531a828b16005feab3754c36
 
 <<<<<<< HEAD
   bestand = await db.asyncquery('SELECT anzahl FROM bestand;');
@@ -82,12 +106,12 @@ function queryStringfromDB(){
   var querySent = [];
   var getData = '';
 
-  db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
+  db.asyncquery('SELECT anzahl FROM bestand;', function(err, results, fields) {
     if (err) throw err;
 
-    while(results == null){
+     //while(results == null){
       //warten bis die query fertig ist
-    }
+    //}
     querySent = results;
 
     //ergebnis der query in String umwandeln
