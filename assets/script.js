@@ -40,7 +40,7 @@ function vonDBladen() {
   console.log('dbVal: ');
   console.log(dbVal);
 
-  for (var i = 0; i < totalRows; i++) {
+  for (var i = 1; i <= totalRows; i++) {
     //getData += dbVal[i].anzahl.toString() + ',';
 
     var bestand = document.getElementById('pb' + (i + 1) + '1').innerHTML;
