@@ -26,8 +26,6 @@ db.connect(function(err){
   console.log('connected');
 });
 
-
-
 app.get('/', function(req, res){
   res.render('index');
 });
