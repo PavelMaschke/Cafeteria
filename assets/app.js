@@ -103,7 +103,7 @@ var test = await db.query('SELECT anzahl FROM bestand;', function(err, results, 
 });
 
   console.log('hier ' + test);
-  return getData;
+  return test;
 
 }
 
