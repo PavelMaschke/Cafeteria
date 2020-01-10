@@ -29,7 +29,7 @@ function aufDBpacken() {
     anzahl += document.getElementById('p' + i + '0').innerHTML + ',';
   }
   postRequest('/bestandsliste', anzahl);
-  postRequest('/addedRows', addedRows());
+  //postRequest('/addedRows', addedRows());
 }
 
 function vonDBladen() {
