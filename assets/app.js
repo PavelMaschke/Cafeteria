@@ -108,7 +108,7 @@ var test = await db.query('SELECT anzahl FROM bestand;', function(err, results, 
 }
 
 async function doStuff(res){
-  let valuesFromDB = queryStringfromDB();
+  let valuesFromDB = await queryStringfromDB();
   console.log('dort ' + valuesFromDB);
   res.render('einkaufsliste', {dbValues: valuesFromDB});
 }
