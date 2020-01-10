@@ -39,7 +39,7 @@ function vonDBladen() {
     //getData += dbVal[i].anzahl.toString() + ',';
 
     var bestand = document.getElementById('pb' + (i + 1) + '1').innerHTML;
-    var vorhanden = dbVal.charAt((i*2));
+    var vorhanden = dbVal.charAt((i*2)); // nicht so sondern string an ',' teilen !!!
 
     document.getElementById('pn' + (i + 1) + '1').innerHTML = vorhanden;
 
