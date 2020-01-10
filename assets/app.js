@@ -91,7 +91,7 @@ db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
     if (err) throw err;
 
      while(results == null){
-      warten bis die query fertig ist
+      //warten bis die query fertig ist
     }
     querySent = results;
 
