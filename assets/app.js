@@ -63,6 +63,7 @@ app.get('/einkaufsliste', async function(req, res){
   dbVal.forEach(function(item){
     valuesFromDB.push(item);
   });
+  console.log(valuesFromDB);
 
   res.render('einkaufsliste', {dbValues: valuesFromDB});
 
