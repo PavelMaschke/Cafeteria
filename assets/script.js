@@ -34,7 +34,7 @@ function aufDBpacken() {
 
 function vonDBladen() {
   //val = document.getElementById('hiddenValue').innerHTML;
-  var dbVal = getRequest('/einkaufsliste');
+  var dbVal = getRequest('/einkaufsliste%dbValues');
   //var getData '';
 
 

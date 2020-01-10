@@ -59,7 +59,7 @@ app.get('/einkaufsliste', async function(req, res){
 
   let valuesFromDB = await db.asyncquery('SELECT anzahl FROM bestand;');
   //console.log(valuesFromDB);
-  res.render({dbValues: valuesFromDB}, 'einkaufsliste');
+  res.render('einkaufsliste', {dbValues: valuesFromDB});
 
 });
 
