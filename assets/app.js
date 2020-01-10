@@ -57,7 +57,7 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
 
 app.get('/einkaufsliste', async function(req, res){
 
-  let valuesFromDB = await queryStringfromDB();
+  let valuesFromDB = await db.asyncquery('SELECT anzahl FROM bestand;';
   console.log(valuesFromDB);
   res.render('einkaufsliste', {dbValues: valuesFromDB});
 
@@ -88,15 +88,20 @@ function queryStringfromDB(){
   var querySent = [];
   var getData = '';
 
-  var test = db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
+  db.asyncquery('SELECT anzahl FROM bestand;', function(err, results, fields) {
     if (err) throw err;
+
+     //while(results == null){
+      //warten bis die query fertig ist
+    //}
+    querySent = results;
+
+    //ergebnis der query in String umwandeln
+    for (var i = 0; i < 7; i++) {
+      getData += querySent[i].anzahl.toString() + ',';
+    }
   });
 
-  for (var i = 0; i < 7; i++) {
-    getData += test[i].anzahl.toString() + ',';
-  }
-
-  console.log('hier ' + getData);
   return getData;
 
 }
