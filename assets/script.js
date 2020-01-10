@@ -37,11 +37,19 @@ function vonDBladen() {
   var dbVal = getRequest('/einkaufsliste');
   //var getData '';
 
+
+  console.log('dbVal: ');
+  console.log(dbVal);
+
   for (var i = 0; i < totalRows; i++) {
     //getData += dbVal[i].anzahl.toString() + ',';
 
     var bestand = document.getElementById('pb' + (i + 1) + '1').innerHTML;
     var vorhanden = dbVal[i].anzahl.toString();
+
+    console.log('vorhanden: ');
+    console.log(vorhanden);
+
     document.getElementById('p' + i + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
   }
 
