@@ -44,6 +44,21 @@ app.post('/bestandsliste', urlencodedParser, function(req, res) {
   queryArrayToDB(msg);
 });
 
+app.post('/addedRows', urlencodedParser, function(req, res) {
+
+  for (var i = 0; i < req.body.length(); i++) {
+    
+    let sql = stringToArray(req.body.new);
+
+    db.query(sql, function(err, results) {
+        if (err) throw err;
+    });
+  }
+  
+  console.log(msg);
+  queryArrayToDB(msg);
+});
+
 app.get('/einkaufsliste', function(req, res){
 
   let valuesFromDB = queryStringfromDB();
