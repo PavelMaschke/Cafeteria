@@ -86,24 +86,16 @@ async function queryStringfromDB(){
   var querySent = [];
   var getData = '';
 
-var test = await db.asyncquery('SELECT anzahl FROM bestand;', function(err, results, fields) {
-  if (err) throw err;
+  var test = await db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
+    if (err) throw err;
+  });
 
-   while(results == null){
-    //warten bis die query fertig ist
-  }
-  querySent = results;
-  //console.log(querySent);
-
-
-  //ergebnis der query in String umwandeln
   for (var i = 0; i < 7; i++) {
-    getData += querySent[i].anzahl.toString() + ',';
+    getData += test[i].anzahl.toString() + ',';
   }
-});
 
-  console.log('hier ' + test);
-  return test;
+  console.log('hier ' + getData);
+  return getData;
 
 }
 
