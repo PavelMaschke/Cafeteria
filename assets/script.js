@@ -33,8 +33,7 @@ function aufDBpacken() {
 }
 
 function vonDBladen() {
-  //val = document.getElementById('hiddenValue').innerHTML;
-  var dbVal = getRequest('/einkaufslisteValues');
+  //dbVal = document.getElementById('hiddenValue').innerHTML;
   //var getData '';
 
 
@@ -87,12 +86,4 @@ function postRequest(url, postData){
   request.open(method, url, shouldBeAsync);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send(postData);
-}
-
-function getRequest(url)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", url, false ); // false for synchronous request
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
 }
