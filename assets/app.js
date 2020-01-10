@@ -87,13 +87,13 @@ function queryStringfromDB(){
   var querySent = [];
   var getData = '';
 
-  var test = await db.asyncquery('SELECT anzahl FROM bestand;', function(err, results, fields) {
+db.asyncquery('SELECT anzahl FROM bestand;', function(err, results, fields) {
     if (err) throw err;
 
      //while(results == null){
       //warten bis die query fertig ist
     //}
-    querySent = results;
+    querySent = await results;
 
 
     //ergebnis der query in String umwandeln
