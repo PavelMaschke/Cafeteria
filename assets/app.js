@@ -56,8 +56,14 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
 });
 
 app.get('/einkaufsliste', async function(req, res){
+  var getData = '';
 
   let valuesFromDB = await db.asyncquery('SELECT anzahl FROM bestand;');
+
+  for (var i = 0; i < 7; i++) {
+    getData += valuesFromDB[i].anzahl.toString() + ',';
+  }
+
   //console.log(valuesFromDB);
   res.render('einkaufsliste', {dbValues: valuesFromDB});
 
