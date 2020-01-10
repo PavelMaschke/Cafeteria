@@ -94,6 +94,7 @@ function queryStringfromDB(){
       //warten bis die query fertig ist
     //}
     querySent = results;
+    console.log(querySent);
 
     //ergebnis der query in String umwandeln
     for (var i = 0; i < 7; i++) {
