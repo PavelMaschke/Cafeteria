@@ -3,8 +3,6 @@ var bodyParser = require('body-parser');
 var mysql = require('mysql');
 var util = require('util');
 
-var pause = false;
-
 var app = express();
 
 app.set('view engine', 'ejs');
@@ -48,10 +46,16 @@ app.post('/bestandsliste', urlencodedParser, function(req, res) {
 
 app.get('/einkaufsliste', async function(req, res){
 
+<<<<<<< HEAD
   bestand = await db.asyncquery('SELECT anzahl FROM bestand;');
   console.log(bestand);
   res.render('einkaufsliste', {dbValues: bestand});
   
+=======
+  let valuesFromDB = queryStringfromDB();
+  console.log(valuesFromDB);
+  res.render('einkaufsliste', {dbValues: valuesFromDB});
+>>>>>>> fe562d7d86c9852b3ba6879bdf90ff4630a3f46d
 });
 
 function stringToArray(str){
@@ -74,7 +78,6 @@ function queryArrayToDB(arr){
 }
 
 function queryStringfromDB(){
-  pause = true;
   var arr = [];
   var querySent = [];
   var getData = '';
@@ -93,7 +96,6 @@ function queryStringfromDB(){
     }
   });
 
-  pause = false;
   return getData;
 
 }
