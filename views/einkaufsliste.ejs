@@ -9,7 +9,11 @@
     <script src="assets/script.js"></script>
 
     <script>
-      var dbVal = <%= dbValues %>.anzahl;
+      var dbVal;
+
+      <% dbValues.forEach(function(item){%>
+        dbVal.push(items)
+      <% }); %>
 
     </script>
 
