@@ -66,7 +66,7 @@ app.get('/einkaufsliste', async function(req, res){
 app.get('einkaufslisteValues', async function(req, res){
 
   let valuesFromDB = await db.asyncquery('SELECT anzahl FROM bestand;');
-  res.send({dbValues: valuesFromDB});
+  res.render({dbValues: valuesFromDB});
 });
 
 
