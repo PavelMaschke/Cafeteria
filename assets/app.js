@@ -100,8 +100,8 @@ db.query('SELECT anzahl FROM bestand;', function(err, results, fields) {
       getData += querySent[i].anzahl.toString() + ',';
     }
   });
-  console.log('hier ' + await getData);
-  return await getData;
+  console.log('hier ' + getData);
+  return getData;
 
 }
 
