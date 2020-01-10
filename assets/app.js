@@ -93,7 +93,7 @@ var test = await db.query('SELECT anzahl FROM bestand;', function(err, results, 
     //warten bis die query fertig ist
   }
   querySent = results;
-  console.log(querySent);
+  //console.log(querySent);
 
 
   //ergebnis der query in String umwandeln
@@ -109,7 +109,7 @@ var test = await db.query('SELECT anzahl FROM bestand;', function(err, results, 
 
 async function doStuff(res){
   let valuesFromDB = await queryStringfromDB();
-  console.log('dort ' + valuesFromDB);
+  console.log(valuesFromDB);
   res.render('einkaufsliste', {dbValues: valuesFromDB});
 }
 
