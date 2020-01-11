@@ -54,11 +54,12 @@ function aufDBpacken() {
     anzahl += document.getElementById('p' + i + '0').innerHTML + ',';
   }
 
-  var extraRows = document.getElementById("ta2").rows.length - 1;
+  var extraRows = document.getElementById("ta2").rows.length;
 
   for (var i = 1; i <= extraRows; i++)
   { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
     neu += document.getElementById('text' + (i + totalRows)).innerHTML + ',';
+    console.log('text' + (i + totalRows));
     neu += document.getElementById('p' + (i + totalRows) + '0').innerHTML + ',';
   }
 
