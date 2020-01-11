@@ -58,7 +58,7 @@ function aufDBpacken() {
 
   for (var i = 1; i <= extraRows; i++)
   { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
-    neu += document.getElementById('text' + (i + totalRows)).innerHTML + ',';
+    neu += document.getElementById('text' + i).innerHTML + ',';
     neu += document.getElementById('p' + (i + totalRows) + '0').innerHTML + ',';
   }
 
@@ -137,13 +137,13 @@ function hinzufuegen4(text, bestellen, anzahl, normal) {
 }
 
 function hinzufuegenNeu() {
-    var arow = document.getElementById("ta").rows.length + document.getElementById("ta2").rows.length;
+    var arow = document.getElementById("ta2").rows.length;
     var a = arow + "0";
     var aid = "p" + a;
 
     $("#ta2").append(
       '<tr>' +
-        '<td><input type="text" id="text' + arow + '"></td>' +
+        '<td><input id="text' + arow + '" type="text"></td>' +
         '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>0</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
         '<td class=stck>Stck.</td>' +
       '</tr>'
