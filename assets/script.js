@@ -77,12 +77,13 @@ function hinzufuegen() {
     var a;
     a = arow + "0";
     var aid = "p" + a;
+    var text = 'test';
 
     console.log(a);
 
     $("table").append(
       '<tr>' +
-        '<td><input type="text"></td>' +
+        '<td>'+ text +'</td>' +
         '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'> 0 </p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
         '<td class=stck>Stck.</td>' +
       '</tr>'
