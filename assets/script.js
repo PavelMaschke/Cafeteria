@@ -79,11 +79,11 @@ function hinzufuegen() {
     var aid = "p" + (a.toString());
 
     $("table").append(
-      <tr>
-        <td><input type="text"></td>
-        <td><button type=button onclick=buttonRemove(${a})>-</button><p id=${aid}> 0 </p><button type=button onclick=buttonAdd(${a})>+</button></td>
-        <td class=stck>Stck.</td>
-      </tr>
+      '<tr>' +
+        '<td><input type="text"></td>' +
+        '<td><button type=button onclick=buttonRemove(${a})>-</button><p id=${aid}> 0 </p><button type=button onclick=buttonAdd(${a})>+</button></td>' +
+        '<td class=stck>Stck.</td>' +
+      '</tr>'
     );
 }
 
