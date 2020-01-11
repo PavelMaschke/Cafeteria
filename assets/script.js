@@ -75,7 +75,7 @@ function addedRows(){
 function hinzufuegen() {
     var arow = document.getElementById("ta").rows.length;
     var a;
-    a = arow + "1";
+    a = arow + "0";
     var aid = "p" + a;
 
     console.log(a);
