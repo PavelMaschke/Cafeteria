@@ -41,8 +41,8 @@ function initTableEink(){
 
 
   for (var i = 0; i < (tableArray.length / 3); i++) {
-    let bestellen = parseInt(tableArray[(i*3) + 3]) - parseInt(tableArray[(i*3) + 2]);
-    hinzufuegen4(tableArray[i*3], bestellen, tableArray[(i*3) + 2],tableArray[(i*3) + 3]);
+    let bestellen = parseInt(tableArray[(i*3) + 2]) - parseInt(tableArray[(i*3) + 1]);
+    hinzufuegen4(tableArray[i*3], bestellen, tableArray[(i*3) + 1],tableArray[(i*3) + 2]);
   }
 }
 
