@@ -19,8 +19,10 @@ function initTable(){
   tableArray = dbTable.split(',')
   tableArray.pop();
 
+  console.log(tableArray);
 
-  for (var i = 0; i < tableArray.length(); i++) {
+
+  for (var i = 0; i < tableArray.length; i++) {
     hinzufuegen(dbTable[i], dbTable[i + 1]);
   }
 }
