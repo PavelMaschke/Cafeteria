@@ -16,7 +16,7 @@ function buttonRemove(row) {
 
 function buttonSave() {
   aufDBpacken();
-  getRequest('/success');
+  //getRequest('/success');
 }
 
 //zuBestellen(); sollte auferufen werden wenn die Bestelllistenseite geöffnet wird
@@ -72,14 +72,14 @@ function addedRows(){
   return ergebnis;
 }
 
-function getRequest(url){
+/*function getRequest(url){
   var method = "GET";
   var request = new XMLHttpRequest();
 
   request.open(method, url);
   //request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send();
-}
+}*/
 
 function postRequest(url, postData){
   //für post-requests
