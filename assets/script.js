@@ -102,7 +102,7 @@ function hinzufuegen2(text, amount) {
     var a = arow + "0";
     var aid = "p" + a;
 
-    $("table").append(
+    $("#ta").append(
       '<tr>' +
         '<td>'+ text +'</td>' +
         '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ amount +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
@@ -132,7 +132,7 @@ function hinzufuegenNeu() {
     var a = arow + "0";
     var aid = "p" + a;
 
-    $("table").append(
+    $("#ta2").append(
       '<tr>' +
         '<td><input type="text" name="text' + arow + '"></td>' +
         '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>0</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
