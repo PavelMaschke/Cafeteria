@@ -65,13 +65,15 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
 
 app.get('/einkaufsliste', async function(req, res){
   var getData = '';
-  let valuesFromDB = await db.asyncquery('SELECT anzahl FROM bestand;');
+  let valuesFromDB = await db.asyncquery('SELECT produkt, anzahl, normal FROM bestand;');
 
   for (var i = 0; i < 7; i++) {
+    getData += valuesFromDB[i].produkt.toString() + ',';
     getData += valuesFromDB[i].anzahl.toString() + ',';
+    getData += valuesFromDB[i].normal.toString() + ',';
   }
 
-  res.render('einkaufsliste', {dbValues: getData});
+  res.render('einkaufsliste', {dbTableData: getData});
 });
 
 app.get('/success', function(req, res){

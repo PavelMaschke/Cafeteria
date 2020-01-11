@@ -14,22 +14,36 @@ function buttonRemove(row) {
   }
 }
 
-function initTable(){
+function initTableBest(){
   //bei bestandsliste die Tabelle erstellen
-  tableArray = dbTable.split(',')
+  tableArray = dbTable2.split(',')
   tableArray.pop();
 
   console.log(tableArray);
 
 
   for (var i = 0; i < (tableArray.length / 2); i++) {
-    hinzufuegen(tableArray[i*2], tableArray[(i*2) + 1]);
+    hinzufuegen2(tableArray[i*2], tableArray[(i*2) + 1]);
   }
 }
 
 function buttonSave() {
   aufDBpacken();
   //getRequest('/success');
+}
+
+function initTableEink(){
+  //bei bestandsliste die Tabelle erstellen
+  tableArray = dbTable3.split(',')
+  tableArray.pop();
+
+  console.log(tableArray);
+
+
+  for (var i = 0; i < (tableArray.length / 3); i++) {
+    let bestellen = parseInt(tableArray[(i*3) + 3]) - parseInt(tableArray[(i*3) + 2]);
+    hinzufuegen4(tableArray[i*3], bestellen, tableArray[(i*3) + 2],tableArray[(i*3) + 3]);
+  }
 }
 
 //zuBestellen(); sollte auferufen werden wenn die Bestelllistenseite geöffnet wird
@@ -85,7 +99,7 @@ function addedRows(){
   return ergebnis;
 }
 
-function hinzufuegen(text, amount) {
+function hinzufuegen2(text, amount) {
     var arow = document.getElementById("ta").rows.length;
     var a;
     a = arow + "0";
@@ -95,6 +109,23 @@ function hinzufuegen(text, amount) {
       '<tr>' +
         '<td>'+ text +'</td>' +
         '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ amount +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
+        '<td class=stck>Stck.</td>' +
+      '</tr>'
+    );
+}
+
+function hinzufuegen4(text, bestellen, anzahl, normal) {
+    var arow = document.getElementById("ta").rows.length;
+    var a;
+    a = arow + "1";
+    var aid = "p" + a;
+
+    $("table").append(
+      '<tr>' +
+        '<td>'+ text +'</td>' +
+        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ bestellen +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
+        '<td><p>'+ anzahl +'</p></td>' +
+        '<td><p>'+ normal +'</p></td>' +
         '<td class=stck>Stck.</td>' +
       '</tr>'
     );
