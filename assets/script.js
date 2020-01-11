@@ -1,4 +1,4 @@
-var totalRows = 7;
+var totalRows = 0;
 var extraRows = 7;
 
 function buttonAdd(row) {
@@ -19,10 +19,9 @@ function initTableBest(){
   tableArray = dbTable2.split(',')
   tableArray.pop();
 
-  console.log(tableArray);
+  totalRows = tableArray.length / 2;
 
-
-  for (var i = 0; i < (tableArray.length / 2); i++) {
+  for (var i = 0; i < (totalRows); i++) {
     hinzufuegen2(tableArray[i*2], tableArray[(i*2) + 1]);
   }
 }
@@ -37,10 +36,9 @@ function initTableEink(){
   tableArray = dbTable3.split(',')
   tableArray.pop();
 
-  console.log(tableArray);
+  totalRows = tableArray.length / 3;
 
-
-  for (var i = 0; i < (tableArray.length / 3); i++) {
+  for (var i = 0; i < (totalRows); i++) {
     let bestellen = parseInt(tableArray[(i*3) + 2]) - parseInt(tableArray[(i*3) + 1]);
     hinzufuegen4(tableArray[i*3], bestellen, tableArray[(i*3) + 1],tableArray[(i*3) + 2]);
   }
@@ -59,7 +57,7 @@ function aufDBpacken() {
   //postRequest('/addedRows', addedRows());
 }
 
-function vonDBladen() {
+/*function vonDBladen() {
   //dbVal = document.getElementById('hiddenValue').innerHTML;
   //var getData '';
 
@@ -72,7 +70,7 @@ function vonDBladen() {
     document.getElementById('pn' + (i + 1) + '1').innerHTML = vorhanden;
 
     document.getElementById('p' + (i + 1) + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
-  }
+  }*/
 
   /*for (var i = 1; i <= totalRows; i++)
   { //Alle Reihen durchgehen
@@ -101,8 +99,7 @@ function addedRows(){
 
 function hinzufuegen2(text, amount) {
     var arow = document.getElementById("ta").rows.length;
-    var a;
-    a = arow + "0";
+    var a = arow + "0";
     var aid = "p" + a;
 
     $("table").append(
@@ -116,8 +113,7 @@ function hinzufuegen2(text, amount) {
 
 function hinzufuegen4(text, bestellen, anzahl, normal) {
     var arow = document.getElementById("ta").rows.length;
-    var a;
-    a = arow + "1";
+    var a = arow + "1";
     var aid = "p" + a;
 
     $("table").append(
@@ -126,6 +122,20 @@ function hinzufuegen4(text, bestellen, anzahl, normal) {
         '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ bestellen +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
         '<td><p>'+ anzahl +'</p></td>' +
         '<td><p>'+ normal +'</p></td>' +
+        '<td class=stck>Stck.</td>' +
+      '</tr>'
+    );
+}
+
+function hinzufuegenNeu() {
+    var arow = document.getElementById("ta").rows.length;
+    var a = arow + "0";
+    var aid = "p" + a;
+
+    $("table").append(
+      '<tr>' +
+        '<td><input type="text" name="text' + arow + '"></td>' +
+        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>0</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
         '<td class=stck>Stck.</td>' +
       '</tr>'
     );
