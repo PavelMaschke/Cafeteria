@@ -22,7 +22,7 @@ function initTable(){
   console.log(tableArray);
 
 
-  for (var i = 0; i < tableArray.length; i++) {
+  for (var i = 0; i < (tableArray.length / 2); i++) {
     hinzufuegen(tableArray[i*2], tableArray[(i*2) + 1]);
   }
 }
