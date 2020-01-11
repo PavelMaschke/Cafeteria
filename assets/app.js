@@ -78,7 +78,7 @@ app.get('/einkaufsliste', async function(req, res){
   var getData = '';
   let valuesFromDB = await db.asyncquery('SELECT produkt, anzahl, normal FROM bestand;');
 
-  for (var i = 0; i < 7; i++) {
+  for (var i = 0; i < valuesFromDB.length; i++) {
     getData += valuesFromDB[i].produkt.toString() + ',';
     getData += valuesFromDB[i].anzahl.toString() + ',';
     getData += valuesFromDB[i].normal.toString() + ',';
