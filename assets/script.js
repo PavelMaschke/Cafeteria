@@ -23,7 +23,6 @@ function initTable(){
   for (var i = 0; i < tableArray.length(); i++) {
     hinzufuegen(dbTable[i], dbTable[i + 1]);
   }
-
 }
 
 function buttonSave() {
