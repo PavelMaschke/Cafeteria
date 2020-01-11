@@ -78,6 +78,8 @@ function hinzufuegen() {
     a = arow * 10;
     var aid = "p" + (a.toString());
 
+    console.log(a);
+
     $("table").append(
       '<tr>' +
         '<td><input type="text"></td>' +
