@@ -36,7 +36,7 @@ app.get('/bestandsliste', async function(req, res){
   var getData = '';
   let valuesFromDB = await db.asyncquery('SELECT produkt, anzahl FROM bestand;');
 
-  for (var i = 0; i < 7; i++) {
+  for (var i = 0; i < valuesFromDB.length; i++) {
     getData += valuesFromDB[i].produkt.toString() + ',';
     getData += valuesFromDB[i].anzahl.toString() + ',';
   }
@@ -53,9 +53,18 @@ app.post('/bestandsliste', urlencodedParser, function(req, res) {
 
 app.post('/addedRows', urlencodedParser, function(req, res) {
 
-  for (var i = 0; i < req.body.length(); i++) {
+  var arr = req.body.y.split(',');
+  arr.pop();
 
-    let sql = stringToArray(req.body['new' + i]);
+  var amountNewRows = arr.length / 2;
+
+  for (var i = 0; i < amountNewRows; i++) {
+
+    //let sql = stringToArray(req.body['new' + i]);
+    let produkt = arr[i*2];
+    let benoetigt = parseInt(arr[(i*2) + 1]);
+
+    let sql = 'INSERT INTO bestand (produkt, anzahl, normal) VALUES ('+ produkt +', 0, '+ benoetigt +');';
 
     db.query(sql, function(err, results) {
         if (err) throw err;

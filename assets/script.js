@@ -1,5 +1,4 @@
 var totalRows = 0;
-var extraRows = 7;
 
 function buttonAdd(row) {
   var old = document.getElementById('p' + row).innerHTML
@@ -33,7 +32,7 @@ function buttonSave() {
 
 function initTableEink(){
   //bei bestandsliste die Tabelle erstellen
-  tableArray = dbTable3.split(',')
+  tableArray = dbTable3.split(',');
   tableArray.pop();
 
   totalRows = tableArray.length / 3;
@@ -48,13 +47,23 @@ function initTableEink(){
 
 function aufDBpacken() {
   var anzahl = 'x=';
+  var neu = 'y=';
 
   for (var i = 1; i <= totalRows; i++)
   { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
     anzahl += document.getElementById('p' + i + '0').innerHTML + ',';
   }
+
+  var extraRows = document.getElementById("ta2").rows.length;
+
+  for (var i = 1; i <= extraRows; i++)
+  { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
+    neu += document.getElementById('text' + (i + totalRows)).innerHTML + ',';
+    neu += document.getElementById('p' + (i + totalRows) + '0').innerHTML + ',';
+  }
+
   postRequest('/bestandsliste', anzahl);
-  //postRequest('/addedRows', addedRows());
+  postRequest('/addedRows', neu);
 }
 
 /*function vonDBladen() {
@@ -82,7 +91,7 @@ function aufDBpacken() {
   //console.log(document.getElementById('hiddenValue').innerHTML);
 }*/
 
-function addedRows(){
+/*function addedRows(){
   var ergebnis = '';
   for (var i = totalRows + 1; i <= extraRows; i++) {
 
@@ -95,7 +104,7 @@ function addedRows(){
   }
 
   return ergebnis;
-}
+}*/
 
 function hinzufuegen2(text, amount) {
     var arow = document.getElementById("ta").rows.length;
@@ -128,7 +137,7 @@ function hinzufuegen4(text, bestellen, anzahl, normal) {
 }
 
 function hinzufuegenNeu() {
-    var arow = document.getElementById("ta").rows.length;
+    var arow = document.getElementById("ta").rows.length + document.getElementById("ta2").rows.length;
     var a = arow + "0";
     var aid = "p" + a;
 
