@@ -58,8 +58,8 @@ function aufDBpacken() {
 
   for (var i = 1; i < extraRows; i++)
   { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
-    console.log('text' + (i + totalRows - 1));
-    neu += document.getElementById('text' + (i + totalRows - 1)).innerHTML + ',';
+    console.log('text' + (i + totalRows));
+    neu += document.getElementById('text' + (i + totalRows)).innerHTML + ',';
     neu += document.getElementById('p' + (i + totalRows) + '0').innerHTML + ',';
   }
 
@@ -138,7 +138,7 @@ function hinzufuegen4(text, bestellen, anzahl, normal) {
 }
 
 function hinzufuegenNeu() {
-    var arow = document.getElementById("ta").rows.length + document.getElementById("ta2").rows.length;
+    var arow = document.getElementById("ta").rows.length + document.getElementById("ta2").rows.length -1;
     var a = arow + "0";
     var aid = "p" + a;
 
