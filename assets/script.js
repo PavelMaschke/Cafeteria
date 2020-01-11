@@ -75,15 +75,15 @@ function addedRows(){
 function hinzufuegen() {
     var arow = document.getElementById("ta").rows.length;
     var a;
-    a = arow * 10;
-    var aid = "p" + (a.toString());
+    a = arow + "1";
+    var aid = "p" + a;
 
     console.log(a);
 
     $("table").append(
       '<tr>' +
         '<td><input type="text"></td>' +
-        '<td><button type=button onclick=buttonRemove(${a})>-</button><p id=${aid}> 0 </p><button type=button onclick=buttonAdd(${a})>+</button></td>' +
+        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'> 0 </p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
         '<td class=stck>Stck.</td>' +
       '</tr>'
     );
