@@ -69,6 +69,10 @@ app.get('/einkaufsliste', async function(req, res){
 
 });
 
+app.get('/success', function(req, res){
+  res.render('success');
+});
+
 function stringToArray(str){
   var  ergebnis= str.split(',');
   ergebnis.pop(); //letztes element leer -> löschen

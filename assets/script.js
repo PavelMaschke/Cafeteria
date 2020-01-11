@@ -71,6 +71,16 @@ function addedRows(){
   return ergebnis;
 }
 
+function getRequest(url){
+  var method = "GET";
+  var shouldBeAsync = false;
+  var request = new XMLHttpRequest();
+
+  request.open(method, url, shouldBeAsync);
+  //request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  request.send();
+}
+
 function postRequest(url, postData){
   //für post-requests
   var method = "POST";
