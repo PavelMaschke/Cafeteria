@@ -23,7 +23,7 @@ function initTable(){
 
 
   for (var i = 0; i < tableArray.length; i++) {
-    hinzufuegen(dbTable[i], dbTable[i + 1]);
+    hinzufuegen(tableArray[i], tableArray[i + 1]);
   }
 }
 
@@ -90,8 +90,6 @@ function hinzufuegen(text, amount) {
     var a;
     a = arow + "0";
     var aid = "p" + a;
-
-    console.log(a);
 
     $("table").append(
       '<tr>' +
