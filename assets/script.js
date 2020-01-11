@@ -78,9 +78,9 @@ function aufDBpacken() {
     var vorhanden = val.charAt((i*2) - 1);
 
     document.getElementById('p' + i + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
-  }*/
+  }
   //console.log(document.getElementById('hiddenValue').innerHTML);
-}
+}*/
 
 function addedRows(){
   var ergebnis = '';
