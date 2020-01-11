@@ -66,6 +66,8 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
 
     let sql = 'INSERT INTO bestand (produkt, anzahl, normal) VALUES ('+ produkt +', 0, '+ benoetigt +');';
 
+    console.log(sql);
+
     db.query(sql, function(err, results) {
         if (err) throw err;
     });
