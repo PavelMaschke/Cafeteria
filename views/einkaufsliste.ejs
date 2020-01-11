@@ -4,9 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="assets/testStyle.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
 
     <script src="assets/script.js"></script>
+    <script src="assets/generatePdf.js"></script>
+
+    <script type="text/javascript" src="jspdf.debug.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script>
+      var dbTable3 = '<%=dbTableData%>';
+    </script>
 
 
     <title>Einkaufsliste</title>
@@ -15,9 +23,10 @@
   <body>
 
 
+
     <center><h1 class="header">Einkaufsliste</h1></center>
 
-    <center><table>
+    <center><table id="ta">
       <tr>
         <th>Artikel</th>
         <th>zu bestellen</th>
@@ -26,7 +35,7 @@
         <th style="width: auto;"></th>
       </tr>
 
-      <tr>
+      <!--<tr>
         <td>Äpfel</td>
         <td><button type="button" onclick="buttonRemove(11)">-</button><p id="p11"> 0 </p><button type="button" onclick="buttonAdd(11)">+</button></td>
         <td><p id="pn11">0</p></td>
@@ -80,11 +89,11 @@
         <td><p id="pn71">0</p></td>
         <td><p id="pb71">5</p></td>
         <td class="stck">Stck.</td>
-      </tr>
+      </tr>-->
     </table></center>
 
       <div class="side">
-          <center> <a class="navi" href="index.html">Startseite</a> </center>
+          <center> <a class="navi" href="/">Startseite</a> </center>
       </div>
 
       <p></p>
@@ -100,7 +109,11 @@
       </div>
 
 
-      <button type="button" onclick="buttonSave()">Save</button>
+      <button type="button" onclick="demoFromHTML()">Save</button>
+
+      <script>
+        initTableEink();
+      </script>
 
   </body>
 </html>
