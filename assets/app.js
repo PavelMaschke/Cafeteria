@@ -33,7 +33,15 @@ app.get('/', function(req, res){
 });
 
 app.get('/bestandsliste', async function(req, res){
-  res.render('bestandsliste');
+  var getData = '';
+  let valuesFromDB = await db.asyncquery('SELECT produkt, anzahl FROM bestand;');
+
+  for (var i = 0; i < 7; i++) {
+    getData += valuesFromDB[i].produkt.toString() + ',';
+    getData += valuesFromDB[i].anzahl.toString() + ',';
+  }
+
+  res.render('bestandsliste', {dbTableData: getData});
 });
 
 app.post('/bestandsliste', urlencodedParser, function(req, res) {
@@ -57,16 +65,13 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
 
 app.get('/einkaufsliste', async function(req, res){
   var getData = '';
-
   let valuesFromDB = await db.asyncquery('SELECT anzahl FROM bestand;');
 
   for (var i = 0; i < 7; i++) {
     getData += valuesFromDB[i].anzahl.toString() + ',';
   }
 
-  //console.log(valuesFromDB);
   res.render('einkaufsliste', {dbValues: getData});
-
 });
 
 app.get('/success', function(req, res){

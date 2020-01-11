@@ -14,6 +14,18 @@ function buttonRemove(row) {
   }
 }
 
+function initTable(){
+  //bei bestandsliste die Tabelle erstellen
+  tableArray = dbTable.split(',')
+  tableArray.pop();
+
+
+  for (var i = 0; i < tableArray.length(); i++) {
+    hinzufuegen(dbTable[i], dbTable[i + 1]);
+  }
+
+}
+
 function buttonSave() {
   aufDBpacken();
   //getRequest('/success');
@@ -72,19 +84,18 @@ function addedRows(){
   return ergebnis;
 }
 
-function hinzufuegen() {
+function hinzufuegen(text, amount) {
     var arow = document.getElementById("ta").rows.length;
     var a;
     a = arow + "0";
     var aid = "p" + a;
-    var text = 'test';
 
     console.log(a);
 
     $("table").append(
       '<tr>' +
         '<td>'+ text +'</td>' +
-        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'> 0 </p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
+        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ amount +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
         '<td class=stck>Stck.</td>' +
       '</tr>'
     );
