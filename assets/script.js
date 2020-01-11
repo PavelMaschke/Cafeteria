@@ -16,6 +16,7 @@ function buttonRemove(row) {
 
 function buttonSave() {
   aufDBpacken();
+  getRequest('/success');
 }
 
 //zuBestellen(); sollte auferufen werden wenn die Bestelllistenseite geöffnet wird
@@ -73,10 +74,9 @@ function addedRows(){
 
 function getRequest(url){
   var method = "GET";
-  var shouldBeAsync = false;
   var request = new XMLHttpRequest();
 
-  request.open(method, url, shouldBeAsync);
+  request.open(method, url);
   //request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send();
 }
