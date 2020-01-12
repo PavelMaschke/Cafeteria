@@ -50,7 +50,7 @@ function initTableNrmlBestand(){
   totalRows = tableArray.length / 2;
 
   for (var i = 0; i < (totalRows); i++) {
-    hinzufuegen2(tableArray[i*2], tableArray[(i*2) + 1]);
+    hinzufuegenNormal(tableArray[i*2], tableArray[(i*2) + 1]);
 
   }
 }
