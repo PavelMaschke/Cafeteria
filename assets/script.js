@@ -195,7 +195,7 @@ function hinzufuegenNormal(text, nrmlBestand){
 }*/
 
 function buttonRemoveRow(row){
-  var aid = "b" + row;
+  var aid = "f" + row;
   var elem = document.getElementById(aid);
   elem.parentNode.removeChild(elem);
 
