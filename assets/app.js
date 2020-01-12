@@ -91,6 +91,20 @@ app.get('/success', function(req, res){
   res.render('success');
 });
 
+app.get('/normalerbestand', function(req, res){
+  res.render('normalerbestand');
+});
+
+
+app.post('/removerow', function(req, res) {
+  let sql = 'DELETE FROM bestand WHERE id='+ req.body.x +';';
+
+  db.query(sql, function(err, results) {
+    if (err) throw err;
+  });
+})
+
+
 function stringToArray(str){
   var  ergebnis= str.split(',');
   ergebnis.pop(); //letztes element leer -> löschen

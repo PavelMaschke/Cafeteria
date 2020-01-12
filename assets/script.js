@@ -43,6 +43,18 @@ function initTableEink(){
   }
 }
 
+function initTableNrmlBestand(){
+  tableArray = dbTableNrml.split(',');
+  tableArray.pop();
+
+  totalRows = tableArray.length / 2;
+
+  for (var i = 0; i < (totalRows); i++) {
+    hinzufuegen2(tableArray[i*2], tableArray[(i*2) + 1]);
+
+  }
+}
+
 //zuBestellen(); sollte auferufen werden wenn die Bestelllistenseite geöffnet wird
 
 function aufDBpacken() {
@@ -150,6 +162,19 @@ function hinzufuegenNeu() {
       '</tr>'
     );
 }
+function hinzufuegenNormal(text, nrmlBestand){
+  var arow = document.getElementById("ta").rows.length;
+  var a = arow + "0";
+  var aid = "p" + a;
+
+  $("#ta").append(
+    '<tr id='+ aid +'>' +
+      '<td>'+ text +'</td>' +
+      '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ nrmlBestand +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
+      '<td class=stck>Stck.<button type=button onclick=buttonRemoveRow('+ a +')>x</button></td>' +
+    '</tr>'
+  );
+}
 
 /*function getRequest(url){
   var method = "GET";
@@ -159,6 +184,14 @@ function hinzufuegenNeu() {
   //request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send();
 }*/
+
+function buttonRemoveRow(row){
+  var aid = "p" + row;
+  var elem = document.getElementById('aid');
+  elem.parentNode.removeChild(elem);
+
+  postRequest('/removerow', 'x=' + row);
+}
 
 function postRequest(url, postData){
   //für post-requests
