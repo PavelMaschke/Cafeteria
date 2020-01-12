@@ -184,7 +184,7 @@ function hinzufuegenNeu() {
       '</tr>'
     );
 }
-function hinzufuegenNormal(text, nrmlBestand, normal){
+function hinzufuegenNormal(text, nrmlBestand, menge){
   var arow = document.getElementById("ta").rows.length;
   var a = arow + "0";
   var aid = "p" + a;
