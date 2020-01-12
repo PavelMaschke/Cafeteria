@@ -62,9 +62,9 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
   for (var i = 0; i < amountNewRows; i++) {
 
     //let sql = stringToArray(req.body['new' + i]);
-    let produkt = arr[i*2];
-    let benoetigt = parseInt(arr[(i*2) + 1]);
-    let menge = arr[(i*2) + 2];
+    let produkt = arr[i*3];
+    let benoetigt = parseInt(arr[(i*3) + 1]);
+    let menge = arr[(i*3) + 2];
 
     let sql = "INSERT INTO bestand (produkt, anzahl, normal, menge) VALUES ('"+ produkt +"', 0, "+ benoetigt +", '"+ menge +"');";
 
@@ -115,14 +115,12 @@ app.post('/updateNrmlBestand', urlencodedParser, function(req, res){
   for (var i = 0; i < msg.length / 2; i++) {
 
     let sql = 'UPDATE bestand SET normal = '+ msg[i*2] +' WHERE id ='+ (i + 1) +';';
-    console.log(sql);
     db.query(sql, function(err, results) {
       if (err) throw err;
     });
 
 
     sql = "UPDATE bestand SET menge = '"+ msg[(i*2) + 1]+"' WHERE id ="+ (i + 1) +";";
-    console.log(sql);
     db.query(sql, function(err, results) {
       if (err) throw err;
     });
