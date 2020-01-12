@@ -69,16 +69,16 @@ function aufDBpacken() {
 
   for (var i = 1; i < extraRows; i++) { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
 
-    let sel = document.getElementById('s' + (i + totalRows));
-    let opt = sel.options[sel.selectedIndex];
-
     if (document.getElementById('text' + (i + totalRows)).value != ''){
+
+      let sel = document.getElementById('s' + (i + totalRows));
+      let opt = sel.options[sel.selectedIndex];
+
       neu += document.getElementById('text' + (i + totalRows)).value + ',';
       neu += document.getElementById('p' + (i + totalRows) + '0').innerHTML + ',';
       neu += opt.value + ',';
       console.log(opt.value);
     }
-
   }
 
   postRequest('/bestandsliste', anzahl);
@@ -90,9 +90,13 @@ function updateNrmlBestand(){
   var normal = 'x=';
 
   for (var i = 1; i <= (totalRows); i++) {
+
+    let sel = document.getElementById('s' + (i + totalRows));
+    let opt = sel.options[sel.selectedIndex];
+
     if (document.getElementById('p' + i + '0') != null) {
       normal += document.getElementById('p' + i + '0').innerHTML + ',';
-      normal += document.getElementById('s' + (i + totalRows)).value + ',';;
+      normal += opt.value + ',';
     }
   }
 
