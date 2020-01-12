@@ -103,6 +103,20 @@ app.get('/normalerbestand', async function(req, res){
   res.render('normalerbestand', {dbTableData: getData});
 });
 
+app.post('/updateNrmlBestand', function(res, req){
+
+  let msg = stringToArray(req.body.x);
+
+  msg.forEach(function(item, index){
+    let sql = 'UPDATE bestand SET normal = '+ normal +' WHERE id ='+ msg[index + 1] +';';
+
+console.log(sql);
+
+    db.query(sql, function(err, results) {
+      if (err) throw err;
+    });
+  });
+});
 
 app.post('/removerow', function(req, res) {
   let sql = 'DELETE FROM bestand WHERE id='+ req.body.x +';';
@@ -110,7 +124,7 @@ app.post('/removerow', function(req, res) {
   db.query(sql, function(err, results) {
     if (err) throw err;
   });
-})
+});
 
 
 function stringToArray(str){
@@ -120,10 +134,9 @@ function stringToArray(str){
 }
 
 function queryArrayToDB(arr){
-  var sql = '';
-  arr.forEach(function(item, index){
-    sql = 'UPDATE bestand SET anzahl = '+ item +' WHERE id = ' + (index + 1) + ';' ;
 
+  arr.forEach(function(item, index){
+    let sql = 'UPDATE bestand SET anzahl = '+ item +' WHERE id = ' + (index + 1) + ';' ;
 
     //run query
     db.query(sql, function(err, results) {

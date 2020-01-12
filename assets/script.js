@@ -61,15 +61,13 @@ function aufDBpacken() {
   var anzahl = 'x=';
   var neu = 'y=';
 
-  for (var i = 1; i <= totalRows; i++)
-  { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
+  for (var i = 1; i <= totalRows; i++) { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
     anzahl += document.getElementById('p' + i + '0').innerHTML + ',';
   }
 
   var extraRows = document.getElementById("ta2").rows.length;
 
-  for (var i = 1; i < extraRows; i++)
-  { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
+  for (var i = 1; i < extraRows; i++) { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
     console.log('text' + (i + totalRows));
     neu += document.getElementById('text' + (i + totalRows)).value + ',';
     neu += document.getElementById('p' + (i + totalRows) + '0').innerHTML + ',';
@@ -79,6 +77,16 @@ function aufDBpacken() {
   postRequest('/addedRows', neu);
 }
 
+
+function updateNrmlBestand(){
+  var normal = 'x=';
+
+  for (var i = 1; i < totalRows; i++) {
+    normal = document.getElementById('p' + i + '0').innerHTML + ',';
+  }
+
+  postRequest('/updateNrmlBestand', normal);
+}
 /*function vonDBladen() {
   //dbVal = document.getElementById('hiddenValue').innerHTML;
   //var getData '';
