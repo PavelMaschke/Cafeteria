@@ -34,11 +34,12 @@ app.get('/', function(req, res){
 
 app.get('/bestandsliste', async function(req, res){
   var getData = '';
-  let valuesFromDB = await db.asyncquery('SELECT produkt, anzahl FROM bestand;');
+  let valuesFromDB = await db.asyncquery('SELECT produkt, anzahl, menge FROM bestand;');
 
   for (var i = 0; i < valuesFromDB.length; i++) {
     getData += valuesFromDB[i].produkt.toString() + ',';
     getData += valuesFromDB[i].anzahl.toString() + ',';
+    getData += valuesFromDB[i].menge.toString() + ',';
   }
 
   res.render('bestandsliste', {dbTableData: getData});
@@ -56,15 +57,16 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
   var arr = req.body.y.split(',');
   arr.pop();
 
-  var amountNewRows = arr.length / 2;
+  var amountNewRows = arr.length / 3;
 
   for (var i = 0; i < amountNewRows; i++) {
 
     //let sql = stringToArray(req.body['new' + i]);
-    let produkt = arr[i*2];
-    let benoetigt = parseInt(arr[(i*2) + 1]);
+    let produkt = arr[i*3];
+    let benoetigt = parseInt(arr[(i*3) + 1]);
+    let menge = arr[(i*3) + 2];
 
-    let sql = "INSERT INTO bestand (produkt, anzahl, normal) VALUES ('"+ produkt +"', 0, "+ benoetigt +");";
+    let sql = "INSERT INTO bestand (produkt, anzahl, normal, menge) VALUES ('"+ produkt +"', 0, "+ benoetigt +", '"+ menge +"');";
 
     console.log(sql);
 
@@ -76,12 +78,13 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
 
 app.get('/einkaufsliste', async function(req, res){
   var getData = '';
-  let valuesFromDB = await db.asyncquery('SELECT produkt, anzahl, normal FROM bestand;');
+  let valuesFromDB = await db.asyncquery('SELECT produkt, anzahl, normal, menge FROM bestand;');
 
   for (var i = 0; i < valuesFromDB.length; i++) {
     getData += valuesFromDB[i].produkt.toString() + ',';
     getData += valuesFromDB[i].anzahl.toString() + ',';
     getData += valuesFromDB[i].normal.toString() + ',';
+    getData += valuesFromDB[i].menge.toString() + ',';
   }
 
   res.render('einkaufsliste', {dbTableData: getData});
@@ -91,6 +94,52 @@ app.get('/success', function(req, res){
   res.render('success');
 });
 
+app.get('/normalerbestand', async function(req, res){
+  var getData = '';
+  let valuesFromDB = await db.asyncquery('SELECT produkt, normal, menge FROM bestand;');
+
+  for (var i = 0; i < valuesFromDB.length; i++) {
+    getData += valuesFromDB[i].produkt.toString() + ',';
+    getData += valuesFromDB[i].normal.toString() + ',';
+    getData += valuesFromDB[i].menge.toString() + ',';
+  }
+
+  res.render('normalerbestand', {dbTableData: getData});
+});
+
+app.post('/updateNrmlBestand', urlencodedParser, function(req, res){
+
+  let msg = stringToArray(req.body.x);
+
+
+  for (var i = 0; i < msg.length / 2; i++) {
+
+    let sql = 'UPDATE bestand SET normal = '+ msg[i*2] +' WHERE id ='+ (i + 1) +';';
+    db.query(sql, function(err, results) {
+      if (err) throw err;
+    });
+
+
+    sql = "UPDATE bestand SET menge = '"+ msg[(i*2) + 1]+"' WHERE id ="+ (i + 1) +";";
+    db.query(sql, function(err, results) {
+      if (err) throw err;
+    });
+  }
+});
+
+app.post('/removerow', urlencodedParser, function(req, res) {
+  let sql = 'DELETE FROM bestand WHERE id='+ req.body.x +';';
+
+  console.log(sql);
+  db.query(sql, function(err, results) {
+    if (err) throw err;
+  });
+
+  //Damit id immer gleichmäßig größer wird:
+  fixIDofDB();
+});
+
+
 function stringToArray(str){
   var  ergebnis= str.split(',');
   ergebnis.pop(); //letztes element leer -> löschen
@@ -98,10 +147,9 @@ function stringToArray(str){
 }
 
 function queryArrayToDB(arr){
-  var sql = '';
-  arr.forEach(function(item, index){
-    sql = 'UPDATE bestand SET anzahl = '+ item +' WHERE id = ' + (index + 1) + ';' ;
 
+  arr.forEach(function(item, index){
+    let sql = 'UPDATE bestand SET anzahl = '+ item +' WHERE id = ' + (index + 1) + ';' ;
 
     //run query
     db.query(sql, function(err, results) {
@@ -132,6 +180,24 @@ function queryArrayToDB(arr){
   return getData;
 
 }*/
+
+function fixIDofDB(){
+
+  db.query('SET @num := 0;', function(err, results) {
+    if (err) throw err;
+  });
+
+  db.query('UPDATE bestand SET id = @num := (@num+1);', function(err, results) {
+    if (err) throw err;
+  });
+
+  db.query('ALTER TABLE bestand AUTO_INCREMENT = 1;', function(err, results) {
+    if (err) throw err;
+  });
+
+
+
+}
 
 app.listen(8080, function(){
   console.log('Running on 8080');

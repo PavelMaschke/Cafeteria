@@ -4,7 +4,7 @@
 //doc.save('a4.pdf');
 
 /*function createPDF() {
-  var sTable = document.getElementById('ta').innerHTML;
+  var sTable = document.getElementById('tab').innerHTML;
 
   var style = "<style>";
   style = style + "table {width: 100%;font: 17px Calibri;}";
@@ -16,7 +16,7 @@
   var win = window.open('', '', 'height=700,width=700');
 
   win.document.write('<html><head>');
-  win.document.write('<title>test</title>');   // <title> FOR PDF HEADER.
+  win.document.write('<title>Einkaufsliste</title>');   // <title> FOR PDF HEADER.
   win.document.write(style);          // ADD STYLE INSIDE THE HEAD TAG.
   win.document.write('</head>');
   win.document.write('<body>');
@@ -26,7 +26,7 @@
   win.document.close(); 	// CLOSE THE CURRENT WINDOW.
 
   win.print();    // PRINT THE CONTENTS.
-}*/
+} */
 
 function demoFromHTML() {
             var pdf = new jsPDF('p', 'pt', 'letter');

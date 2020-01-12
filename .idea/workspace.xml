@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57279d42-fbb0-475e-9976-609def5c6f35" name="Default Changelist" comment="" />
+    <list default="true" id="57279d42-fbb0-475e-9976-609def5c6f35" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Bestandsliste.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Bestandsliste.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Einkaufsliste.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Einkaufsliste.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/generatePdf.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/generatePdf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/views/bestandsliste.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/bestandsliste.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/bestandsliste.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/einkaufsliste.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/einkaufsliste.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/normalerbestand.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/normalerbestand.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/success.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/success.ejs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +60,8 @@
       <option name="presentableId" value="Default" />
       <updated>1578496701035</updated>
       <workItem from="1578496706616" duration="1247000" />
-      <workItem from="1578497972440" duration="11454000" />
+      <workItem from="1578497972440" duration="12222000" />
+      <workItem from="1578763299208" duration="4915000" />
     </task>
     <servers />
   </component>
