@@ -75,7 +75,7 @@ function aufDBpacken() {
       neu += document.getElementById('p' + (i + totalRows) + '0').innerHTML + ',';
       neu += document.getElementById('s' + (i + totalRows)).value + ',';
     }
-
+  console.log(document.getElementById('s' + (i + totalRows)).value);
   }
 
   postRequest('/bestandsliste', anzahl);
@@ -91,8 +91,6 @@ function updateNrmlBestand(){
       normal += document.getElementById('p' + i + '0').innerHTML + ',';
       normal += document.getElementById('s' + (i + totalRows)).value + ',';;
     }
-
-    console.log(document.getElementById('s' + (i + totalRows)).value);
   }
 
   postRequest('/updateNrmlBestand', normal);
