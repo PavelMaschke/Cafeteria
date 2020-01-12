@@ -180,7 +180,7 @@ function hinzufuegenNormal(text, nrmlBestand){
     '<tr id='+ bid +'>' +
       '<td>'+ text +'</td>' +
       '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ nrmlBestand +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
-      '<td class=stck>Stck.<button type=button onclick=buttonRemoveRow('+ bid +')>x</button></td>' +
+      '<td class=stck>Stck.<button type=button onclick=buttonRemoveRow('+ arow +')>x</button></td>' +
     '</tr>'
   );
 }
