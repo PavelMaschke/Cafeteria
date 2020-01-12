@@ -91,10 +91,10 @@ app.get('/success', function(req, res){
   res.render('success');
 });
 
-app.get('/normalerbestand', function(req, res){
+app.get('/normalerbestand', async function(req, res){
   var getData = '';
   let valuesFromDB = await db.asyncquery('SELECT produkt, normal FROM bestand;');
-  
+
   for (var i = 0; i < valuesFromDB.length; i++) {
     getData += valuesFromDB[i].produkt.toString() + ',';
     getData += valuesFromDB[i].anzahl.toString() + ',';
