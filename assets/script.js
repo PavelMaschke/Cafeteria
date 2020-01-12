@@ -78,6 +78,8 @@ function aufDBpacken() {
       neu += document.getElementById('p' + (i + totalRows) + '0').innerHTML + ',';
       neu += opt.value + ',';
       console.log(opt.value);
+      console.log('warte mal');
+      console.log(document.getElementById('s' + (i + totalRows)).value);
     }
   }
 
@@ -185,7 +187,7 @@ function hinzufuegenNeu() {
         '<td class=stck>'+
           '<select id="'+ sid +'">'+
             '<option value="Stck.">Stck.</option>'+
-            '<option value="Stck.">Bund</option>'+
+            '<option value="Bund">Bund</option>'+
           '</select>'+
         '</td>'+
       '</tr>'
