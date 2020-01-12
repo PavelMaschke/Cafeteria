@@ -18,10 +18,10 @@ function initTableBest(){
   tableArray = dbTable2.split(',')
   tableArray.pop();
 
-  totalRows = tableArray.length / 2;
+  totalRows = tableArray.length / 3;
 
   for (var i = 0; i < (totalRows); i++) {
-    hinzufuegen2(tableArray[i*2], tableArray[(i*2) + 1]);
+    hinzufuegen3(tableArray[i*3], tableArray[(i*3) + 1], tableArray[(i*3) + 2]);
   }
 }
 
@@ -35,11 +35,11 @@ function initTableEink(){
   tableArray = dbTable3.split(',');
   tableArray.pop();
 
-  totalRows = tableArray.length / 3;
+  totalRows = tableArray.length / 4;
 
   for (var i = 0; i < (totalRows); i++) {
-    let bestellen = parseInt(tableArray[(i*3) + 2]) - parseInt(tableArray[(i*3) + 1]);
-    hinzufuegen4(tableArray[i*3], bestellen, tableArray[(i*3) + 1],tableArray[(i*3) + 2]);
+    let bestellen = parseInt(tableArray[(i*4) + 2]) - parseInt(tableArray[(i*4) + 1]);
+    hinzufuegen5(tableArray[i*4], bestellen, tableArray[(i*4) + 1],tableArray[(i*4) + 2],tableArray[(i*4) + 3]);
   }
 }
 
@@ -47,10 +47,10 @@ function initTableNrmlBestand(){
   tableArray = dbTableNrml.split(',');
   tableArray.pop();
 
-  totalRows = tableArray.length / 2;
+  totalRows = tableArray.length / 3;
 
   for (var i = 0; i < (totalRows); i++) {
-    hinzufuegenNormal(tableArray[i*2], tableArray[(i*2) + 1]);
+    hinzufuegenNormal(tableArray[i*3], tableArray[(i*3) + 1], tableArray[(i*3) + 2]);
 
   }
 }
@@ -73,6 +73,7 @@ function aufDBpacken() {
     if (document.getElementById('text' + (i + totalRows)).value != ''){
       neu += document.getElementById('text' + (i + totalRows)).value + ',';
       neu += document.getElementById('p' + (i + totalRows) + '0').innerHTML + ',';
+      neu += document.getElementById('s' + (i + totalRows)).value + ',';
     }
 
   }
@@ -88,6 +89,7 @@ function updateNrmlBestand(){
   for (var i = 1; i <= (totalRows); i++) {
     if (document.getElementById('p' + i + '0') != null) {
       normal += document.getElementById('p' + i + '0').innerHTML + ',';
+      normal += document.getElementById('s' + (i + totalRows)).value + ',';;
     }
   }
 
@@ -133,7 +135,7 @@ function updateNrmlBestand(){
   return ergebnis;
 }*/
 
-function hinzufuegen2(text, amount) {
+function hinzufuegen3(text, amount, menge) {
     var arow = document.getElementById("ta").rows.length;
     var a = arow + "0";
     var aid = "p" + a;
@@ -142,12 +144,12 @@ function hinzufuegen2(text, amount) {
       '<tr>' +
         '<td>'+ text +'</td>' +
         '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ amount +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
-        '<td class=stck>Stck.</td>' +
+        '<td class=stck>'+ menge +'</td>' +
       '</tr>'
     );
 }
 
-function hinzufuegen4(text, bestellen, anzahl, normal) {
+function hinzufuegen5(text, bestellen, anzahl, normal, menge) {
     var arow = document.getElementById("ta").rows.length;
     var a = arow + "1";
     var aid = "p" + a;
@@ -158,7 +160,7 @@ function hinzufuegen4(text, bestellen, anzahl, normal) {
         '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ bestellen +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
         '<td><p>'+ anzahl +'</p></td>' +
         '<td><p>'+ normal +'</p></td>' +
-        '<td class=stck>Stck.</td>' +
+        '<td class=stck>'+ menge +'</td>' +
       '</tr>'
     );
 }
@@ -167,26 +169,40 @@ function hinzufuegenNeu() {
     var arow = document.getElementById("ta").rows.length + document.getElementById("ta2").rows.length -1;
     var a = arow + "0";
     var aid = "p" + a;
+    var sid = "s" + arow;
 
     $("#ta2").append(
       '<tr>' +
         '<td><input id="text' + arow + '" type="text"></td>' +
         '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>0</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
-        '<td class=stck>Stck.</td>' +
+        '<td class=stck>'+
+          '<select id="'+ sid +'">'+
+            '<option value="Stck.">Stck.</option>'+
+            '<option value="Stck.">Bund</option>'+
+          '</select>'+
+        '</td>'+
       '</tr>'
     );
 }
-function hinzufuegenNormal(text, nrmlBestand){
+function hinzufuegenNormal(text, nrmlBestand, normal){
   var arow = document.getElementById("ta").rows.length;
   var a = arow + "0";
   var aid = "p" + a;
   var bid = "f" + arow;
+  var sid = "s" + arow;
 
   $("#ta").append(
     '<tr id='+ bid +'>' +
       '<td>'+ text +'</td>' +
       '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ nrmlBestand +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
-      '<td class=stck>Stck.<button type=button onclick=buttonRemoveRow('+ arow +')>x</button></td>' +
+      '<td class=stck>'+
+        '<select id="'+ sid +'">'+
+          '<option value="'+ normal +'">'+ normal +'</option>'+
+          '<option value="Stck.">Stck.</option>'+
+          '<option value="Bund">Bund</option>'+
+        '</select>'+
+      '<button type=button onclick=buttonRemoveRow('+ arow +')>x</button>'+
+      '</td>'+
     '</tr>'
   );
 }
