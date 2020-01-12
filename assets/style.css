@@ -232,6 +232,10 @@
     font-size: 16px;
   }
 
+  .side{
+    margin:  auto;
+    width: 50%;
+    }
 
   td.stck{
     text-align: center;
