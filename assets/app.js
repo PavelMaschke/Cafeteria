@@ -66,7 +66,7 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
     let benoetigt = parseInt(arr[(i*2) + 1]);
     let menge = arr[(i*2) + 2];
 
-    let sql = "INSERT INTO bestand (produkt, anzahl, normal, menge) VALUES ('"+ produkt +"', 0, "+ benoetigt +", "+ menge +");";
+    let sql = "INSERT INTO bestand (produkt, anzahl, normal, menge) VALUES ('"+ produkt +"', 0, "+ benoetigt +", '"+ menge +"');";
 
     console.log(sql);
 
@@ -121,7 +121,7 @@ app.post('/updateNrmlBestand', urlencodedParser, function(req, res){
     });
 
 
-    let sql = 'UPDATE bestand SET menge = '+ msg[(i*2) + 1]+' WHERE id ='+ (i + 1) +';';
+    let sql = "UPDATE bestand SET menge = '"+ msg[(i*2) + 1]+"' WHERE id ="+ (i + 1) +";";
     console.log(sql);
     db.query(sql, function(err, results) {
       if (err) throw err;
