@@ -145,7 +145,7 @@
     margin-bottom: 5%;
   }
 
-  .hinzufuegen{
+  .hinzufuegen, .hinzufuegen:hover{
     width: auto;
     border-radius: 30px;
   }
