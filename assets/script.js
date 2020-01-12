@@ -70,15 +70,15 @@ function aufDBpacken() {
   for (var i = 1; i < extraRows; i++) { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
     console.log('text' + (i + totalRows));
 
+    if (document.getElementById('text' + (i + totalRows)).value.includes(',')){
+      window.alert('Bitte kein Komma benutzen (Benutzen Sie lieber ein Punkt)');
+    }
+
     if (document.getElementById('text' + (i + totalRows)).value != '' && !document.getElementById('text' + (i + totalRows)).value.includes(',')){
       neu += document.getElementById('text' + (i + totalRows)).value + ',';
       neu += document.getElementById('p' + (i + totalRows) + '0').innerHTML + ',';
       neu += document.getElementById('s' + (i + totalRows)).value + ',';
     }
-  }
-
-  if (document.getElementById('text' + (i + totalRows)).value.includes(',')){
-    window.alert('Bitte kein Komma benutzen (Benutzen Sie lieber ein Punkt)');
   }
 
   postRequest('/bestandsliste', anzahl);
