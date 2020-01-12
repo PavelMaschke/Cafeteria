@@ -85,6 +85,8 @@ function updateNrmlBestand(){
     normal = document.getElementById('p' + i + '0').innerHTML + ',';
   }
 
+  console.log(normal);
+
   postRequest('/updateNrmlBestand', normal);
 }
 /*function vonDBladen() {
