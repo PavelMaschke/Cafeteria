@@ -191,10 +191,10 @@
 
   .header {
     background-color: white;
-    padding: 2%;
-    padding-left: 4%;
+    padding: 3%;
+    padding-left: 5%;
     text-align: left;
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
   .navigation{
     color:#ffffff;
