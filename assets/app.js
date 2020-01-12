@@ -121,6 +121,7 @@ app.post('/updateNrmlBestand', urlencodedParser, function(req, res){
 app.post('/removerow', urlencodedParser, function(req, res) {
   let sql = 'DELETE FROM bestand WHERE id='+ req.body.x +';';
 
+  console.log(sql);
   db.query(sql, function(err, results) {
     if (err) throw err;
   });
