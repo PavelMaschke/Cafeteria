@@ -111,7 +111,6 @@ app.post('/updateNrmlBestand', urlencodedParser, function(req, res){
 
   msg.forEach(function(item, index){
     let sql = 'UPDATE bestand SET normal = '+ item +' WHERE id ='+ (index + 1) +';';
-    console.log(sql);
 
     db.query(sql, function(err, results) {
       if (err) throw err;
