@@ -112,7 +112,7 @@ app.post('/updateNrmlBestand', urlencodedParser, function(req, res){
   let msg = stringToArray(req.body.x);
 
 
-  for (var i = 1; i <= msg.length / 2; i++) {
+  for (var i = 1; i < msg.length / 2; i++) {
 
     let sql = 'UPDATE bestand SET normal = '+ msg[i*2] +' WHERE id ='+ (i + 1) +';';
     console.log(sql);
