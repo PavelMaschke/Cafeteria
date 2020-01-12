@@ -68,14 +68,17 @@ function aufDBpacken() {
   var extraRows = document.getElementById("ta2").rows.length;
 
   for (var i = 1; i < extraRows; i++) { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
-    console.log('text' + (i + totalRows));
+
+    let sel = document.getElementById('s' + (i + totalRows));
+    let opt = sel.options[sel.selectedIndex];
 
     if (document.getElementById('text' + (i + totalRows)).value != ''){
       neu += document.getElementById('text' + (i + totalRows)).value + ',';
       neu += document.getElementById('p' + (i + totalRows) + '0').innerHTML + ',';
-      neu += document.getElementById('s' + (i + totalRows)).value + ',';
+      neu += opt.value + ',';
+      console.log(opt.value);
     }
-  console.log(document.getElementById('s' + (i + totalRows)).value);
+
   }
 
   postRequest('/bestandsliste', anzahl);
@@ -197,7 +200,6 @@ function hinzufuegenNormal(text, nrmlBestand, normal){
       '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ nrmlBestand +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
       '<td class=stck>'+
         '<select id="'+ sid +'">'+
-          '<option value="'+ normal +'">'+ normal +'</option>'+
           '<option value="Stck.">Stck.</option>'+
           '<option value="Bund">Bund</option>'+
         '</select>'+
@@ -205,6 +207,8 @@ function hinzufuegenNormal(text, nrmlBestand, normal){
       '</td>'+
     '</tr>'
   );
+
+  $('#' + sid).val(menge);
 }
 
 /*function getRequest(url){
