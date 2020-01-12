@@ -103,7 +103,7 @@ app.get('/normalerbestand', async function(req, res){
   res.render('normalerbestand', {dbTableData: getData});
 });
 
-app.post('/updateNrmlBestand', function(res, req){
+app.post('/updateNrmlBestand', function(req, res){
 
   let msg = stringToArray(req.body.x);
 
