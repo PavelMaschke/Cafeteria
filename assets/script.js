@@ -81,7 +81,8 @@ function aufDBpacken() {
 function updateNrmlBestand(){
   var normal = 'x=';
 
-  for (var i = 1; i < totalRows; i++) {
+  console.log(totalRows);
+  for (var i = 1; i < (totalRows + 1); i++) {
     normal += document.getElementById('p' + i + '0').innerHTML + ',';
   }
 

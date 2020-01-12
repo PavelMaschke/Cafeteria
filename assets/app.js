@@ -103,7 +103,7 @@ app.get('/normalerbestand', async function(req, res){
   res.render('normalerbestand', {dbTableData: getData});
 });
 
-app.post('/updateNrmlBestand', function(req, res){
+app.post('/updateNrmlBestand', urlencodedParser, function(req, res){
 
   console.log(req.body);
 
@@ -119,7 +119,7 @@ app.post('/updateNrmlBestand', function(req, res){
   });
 });
 
-app.post('/removerow', function(req, res) {
+app.post('/removerow', urlencodedParser, function(req, res) {
   let sql = 'DELETE FROM bestand WHERE id='+ req.body.x +';';
 
   db.query(sql, function(err, results) {
