@@ -196,6 +196,10 @@
     max-width: 74px;
   }
 
+  input{
+    width: 111px;
+  }
+
   .header {
     background-color: white;
     padding: 3%;
