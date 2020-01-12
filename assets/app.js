@@ -125,6 +125,9 @@ app.post('/removerow', urlencodedParser, function(req, res) {
   db.query(sql, function(err, results) {
     if (err) throw err;
   });
+
+  //Damit id immer gleichmäßig größer wird:
+  fixIDofDB();
 });
 
 
@@ -168,6 +171,24 @@ function queryArrayToDB(arr){
   return getData;
 
 }*/
+
+function fixIDofDB(){
+
+  db.query('SET @num := 0;', function(err, results) {
+    if (err) throw err;
+  });
+
+  db.query('UPDATE bestand SET id = @num := (@num+1);', function(err, results) {
+    if (err) throw err;
+  });
+
+  db.query('ALTER TABLE bestand AUTO_INCREMENT = 1;', function(err, results) {
+    if (err) throw err;
+  });
+
+  
+
+}
 
 app.listen(8080, function(){
   console.log('Running on 8080');
