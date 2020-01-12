@@ -105,12 +105,13 @@ app.get('/normalerbestand', async function(req, res){
 
 app.post('/updateNrmlBestand', function(req, res){
 
+  console.log(req.body);
+
   let msg = stringToArray(req.body.x);
 
   msg.forEach(function(item, index){
     let sql = 'UPDATE bestand SET normal = '+ normal +' WHERE id ='+ msg[index + 1] +';';
 
-console.log(sql);
 
     db.query(sql, function(err, results) {
       if (err) throw err;
