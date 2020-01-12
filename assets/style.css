@@ -142,16 +142,11 @@
     font-size: 16px;
   }
 
-<<<<<<< HEAD
   .decorationhead{
     float: left;
     height: 7px;
     width: 33.3%;
     margin-bottom: 5%;
-=======
-  #hiddenValue{
->>>>>>> 94efcca520d16233e0a908a12ac6673d341d1da8
-  }
 
 }
 
@@ -250,31 +245,7 @@
     background-color: #f5f5f5;
   }
 
-  #p10, #p20, #p30, #p40, #p50, #p60, #p70{
-    width: 20px;
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
-    display: inline-block;
-  }
-
-  #pn11, #pn21, #pn31, #pn41, #pn51, #pn61, #pn71{
-    width: 20px;
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
-    display: inline-block;
-  }
-
-  #pb11, #pb21, #pb31, #pb41, #pb51, #pb61, #pb71{
-    width: 20px;
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
-    display: inline-block;
-  }
-
-  #p11, #p21, #p31, #p41, #p51, #p61, #p71{
+  table p{
     width: 20px;
     text-align: center;
     margin: 0px;
@@ -319,21 +290,10 @@
     font-size: 16px;
   }
 
-<<<<<<< HEAD
-
-
   .decorationhead{
     float: left;
     height: 7px;
     width: 33.3%;
     margin-bottom: 15%;
   }
-
 }
-=======
-  #hiddenValue{
-    display: none;
-  }
-
-}
->>>>>>> 94efcca520d16233e0a908a12ac6673d341d1da8
