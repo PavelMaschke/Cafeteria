@@ -12,7 +12,7 @@
 
   table{
     border-spacing: 0px;
-    margin: 1px 100px 100px 100px;
+    margin: 20px 0px;
 
   }
 
@@ -47,12 +47,12 @@
     background-color:#8c8c8c;
     border: none;
     border-radius: 100px;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    width: 30%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 20vw;
     text-align: center;
     display: inline-block;
-    font-size: 1.75em;
+    font-size: 2.5vw;
   }
 
   .navigation:hover{
@@ -69,16 +69,16 @@
     border-radius: 100px;
     padding-top:2em;
     padding-bottom: 2em ;
-    width: 30%;
+    width: 20vw;
     text-align: center;
     display: inline-block;
-    font-size: 1.75em;
+    font-size: 2.5vw;
   }
 
 
   .side{
-    width:33%;
-    float:left;
+    margin:  auto;
+    width: 50%;
     }
 
   td.stck{
@@ -104,6 +104,7 @@
   }
 
 
+
   button{
     margin: 0px 10px;
     background-color: #fefefe;
@@ -115,6 +116,7 @@
     display: inline-block;
     font-size: 16px;
   }
+
 
   button:hover{
     background-color: #f5f5f5;
@@ -139,16 +141,77 @@
   }
 
 <<<<<<< HEAD
+  .spacer{
+
+  }
+
+  .buttonsave{
+    margin: 0px 10px;
+    background-color: #fefefe;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 2.5vw;
+  }
+
+
+  #buttonadd{
+    font-weight: bold;
+    float: left;
+    text-decoration: none;
+    color:#ffffff;
+    /*margin: 0.25em 10% 0.25em;*/
+    background-color:#8c8c8c;
+    border: none;
+    border-radius: 100px;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+    width: auto;
+    text-align: center;
+    display: inline-block;
+    font-size: 2.5vw;
+  }
+
+  .buttonadd:hover{
+    font-weight: bold;
+    float: left;
+    text-decoration: none;
+    color:#000000;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color:#8c8c8c;
+    border: none;
+    border-radius: 100px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    width: auto;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.75em;
+  }
+
+=======
+>>>>>>> 1792fe0218ae8240f5d51b2a558479e3f5829cb5
   .decorationhead{
     float: left;
     height: 7px;
     width: 33.3%;
     margin-bottom: 5%;
+<<<<<<< HEAD
+
 =======
-  #hiddenValue{
->>>>>>> 94efcca520d16233e0a908a12ac6673d341d1da8
+>>>>>>> 1792fe0218ae8240f5d51b2a558479e3f5829cb5
   }
 
+  .hinzufuegen, .hinzufuegen:hover{
+    width: auto;
+    border-radius: 30px;
+  }
 }
 
 @media only screen and (max-width: 700px){
@@ -181,30 +244,36 @@
 
   table{
     border-spacing: 0px;
-    margin: 10px;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0px;
   }
 
   th{
-    padding: 20px;
-    width: 180px;
+    padding: 5%;
   }
 
   td{
-    padding: 15px;
+    padding: 10px;
     text-align: center;
+    max-width: 74px;
+  }
+
+  input{
+    width: 111px;
   }
 
   .header {
     background-color: white;
-    padding: 2%;
-    padding-left: 4%;
+    padding: 3%;
+    padding-left: 5%;
     text-align: left;
-    font-size: 1.25rem;
+    font-size: 2.4rem;
   }
   .navigation{
     color:#ffffff;
-    margin-top: 0.25em;
-    margin-bottom: 0.25em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
     background-color:#8c8c8c;
     border: none;
     border-radius: 30px 30px 30px 30px;
@@ -214,12 +283,13 @@
     text-align: center;
     display: inline-block;
     font-size: 16px;
+    padding: 0.7em 0px;
     }
 
   .navigation:hover{
     color: #000000;
-    margin-top: 0.25em;
-    margin-bottom: 0.25em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
     background-color:#8c8c8c;
     border: none;
     border-radius: 30px 30px 30px 30px;
@@ -231,11 +301,14 @@
     font-size: 16px;
   }
 
+  .side{
+    margin:  auto;
+    width: 100%;
+    }
 
   td.stck{
     text-align: center;
-    width: 70px;
-    padding: 15px 0px;
+    width: 15%;
   }
 
   tr:nth-child(even){
@@ -246,34 +319,10 @@
     background-color: #f5f5f5;
   }
 
-  #p10, #p20, #p30, #p40, #p50, #p60, #p70{
+  table p{
     width: 20px;
     text-align: center;
-    margin: 0px;
-    padding: 0px;
-    display: inline-block;
-  }
-
-  #pn11, #pn21, #pn31, #pn41, #pn51, #pn61, #pn71{
-    width: 20px;
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
-    display: inline-block;
-  }
-
-  #pb11, #pb21, #pb31, #pb41, #pb51, #pb61, #pb71{
-    width: 20px;
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
-    display: inline-block;
-  }
-
-  #p11, #p21, #p31, #p41, #p51, #p61, #p71{
-    width: 20px;
-    text-align: center;
-    margin: 0px;
+    margin: 4%;
     padding: 0px;
     display: inline-block;
   }
@@ -315,9 +364,6 @@
     font-size: 16px;
   }
 
-<<<<<<< HEAD
-
-
   .decorationhead{
     float: left;
     height: 7px;
@@ -325,11 +371,8 @@
     margin-bottom: 15%;
   }
 
-}
-=======
-  #hiddenValue{
-    display: none;
+  .hinzufuegen, .hinzufuegen:hover{
+    width: auto;
+    border-radius: 30px;
   }
-
 }
->>>>>>> 94efcca520d16233e0a908a12ac6673d341d1da8

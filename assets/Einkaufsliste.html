@@ -4,14 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="style.css">
-=======
     <link rel="stylesheet" type="text/css" href="assets/testStyle.css">
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
-    <script src="assets/generatePdf.js"></script>
->>>>>>> 94efcca520d16233e0a908a12ac6673d341d1da8
+    <script type="text/javascript" src="assets/generatePdf.js"></script>
 
     <script src="assets/script.js"></script>
 
@@ -27,7 +24,7 @@
     <div class="decorationhead" style="background-color: #238c09"></div>
     <div class="decorationhead" style="background-color: #247510"></div>
 
-    <center><table>
+    <center><table id="tab">
       <tr>
         <th>Artikel</th>
         <th>zu bestellen</th>
@@ -103,7 +100,10 @@
           <center> <h class="navigation">Exportieren</h> </center>
       </div>
 
-      <p></p>
+      <!-- bis wir nen richtigen Button haben;
+      <p>
+        <input type="button" value="Create PDF" id="btPrint" onclick="createPDF">
+      </p>-->
 
       <div class="side">
           <center> <h class="navigation">Artikel Hinzufügen</button> </center>
