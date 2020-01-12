@@ -82,7 +82,7 @@ function updateNrmlBestand(){
   var normal = 'x=';
 
   for (var i = 1; i <= (totalRows); i++) {
-    if (document.getElementById('p' + i + '0').innerHTML != null) {
+    if (document.getElementById('p' + i + '0') != null) {
       normal += document.getElementById('p' + i + '0').innerHTML + ',';
     }
   }
