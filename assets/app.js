@@ -121,7 +121,7 @@ app.post('/updateNrmlBestand', urlencodedParser, function(req, res){
     });
 
 
-    let sql = "UPDATE bestand SET menge = '"+ msg[(i*2) + 1]+"' WHERE id ="+ (i + 1) +";";
+    sql = "UPDATE bestand SET menge = '"+ msg[(i*2) + 1]+"' WHERE id ="+ (i + 1) +";";
     console.log(sql);
     db.query(sql, function(err, results) {
       if (err) throw err;
