@@ -174,7 +174,7 @@ function hinzufuegenNormal(text, nrmlBestand){
   var arow = document.getElementById("ta").rows.length;
   var a = arow + "0";
   var aid = "p" + a;
-  var bid = "f" + a;
+  var bid = "f" + arow;
 
   $("#ta").append(
     '<tr id='+ bid +'>' +
