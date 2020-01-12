@@ -91,6 +91,8 @@ function updateNrmlBestand(){
       normal += document.getElementById('p' + i + '0').innerHTML + ',';
       normal += document.getElementById('s' + (i + totalRows)).value + ',';;
     }
+
+    console.log(document.getElementById('s' + (i + totalRows)).value);
   }
 
   postRequest('/updateNrmlBestand', normal);
