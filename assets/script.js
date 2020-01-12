@@ -191,6 +191,9 @@ function hinzufuegenNeu() {
         '</td>'+
       '</tr>'
     );
+
+    document.getElementById('text' + arow).autofocus = true;
+
 }
 function hinzufuegenNormal(text, nrmlBestand, menge){
   var arow = document.getElementById("ta").rows.length;
