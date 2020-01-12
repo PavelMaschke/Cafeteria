@@ -176,9 +176,10 @@ function hinzufuegenNormal(text, nrmlBestand){
   var arow = document.getElementById("ta").rows.length;
   var a = arow + "0";
   var aid = "p" + a;
+  var bid = "f" + a;
 
   $("#ta").append(
-    '<tr id='+ aid +'>' +
+    '<tr id='+ bid +'>' +
       '<td>'+ text +'</td>' +
       '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ nrmlBestand +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
       '<td class=stck>Stck.<button type=button onclick=buttonRemoveRow('+ a +')>x</button></td>' +
@@ -196,8 +197,8 @@ function hinzufuegenNormal(text, nrmlBestand){
 }*/
 
 function buttonRemoveRow(row){
-  var aid = "p" + row;
-  var elem = document.getElementById('aid');
+  var aid = "b" + row;
+  var elem = document.getElementById(aid);
   elem.parentNode.removeChild(elem);
 
   postRequest('/removerow', 'x=' + row);
