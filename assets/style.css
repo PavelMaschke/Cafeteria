@@ -176,12 +176,12 @@
 
   table{
     border-spacing: 0px;
-    margin: 10px;
+    width: 100%;
+    padding: 10px;
   }
 
   th{
-    padding: 20px;
-    width: 180px;
+    padding: 5%;
   }
 
   td{
