@@ -1,4 +1,4 @@
-(function () {
+function () {
     var
      form = $('table'),
      cache_width = form.width(),
@@ -33,7 +33,7 @@
         });
     }
 
-}());
+}
 
 (function ($) {
     $.fn.html2canvas = function (options) {
