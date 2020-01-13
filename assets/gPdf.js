@@ -12,7 +12,11 @@ function PDFnone(){
 function createPDF2() {
 
   var elem = document.getElementsByTagName('button');
-  elem.parentNode.removeChild(elem);
+
+  for (var i = 0; i < elem.length; i++) {
+    elem[i].parentNode.removeChild(elem);
+  }
+
 
   window.print();
 }
