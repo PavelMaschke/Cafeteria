@@ -139,7 +139,7 @@ app.post('/removerow', urlencodedParser, function(req, res) {
   fixIDofDB();
 });
 
-app.get('erfolgreich', function(req, res) {
+app.get('/erfolgreich', function(req, res) {
   res.render('success');
 });
 
