@@ -89,12 +89,12 @@ function updateNrmlBestand(){
   for (var i = 1; i <= (totalRows); i++) {
     if (document.getElementById('p' + i + '0') != null) {
       normal += document.getElementById('p' + i + '0').value + ',';
-      normal += document.getElementById('s' + i).value + ',';;
+      normal += document.getElementById('s' + i).value + ',';
     }
   }
 
   postRequest('/updateNrmlBestand', normal);
-  Popup();
+  window.setTimeout('window.location = "/erfolgreich"',100);
 }
 
 function hinzufuegen3(text, amount, menge) {
