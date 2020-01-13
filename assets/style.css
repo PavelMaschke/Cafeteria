@@ -50,6 +50,8 @@
     border-radius: 100px;
     padding-top: 2vh;
     padding-bottom: 2vh;
+    padding-left: 3vw;
+    padding-right: 3vw;
     width: auto;
     min-width: 20vw;
     text-align: center;
@@ -283,7 +285,7 @@
     background-color:#8c8c8c;
     border: none;
     border-radius: 30px 30px 30px 30px;
-    min-width: 24vw;
+    min-width: 35vw;
     width: auto;
     height: 50%;
     text-align: center;
