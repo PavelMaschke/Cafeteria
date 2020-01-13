@@ -10,5 +10,9 @@ function PDFnone(){
 }
 
 function createPDF2() {
+
+  var elem = document.getElementsByTagName('button');
+  elem.parentNode.removeChild(elem);
+
   window.print();
 }
