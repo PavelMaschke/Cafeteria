@@ -9,7 +9,7 @@ function PDFnone(){
   //window.setTimeout('window.print();',1000);
 }
 
-function createPDF2() {
+function createPDF() {
 
 
   document.body.innerHTML = document.getElementById("ta").innerHTML;
