@@ -4,7 +4,7 @@
 //doc.save('a4.pdf');
 
 function createPDF() {
-  var sTable = document.getElementById('tab').innerHTML;
+  var sTable = document.getElementById('ta').innerHTML;
 
   var style = "<style>";
   style = style + "table {width: 100%;font: 17px Calibri;}";
