@@ -27,6 +27,10 @@
     text-align: center;
   }
 
+  a{
+    cursor: pointer;
+  }
+
   .center{
     text-align: center;
 
@@ -242,7 +246,6 @@
     display:inline-block;
     font-size: 16px;
     text-decoration: none;
-    cursor: pointer;
   }
 
   table{
