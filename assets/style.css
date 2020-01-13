@@ -151,7 +151,7 @@
     display: inline-block;
     font-size: 2.5vw;
   }
-  
+
 
   .decorationhead1{
     float: left;
@@ -178,6 +178,25 @@
     width: auto;
     border-radius: 30px;
   }
+
+  .navigation .popuptext{
+    visibility: hidden;
+    width: 40vw;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    border-radius: 6px;
+    border-color: #238c09;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
 }
 
 @media only screen and (max-width: 700px){

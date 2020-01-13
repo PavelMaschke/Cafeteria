@@ -93,6 +93,7 @@ function updateNrmlBestand(){
   }
 
   postRequest('/updateNrmlBestand', normal);
+  Popup();
 }
 
 function hinzufuegen3(text, amount, menge) {
@@ -198,4 +199,9 @@ function postRequest(url, postData){
   request.open(method, url, shouldBeAsync);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send(postData);
+}
+
+function Popup() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
 }
