@@ -174,7 +174,7 @@
     background-color: #247510;
   }
 
-  .hinzufuegen, .hinzufuegen:hover{
+  .hinzufuegen, .hinzufuegen:hover, .hinzufuegen:active{
     width: auto;
     border-radius: 30px;
   }
@@ -373,7 +373,7 @@
     background-color: #247510;
   }
 
-  .hinzufuegen, .hinzufuegen:hover{
+  .hinzufuegen, .hinzufuegen:hover, .hinzufuegen:active{
     width: auto;
     border-radius: 30px;
   }
