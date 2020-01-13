@@ -79,6 +79,7 @@ function aufDBpacken() {
   postRequest('/bestandsliste', anzahl);
   postRequest('/addedRows', neu);
 
+  //weiterleitung (muss verzögert sein, da manche browser den oberen Teil sonst nicht ausführen)
   window.setTimeout('window.location = "/erfolgreich"',100);
 }
 
