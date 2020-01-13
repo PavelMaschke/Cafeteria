@@ -139,7 +139,7 @@ function hinzufuegenNeu() {
 
     $("#ta2").append(
       '<tr>' +
-        '<td><input id="text' + arow + '" type="text"></td>' +
+        '<td><input id="text' + arow + ' class="gross" type="text"></td>' +
         '<td><button type=button onclick=buttonRemove('+ a +')>-</button><input type="text" name="none" id="'+ aid +'" value="0"><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
         '<td class=stck>'+
           '<select id="'+ sid +'">'+
