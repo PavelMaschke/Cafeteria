@@ -192,7 +192,6 @@
     position: absolute;
     z-index: 1;
   }
-}
 
   .popup .show {
     visibility: visible;
@@ -289,13 +288,11 @@
     display: inline-block;
     font-size: 4vw;
     padding: 0.7em 0px;
-    }
+  }
 
   .navigation:hover{
     color: #000000;
-
   }
-
 
   td.stck{
     text-align: center;
