@@ -100,7 +100,7 @@ function updateNrmlBestand(){
 
   postRequest('/updateNrmlBestand', normal);
 
-  for (var i = 0; i <= deleteRows.length; i++) {
+  for (var i = 0; i < deleteRows.length; i++) {
     postRequest('/removerow', 'x=' + deleteRows[i]);
   }
 
