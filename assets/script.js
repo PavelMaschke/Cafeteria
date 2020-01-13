@@ -25,7 +25,6 @@ function initTableBest(){
   }
 }
 
-
 function initTableEink(){
   //bei bestandsliste die Tabelle erstellen
   tableArray = dbTable3.split(',');
@@ -50,8 +49,6 @@ function initTableNrmlBestand(){
 
   }
 }
-
-//zuBestellen(); sollte auferufen werden wenn die Bestelllistenseite geöffnet wird
 
 function aufDBpacken() {
   var anzahl = 'x=';
@@ -83,7 +80,6 @@ function aufDBpacken() {
   window.location = "/erfolgreich";
 }
 
-
 function updateNrmlBestand(){
   var normal = 'x=';
 
@@ -96,45 +92,6 @@ function updateNrmlBestand(){
 
   postRequest('/updateNrmlBestand', normal);
 }
-/*function vonDBladen() {
-  //dbVal = document.getElementById('hiddenValue').innerHTML;
-  //var getData '';
-
-  for (var i = 0; i < totalRows; i++) {
-    //getData += dbVal[i].anzahl.toString() + ',';
-
-    var bestand = document.getElementById('pb' + (i + 1) + '1').innerHTML;
-    var vorhanden = dbVal.split(',')[i]; // nicht so sondern string an ',' teilen !!!
-
-    document.getElementById('pn' + (i + 1) + '1').innerHTML = vorhanden;
-
-    document.getElementById('p' + (i + 1) + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
-  }*/
-
-  /*for (var i = 1; i <= totalRows; i++)
-  { //Alle Reihen durchgehen
-    var bestand = document.getElementById('pb' + i + '1').innerHTML;
-    var vorhanden = val.charAt((i*2) - 1);
-
-    document.getElementById('p' + i + '1').innerHTML = parseInt(bestand) - parseInt(vorhanden);
-  }
-  //console.log(document.getElementById('hiddenValue').innerHTML);
-}*/
-
-/*function addedRows(){
-  var ergebnis = '';
-  for (var i = totalRows + 1; i <= extraRows; i++) {
-
-    var anzahl = document.getElementById('p' + i + '0').innerHTML;
-    //var produkt = ;
-
-    //var sql 'INSERT INTO bestand (produkt, anzahl) VALUES ' + produkt ', ' + anzahl + ';';
-
-    ergebnis = 'new' + (i - totalRows) + '=' + sql + '&';
-  }
-
-  return ergebnis;
-}*/
 
 function hinzufuegen3(text, amount, menge) {
     var arow = document.getElementById("ta").rows.length;
@@ -221,15 +178,6 @@ function hinzufuegenNormal(text, nrmlBestand, menge){
 
   $('#' + sid).val(menge);
 }
-
-/*function getRequest(url){
-  var method = "GET";
-  var request = new XMLHttpRequest();
-
-  request.open(method, url);
-  //request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  request.send();
-}*/
 
 function buttonRemoveRow(row){
   var aid = "f" + row;
