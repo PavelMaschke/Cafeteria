@@ -151,7 +151,7 @@
     display: inline-block;
     font-size: 2.5vw;
   }
-  
+
 
   .decorationhead1{
     float: left;
@@ -176,6 +176,12 @@
 
   .hinzufuegen, .hinzufuegen:hover{
     width: auto;
+    border-radius: 30px;
+  }
+
+  .xButton{
+    background-color: #F24444;
+    color: #fff
     border-radius: 30px;
   }
 }
