@@ -3,8 +3,8 @@
 //doc.text('Hello world!', 10, 10);
 //doc.save('a4.pdf');
 
-/*function createPDF() {
-  var sTable = document.getElementById('tab').innerHTML;
+function createPDF() {
+  var sTable = document.getElementById('ta').innerHTML;
 
   var style = "<style>";
   style = style + "table {width: 100%;font: 17px Calibri;}";
@@ -26,9 +26,9 @@
   win.document.close(); 	// CLOSE THE CURRENT WINDOW.
 
   win.print();    // PRINT THE CONTENTS.
-} */
+}
 
-function demoFromHTML() {
+/* function demoFromHTML() {
             var pdf = new jsPDF('p', 'pt', 'letter');
             // source can be HTML-formatted string, or a reference
             // to an actual DOM element from which the text will be scraped.
@@ -66,4 +66,4 @@ function demoFromHTML() {
                 pdf.save('Test.pdf');
             }
             , margins);
-        }
+        } */

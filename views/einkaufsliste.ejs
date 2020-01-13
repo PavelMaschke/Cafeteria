@@ -9,7 +9,7 @@
     <script src="assets/script.js"></script>
     <script src="assets/generatePdf.js"></script>
 
-    <script type="text/javascript" src="jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
     <script>
@@ -38,10 +38,21 @@
       </tr>
       </table>
 
+<<<<<<< HEAD
     <div style="height: 5vh"></div>
     <div class="center"><a class="navigation" href="index.ejs">Startseite</a> </div>
     <div style="height: 5vh"></div>
     <div class="center"><a class="navigation" onclick="demoFromHTML()">Exportieren</a></div>
+=======
+
+      <div class="side">
+        <div class="center"><a class="navigation" href="/">Startseite</a> </div>
+      </div>
+
+      <div class="side">
+        <div class="center"><a class="navigation" onclick="createPDF()">Exportieren</a></div>
+      </div>
+>>>>>>> 4cfa595afd1a02e8fb4d8d5430a91cf56bda47de
 
 
       <script>
