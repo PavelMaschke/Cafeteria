@@ -98,6 +98,9 @@
     display: inline-block;
   }
 
+  input.gross{
+    width: auto;
+  }
 
 
   button{
