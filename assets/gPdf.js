@@ -7,6 +7,6 @@ function createPDF2(){
     x[i].style.visibility = "hidden";
   }
 
-  window.setTimeout('window.print();',1000);
+  //window.setTimeout('window.print();',1000);
 
 }
