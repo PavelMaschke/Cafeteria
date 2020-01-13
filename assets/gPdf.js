@@ -5,5 +5,6 @@ function createPDF2(){
     document.getElementById(lenght + "1").style.display = "none";
   }
 
-  window.print();
+  window.setTimeout('window.print();',1000);
+
 }
