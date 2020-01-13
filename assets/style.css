@@ -292,18 +292,6 @@
 
   .navigation:hover, .navigation:active{
     color: #000000;
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-    background-color:#8c8c8c;
-    border: none;
-    border-radius: 30px 30px 30px 30px;
-    min-width: 55%;
-    width: auto;
-    height: 50%;
-    text-align: center;
-    display: inline-block;
-    font-size: 4vw;
-    padding: 0.7em 0px;
   }
 
   td.stck{
