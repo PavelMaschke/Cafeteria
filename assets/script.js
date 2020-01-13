@@ -174,7 +174,7 @@ function hinzufuegenNormal(text, nrmlBestand, menge){
           '<option value="Becher">Becher</option>'+
         '</select>'+
       '</td>'+
-      '<td><button type=button onclick=buttonRemoveRow('+ arow +')>x</button></td>'+
+      '<td><button style="background-color: red;" type=button onclick=buttonRemoveRow('+ arow +')>x</button></td>'+
     '</tr>'
   );
 
