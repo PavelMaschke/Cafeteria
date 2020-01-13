@@ -1,7 +1,9 @@
 function createPDF2() {
   //Tabelle angeben
   var sTable = document.getElementById('drucken').innerHTML;
-  console.log(sTable);
+  console.log(document.getElementById('p11').innerHTML);
+  console.log(document.getElementById('p11').value);
+  //console.log(sTable);
 
   //style angeben (+ und - buttons sollen nicht angezeigt werden)
   var style = "<style>";
