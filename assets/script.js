@@ -143,11 +143,12 @@ function hinzufuegen5(text, bestellen, anzahl, normal, menge) {
     var arow = document.getElementById("ta").rows.length;
     var a = arow + "1";
     var aid = "p" + a;
+    var aid2 = "r" + a;
 
     $("table").append(
       '<tr>' +
         '<td>'+ text +'</td>' +
-        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><input type="text" name="none" id="'+ aid +'" value="'+ bestellen +'"><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
+        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><input type="text" name="none" id="'+ aid +'" value="'+ bestellen +'"><pid="'+ aid2 +'"></p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
         '<td><p>'+ anzahl +'</p></td>' +
         '<td><p>'+ normal +'</p></td>' +
         '<td class=stck>'+ menge +'</td>' +

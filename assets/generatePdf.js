@@ -2,8 +2,8 @@ function createPDF2() {
   //Tabelle angeben
 
   for (var i = 1; i <= totalRows; i++) {
-    document.getElementById('p' + i + '1').innerHTML = document.getElementById('p' + i + '1').value;
-    console.log(document.getElementById('p' + i + '1').innerHTML);
+    document.getElementById('r' + i + '1').innerHTML = document.getElementById('p' + i + '1').value;
+    console.log(document.getElementById('r' + i + '1').innerHTML);
   }
 
   var sTable = document.getElementById('drucken').innerHTML;
@@ -15,6 +15,7 @@ function createPDF2() {
   var style = "<style>";
   style = style + "button {display: none;}";
   style = style + "td {text-align: right;}";
+  style = style + "input {display: none;}";
   style = style + "</style>";
 
   //neues Fenster öffnen
