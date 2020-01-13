@@ -17,6 +17,8 @@ function createPDF2() {
     elem[i].parentNode.removeChild(elem[i]);
   }
 
+  document.body.innerHTML = document.getElementById("ta").innerHTML;
+
 
   window.print();
 }
