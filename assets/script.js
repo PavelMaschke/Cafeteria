@@ -25,10 +25,6 @@ function initTableBest(){
   }
 }
 
-function buttonSave() {
-  aufDBpacken();
-  //getRequest('/success');
-}
 
 function initTableEink(){
   //bei bestandsliste die Tabelle erstellen
@@ -83,6 +79,8 @@ function aufDBpacken() {
 
   postRequest('/bestandsliste', anzahl);
   postRequest('/addedRows', neu);
+
+  window.location = "/erfolgreich";
 }
 
 

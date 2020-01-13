@@ -139,6 +139,10 @@ app.post('/removerow', urlencodedParser, function(req, res) {
   fixIDofDB();
 });
 
+app.get('erfolgreich', function(req, res) {
+  res.render('success');
+});
+
 
 function stringToArray(str){
   var  ergebnis= str.split(',');
