@@ -1,16 +1,24 @@
+//alle benötigten Packages
 var express = require('express');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
 var util = require('util');
 
+var port = 8080;
+
+//Zum Server starten
 var app = express();
 
+//es werden keine html sonder ejs datein benutzt
 app.set('view engine', 'ejs');
+//damit nicht nur ejs dateien sondern auch alle anderen dateien (css,...) dem client
+//zur verfügung stehen:
 app.use('/assets', express.static('assets/'));
 
-
+//für http post requests notwendig
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
+//connection zur datenbank auf dem server definieren
 const db = mysql.createConnection({
   host    : 'localhost',
   user    : 'cafeteria',
@@ -18,42 +26,52 @@ const db = mysql.createConnection({
   database: 'cafeteria'
 });
 
-//damit auf function gewartet werdwen kann
+//damit auf function gewartet werden kann (code wird sonst ausgeführt bevor die function
+//zuvor zuende ist)
 db.asyncquery = util.promisify(db.query).bind(db);
 
-//connect
+//connect zur datenbank
 db.connect(function(err){
   if(err) throw err;
   console.log('connected');
 });
 
+//app.get ist für http-get-request: urls werden hier abgefangen
+//app.post ist für http-post-request: daten, die an server gesendet werden hier abfangen
 
+
+//Startseite -----------------------------------------------------------
 app.get('/', function(req, res){
+  //res.render schickt die daten an den client
   res.render('index');
 });
 
+//Bestandsliste ------------------------------------------------------------
 app.get('/bestandsliste', async function(req, res){
   var getData = '';
+
+  //db.asyncquery bzw db.query schicken eine MySQL-query an die Datenbank
   let valuesFromDB = await db.asyncquery('SELECT produkt, anzahl, menge FROM bestand;');
+
+  //Diese for-schleifen sorgen dafür dass die Daten in einen String gespeichert werden,
+  //da dieser am einfachsten gesendet werden kann.
 
   for (var i = 0; i < valuesFromDB.length; i++) {
     getData += valuesFromDB[i].produkt.toString() + ',';
     getData += valuesFromDB[i].anzahl.toString() + ',';
     getData += valuesFromDB[i].menge.toString() + ',';
   }
-
   res.render('bestandsliste', {dbTableData: getData});
 });
 
 app.post('/bestandsliste', urlencodedParser, function(req, res) {
 
   let msg = stringToArray(req.body.x);
-  console.log(msg);
   queryArrayToDB(msg);
 });
 
 app.post('/addedRows', urlencodedParser, function(req, res) {
-
+  //wird ausgeführt wenn auf Bestätigen gedrückt wird und die neuen zeilen in die DB sollen
   var arr = req.body.y.split(',');
   arr.pop();
 
@@ -68,14 +86,13 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
 
     let sql = "INSERT INTO bestand (produkt, anzahl, normal, menge) VALUES ('"+ produkt +"', 0, "+ benoetigt +", '"+ menge +"');";
 
-    console.log(sql);
-
     db.query(sql, function(err, results) {
         if (err) throw err;
     });
   }
 });
 
+//Einkaufsliste ------------------------------------------------------
 app.get('/einkaufsliste', async function(req, res){
   var getData = '';
   let valuesFromDB = await db.asyncquery('SELECT produkt, anzahl, normal, menge FROM bestand;');
@@ -90,10 +107,7 @@ app.get('/einkaufsliste', async function(req, res){
   res.render('einkaufsliste', {dbTableData: getData});
 });
 
-app.get('/success', function(req, res){
-  res.render('success');
-});
-
+//Normalbestand ----------------------------------------------------
 app.get('/normalerbestand', async function(req, res){
   var getData = '';
   let valuesFromDB = await db.asyncquery('SELECT produkt, normal, menge FROM bestand;');
@@ -135,10 +149,11 @@ app.post('/removerow', urlencodedParser, function(req, res) {
     if (err) throw err;
   });
 
-  //Damit id immer gleichmäßig größer wird:
+  //Damit id auf der db immer gleichmäßig größer wird:
   fixIDofDB();
 });
 
+//Erfolgreich -------------------------------------------------------
 app.get('/erfolgreich', function(req, res) {
   res.render('success');
 });
@@ -162,29 +177,6 @@ function queryArrayToDB(arr){
   });
 }
 
-/*function queryStringfromDB(){
-  var arr = [];
-  var querySent = [];
-  var getData = '';
-
-  db.asyncquery('SELECT anzahl FROM bestand;', function(err, results, fields) {
-    if (err) throw err;
-
-     //while(results == null){
-      //warten bis die query fertig ist
-    //}
-    querySent = results;
-
-    //ergebnis der query in String umwandeln
-    for (var i = 0; i < 7; i++) {
-      getData += querySent[i].anzahl.toString() + ',';
-    }
-  });
-
-  return getData;
-
-}*/
-
 function fixIDofDB(){
 
   db.query('SET @num := 0;', function(err, results) {
@@ -198,11 +190,9 @@ function fixIDofDB(){
   db.query('ALTER TABLE bestand AUTO_INCREMENT = 1;', function(err, results) {
     if (err) throw err;
   });
-
-
-
 }
 
-app.listen(8080, function(){
-  console.log('Running on 8080');
+//auf port 8080 wird auf die requests gewartet
+app.listen(port, function(){
+  console.log('Running on ' + port);
 });
