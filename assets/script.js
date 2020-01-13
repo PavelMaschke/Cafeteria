@@ -150,7 +150,7 @@ function hinzufuegenNeu() {
       '</tr>'
     );
 
-    document.getElementById('text' + arow).autofocus = true;
+    //document.getElementById('text' + arow).autofocus = true;
 
 }
 function hinzufuegenNormal(text, nrmlBestand, menge){
