@@ -98,7 +98,7 @@ function updateNrmlBestand(){
   }
 
   postRequest('/updateNrmlBestand', normal);
-  window.setTimeout('window.location = "/erfolgreich"',100);
+  window.setTimeout('window.location = "/erfolgreich2"',100);
 }
 
 function hinzufuegen3(text, amount, menge) {

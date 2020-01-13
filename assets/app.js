@@ -159,6 +159,10 @@ app.get('/erfolgreich', function(req, res) {
   res.render('success');
 });
 
+app.get('/erfolgreich2', function(req, res) {
+  res.render('success2');
+});
+
 
 function stringToArray(str){
   var  ergebnis= str.split(',');
