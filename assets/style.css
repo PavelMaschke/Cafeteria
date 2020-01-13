@@ -151,44 +151,7 @@
     display: inline-block;
     font-size: 2.5vw;
   }
-
-
-  .buttonadd{
-    font-weight: bold;
-    float: left;
-    text-decoration: none;
-    color:#ffffff;
-    /*margin: 0.25em 10% 0.25em;*/
-    background-color:#8c8c8c;
-    border: none;
-    border-radius: 100px;
-    padding-top: 3vw;
-    padding-bottom: 3vw;
-    width: auto;
-    text-align: center;
-    display: inline-block;
-    font-size: 2.5vw;
-  }
-
-  .buttonadd:hover{
-    font-weight: bold;
-    float: left;
-    text-decoration: none;
-    color:#000000;
-    margin-top: 0.25em;
-    margin-bottom: 0.25em;
-    margin-left: 10%;
-    margin-right: 10%;
-    background-color:#8c8c8c;
-    border: none;
-    border-radius: 100px;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    width: auto;
-    text-align: center;
-    display: inline-block;
-    font-size: 1.75em;
-  }
+  
 
   .decorationhead1{
     float: left;
@@ -300,10 +263,6 @@
 
   }
 
-  .side{
-    margin:  auto;
-    width: 100%;
-    }
 
   td.stck{
     text-align: center;
