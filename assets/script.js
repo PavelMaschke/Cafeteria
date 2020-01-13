@@ -1,4 +1,5 @@
 var totalRows = 0;
+var deleteRows = [];
 
 function buttonAdd(row) {
   var old = document.getElementById('p' + row).value
@@ -90,7 +91,7 @@ function aufDBpacken() {
 function updateNrmlBestand(){
   var normal = 'x=';
 
-  for (var i = 1; i <= (totalRows); i++) {
+  for (var i = 1; i <= totalRows; i++) {
     if (document.getElementById('p' + i + '0') != null) {
       normal += document.getElementById('p' + i + '0').value + ',';
       normal += document.getElementById('s' + i).value + ',';
@@ -98,6 +99,11 @@ function updateNrmlBestand(){
   }
 
   postRequest('/updateNrmlBestand', normal);
+
+  for (var i = 0; i <= deleteRows.length; i++) {
+    postRequest('/removerow', 'x=' + deleteRows[i]);
+  }
+
   window.setTimeout('window.location = "/erfolgreich2"',100);
 }
 
@@ -192,7 +198,7 @@ function buttonRemoveRow(row){
   var elem = document.getElementById(aid);
   elem.parentNode.removeChild(elem);
 
-  postRequest('/removerow', 'x=' + row);
+  deleteRows.push(row);
 }
 
 function postRequest(url, postData){
