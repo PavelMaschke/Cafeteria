@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="de">
   <head>
     <meta charset="utf-8">
@@ -100,10 +100,10 @@
           <center> <h class="navigation">Exportieren</h> </center>
       </div>
 
-      <!-- bis wir nen richtigen Button haben;
+      bis wir nen richtigen Button haben;
       <p>
         <input type="button" value="Create PDF" id="btPrint" onclick="createPDF">
-      </p>-->
+      </p>
 
       <div class="side">
           <center> <button class="buttonadd">Artikel Hinzufügen</button> </center>
@@ -113,4 +113,62 @@
       <button type="button" onclick="buttonSave()">Save</button>
 
   </body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script src="script.js"></script>
+  <script src="generatePdf.js"></script>
+
+  <script type="text/javascript" src="jspdf.debug.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+  <script>
+    var dbTable3 = '<%=dbTableData%>';
+  </script>
+
+
+  <title>Einkaufsliste</title>
+
+</head>
+<body>
+
+<h1 class="header">Einkaufsliste</h1>
+<div class="decorationhead1"></div>
+<div class="decorationhead2"></div>
+<div class="decorationhead3"></div>
+
+<div class="center">
+  <table id="ta">
+    <tr>
+      <th>Artikel</th>
+      <th>zu bestellen</th>
+      <th style="width: auto;">noch vorhanden</th>
+      <th style="width: auto;">normaler Bestand</th>
+      <th style="width: auto;"></th>
+    </tr>
+  </table>
+</div>
+
+<div class="side">
+  <div class="center"><a class="navigation" href="/">Startseite</a> </div>
+</div>
+
+<div class="side">
+  <div class="center"><a class="navigation" onclick="demoFromHTML()">Exportieren</a></div>
+</div>
+
+
+<script>
+  initTableEink();
+</script>
+
+</body>
 </html>
+
