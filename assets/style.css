@@ -179,6 +179,7 @@
     border-radius: 30px;
   }
 
+<<<<<<< HEAD
   .navigation .popuptext{
     visibility: hidden;
     width: 40vw;
@@ -197,6 +198,19 @@
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
+=======
+  .xButton{
+    background-color: #F24444;
+    color: #fff;
+    border-radius: 30px;
+  }
+
+  .xButton:hover, .xButton:active{
+    background-color: #9A2828;
+    color: #ccc;
+    border-radius: 30px;
+  }
+>>>>>>> d8a863229335fbb1424741528ba8feb6ad5f5538
 }
 
 @media only screen and (max-width: 700px){
