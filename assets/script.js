@@ -1,15 +1,15 @@
 var totalRows = 0;
 
 function buttonAdd(row) {
-  var old = document.getElementById('p' + row).innerHTML
-  document.getElementById('p' + row).innerHTML = parseInt(old) + 1;
+  var old = document.getElementById('p' + row).value
+  document.getElementById('p' + row).value = parseInt(old) + 1;
 }
 
 function buttonRemove(row) {
-  var old = document.getElementById('p' + row).innerHTML
+  var old = document.getElementById('p' + row).value
   if (old > 0)
   {
-    document.getElementById('p' + row).innerHTML = parseInt(old) - 1;
+    document.getElementById('p' + row).value = parseInt(old) - 1;
   }
 }
 
@@ -57,7 +57,7 @@ function aufDBpacken() {
   console.log('test');
 
   for (var i = 1; i <= totalRows; i++) { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
-    anzahl += document.getElementById('p' + i + '0').innerHTML + ',';
+    anzahl += document.getElementById('p' + i + '0').value + ',';
   }
 
   var extraRows = document.getElementById("ta2").rows.length;
@@ -71,7 +71,7 @@ function aufDBpacken() {
 
     if (document.getElementById('text' + (i + totalRows)).value != '' && !document.getElementById('text' + (i + totalRows)).value.includes(',')){
       neu += document.getElementById('text' + (i + totalRows)).value + ',';
-      neu += document.getElementById('p' + (i + totalRows) + '0').innerHTML + ',';
+      neu += document.getElementById('p' + (i + totalRows) + '0').value + ',';
       neu += document.getElementById('s' + (i + totalRows)).value + ',';
     }
   }
@@ -88,7 +88,7 @@ function updateNrmlBestand(){
 
   for (var i = 1; i <= (totalRows); i++) {
     if (document.getElementById('p' + i + '0') != null) {
-      normal += document.getElementById('p' + i + '0').innerHTML + ',';
+      normal += document.getElementById('p' + i + '0').value + ',';
       normal += document.getElementById('s' + i).value + ',';;
     }
   }
@@ -105,7 +105,7 @@ function hinzufuegen3(text, amount, menge) {
     $("#ta").append(
       '<tr>' +
         '<td>'+ text +'</td>' +
-        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><input type="text" name="' + amount +'" id="'+ aid +'"><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
+        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><input type="text" name="none" id="'+ aid +'" value="'+ amount +'"><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
         '<td class=stck>'+ menge +'</td>' +
       '</tr>'
     );
@@ -119,7 +119,7 @@ function hinzufuegen5(text, bestellen, anzahl, normal, menge) {
     $("table").append(
       '<tr>' +
         '<td>'+ text +'</td>' +
-        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ bestellen +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
+        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><input type="text" name="none" id="'+ aid +'" value="'+ bestellen +'"><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
         '<td><p>'+ anzahl +'</p></td>' +
         '<td><p>'+ normal +'</p></td>' +
         '<td class=stck>'+ menge +'</td>' +
@@ -136,7 +136,7 @@ function hinzufuegenNeu() {
     $("#ta2").append(
       '<tr>' +
         '<td><input id="text' + arow + '" type="text"></td>' +
-        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>0</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
+        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><input type="text" name="none" id="'+ aid +'" value="0"><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
         '<td class=stck>'+
           '<select id="'+ sid +'">'+
             '<option value="Stck.">Stck.</option>'+
@@ -164,7 +164,7 @@ function hinzufuegenNormal(text, nrmlBestand, menge){
   $("#ta").append(
     '<tr id='+ bid +'>' +
       '<td>'+ text +'</td>' +
-      '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ nrmlBestand +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
+      '<td><button type=button onclick=buttonRemove('+ a +')>-</button><input type="text" name="none" id="'+ aid +'" value="'+ nrmlBestand +'"><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
       '<td class=stck>'+
         '<select id="'+ sid +'">'+
           '<option value="Stck.">Stck.</option>'+
