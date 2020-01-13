@@ -8,6 +8,7 @@ function createPDF2() {
 
   var style = "<style>";
   style = style + "button {display: none;}";
+  style = style + "td {text-align: right;}";
   style = style + "</style>";
 
   // CREATE A WINDOW OBJECT.
