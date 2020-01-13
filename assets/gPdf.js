@@ -1,4 +1,4 @@
 function createPDF2(){
 
-  win.print();    // PRINT THE CONTENTS.
+  window.print();    // PRINT THE CONTENTS.
 }
