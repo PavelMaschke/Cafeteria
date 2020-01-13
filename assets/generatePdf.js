@@ -16,7 +16,7 @@ function createPDF2() {
   style = style + "button {display: none;}";
   style = style + "td {text-align: right;}";
   style = style + "input {display: none;}";
-  style = style + ".weg {display: none;}";
+  style = style + ".weg {display: inline;}";
   style = style + "</style>";
 
   //neues Fenster öffnen
