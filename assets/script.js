@@ -148,7 +148,7 @@ function hinzufuegen5(text, bestellen, anzahl, normal, menge) {
     $("table").append(
       '<tr>' +
         '<td>'+ text +'</td>' +
-        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><input type="text" name="none" id="'+ aid +'" value="'+ bestellen +'"><p id="'+ aid2 +'"></p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
+        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><input type="text" name="none" id="'+ aid +'" value="'+ bestellen +'"><p class="weg" id="'+ aid2 +'"></p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
         '<td><p>'+ anzahl +'</p></td>' +
         '<td><p>'+ normal +'</p></td>' +
         '<td class=stck>'+ menge +'</td>' +
