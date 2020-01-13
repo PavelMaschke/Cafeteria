@@ -1,88 +1,58 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
 
-    <script src="assets/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
+    <script>
+        var dbTable2 = '<%=dbTableData%>';
+    </script>
 
     <title>Bestandsliste</title>
 
-  </head>
-  <div>
-    <center><h1 class="header">Bestandsliste</h1></center>
-      <div class="decorationhead1"></div>
-      <div class="decorationhead2"></div>
-      <div class="decorationhead3"></div>
-    <center><table>
-      <tr>
+</head>
+<body>
+<center><h1 class="header">Bestandsliste</h1></center>
+<div class="decorationhead1"></div>
+<div class="decorationhead2"></div>
+<div class="decorationhead3"></div>
+
+<center><table id="ta">
+    <tr>
         <th>Artikel</th>
         <th colspan = "2">noch Vorhanden</th>
-      </tr>
+    </tr>
 
-      <tr>
-        <td>Äpfel</td>
-        <td><button type="button" onclick="buttonRemove(10)">-</button><p id="p10"> 0 </p><button type="button" onclick="buttonAdd(10)">+</button></td>
-        <td class="stck">Stck.</td>
-       </tr>
+    <!-- hier werden die weiteren zeilen eingefügt -->
+</table></center>
 
-       <tr>
-         <td>Bananen</td>
-         <td><button type="button" onclick="buttonRemove(20)">-</button><p id="p20"> 0 </p><button type="button" onclick="buttonAdd(20)">+</button></td>
-         <td class="stck">Stck.</td>
-       </tr>
+<center><h1 class="header">Extras</h1></center>
 
-       <tr>
-         <td>Möhren</td>
-         <td><button type="button" onclick="buttonRemove(30)">-</button><p id="p30"> 0 </p><button type="button" onclick="buttonAdd(30)">+</button></td>
-         <td class="stck">Stck.</td>
-       </tr>
+<center><table id="ta2">
+    <tr>
+        <th>Artikel</th>
+        <th colspan = "2">benötigt</th>
+    </tr>
 
-       <tr>
-         <td>Tomaten</td>
-         <td><button type="button" onclick="buttonRemove(40)">-</button><p id="p40"> 0 </p><button type="button" onclick="buttonAdd(40)">+</button></td>
-         <td class="stck">Stck.</td>
-       </tr>
-
-       <tr>
-         <td>Gurken</td>
-         <td><button type="button" onclick="buttonRemove(50)">-</button><p id="p50"> 0 </p><button type="button" onclick="buttonAdd(50)">+</button></td>
-         <td class="stck">Stck.</td>
-       </tr>
-
-       <tr>
-         <td>Paprika</td>
-         <td><button type="button" onclick="buttonRemove(60)">-</button><p id="p60"> 0 </p><button type="button" onclick="buttonAdd(60)">+</button></td>
-         <td class="stck">Stck.</td>
-       </tr>
-
-       <tr>
-         <td>Eisbergsalat</td>
-         <td><button type="button" onclick="buttonRemove(70)">-</button><p id="p70"> 0 </p><button type="button" onclick="buttonAdd(70)">+</button></td>
-         <td class="stck">Stck.</td>
-       </tr>
-
-    </table></center>
-
-    <div class="spacer"> <button type="button" onclick="buttonSave()">Save</button> </div>
-
-    <div class="side">
-          <center> <a class="navigation" href="index.html">Startseite</a> </center>
-    </div>
-
-    <div class="side">
-          <center> <button id="buttonadd">Artikel Hinzufügen</button> </center>
-    </div>
-
-    <div class="side">
-          <center> <a class="navigation" href="Einkaufsliste.html">Bestätigen</a> </center>
-    </div>
+    <!-- hier werden die weiteren zeilen eingefügt -->
+</table></center>
 
 
 
+<div class="center"><button type="button" class="hinzufuegen" onclick="hinzufuegenNeu()">Hinzufügen</button></div>
 
-  </body>
+<div class="center"><a class="navigation" href="/">Startseite</a></div>
+<div style="height:50px"></div>
+<div class="center"><a class="navigation" onclick="aufDBpacken()">Speichern</a></div>
+
+<script>
+    initTableBest();
+</script>
+
+</body>
 </html>
