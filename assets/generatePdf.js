@@ -1,15 +1,13 @@
 function createPDF2() {
   //Tabelle angeben
 
+//die Values aus den <input>s werden nicht übernommen, weshalb sie in die leeren <p>s gepackt werden
   for (var i = 1; i <= totalRows; i++) {
     document.getElementById('r' + i + '1').innerHTML = document.getElementById('p' + i + '1').value;
-    console.log(document.getElementById('r' + i + '1').innerHTML);
   }
 
   var sTable = document.getElementById('drucken').innerHTML;
 
-
-  console.log(sTable);
 
   //style angeben (+ und - buttons sollen nicht angezeigt werden)
   var style = "<style>";
