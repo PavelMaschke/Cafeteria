@@ -74,7 +74,6 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
   //wird ausgeführt wenn auf Bestätigen gedrückt wird und die neuen zeilen in die DB sollen
   var arr = req.body.y.split(',');
   arr.pop();
-  console.log(arr);
 
   var amountNewRows = arr.length / 3;
 
@@ -87,7 +86,6 @@ app.post('/addedRows', urlencodedParser, function(req, res) {
 
     let sql = "INSERT INTO bestand (produkt, anzahl, normal, menge) VALUES ('"+ produkt +"', 0, "+ benoetigt +", '"+ menge +"');";
 
-    console.log(sql);
     db.query(sql, function(err, results) {
         if (err) throw err;
     });
