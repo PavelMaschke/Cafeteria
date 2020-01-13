@@ -4,7 +4,7 @@
 //doc.save('a4.pdf');
 
 function createPDF2() {
-  var sTable = document.getElementById('ta').innerHTML;
+  var sTable = document.getElementById('drucken').innerHTML;
 
   var style = "<style>";
   style = style + "button {display: none;}";
