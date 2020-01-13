@@ -399,4 +399,8 @@
     color: #ccc;
     border-radius: 30px;
   }
+  
+  .weg{
+    display: none;
+  }
 }
