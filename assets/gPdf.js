@@ -1,12 +1,14 @@
-function createPDF2(){
+function PDFnone(){
 
   var x = document.getElementsByTagName('button');
 
   for (var i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-    x[i].style.visibility = "hidden";
+    x[i].style.display = "inline";
   }
 
   //window.setTimeout('window.print();',1000);
+}
 
+function createPDF2() {
+  window.print();
 }
