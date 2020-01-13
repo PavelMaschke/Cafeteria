@@ -184,6 +184,12 @@
     color: #fff;
     border-radius: 30px;
   }
+
+  .xButton:hover, .xButton:active{
+    background-color: #9A2828;
+    color: #ccc;
+    border-radius: 30px;
+  }
 }
 
 @media only screen and (max-width: 700px){
