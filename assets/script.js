@@ -79,7 +79,7 @@ function aufDBpacken() {
   postRequest('/bestandsliste', anzahl);
   postRequest('/addedRows', neu);
 
-  //window.location = "/erfolgreich";
+  document.location = "/erfolgreich";
 }
 
 function updateNrmlBestand(){
