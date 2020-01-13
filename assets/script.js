@@ -34,6 +34,10 @@ function initTableEink(){
 
   for (var i = 0; i < (totalRows); i++) {
     let bestellen = parseInt(tableArray[(i*4) + 2]) - parseInt(tableArray[(i*4) + 1]);
+
+    if (bestellen < 0){
+      bestellen = 0;
+    }
     hinzufuegen5(tableArray[i*4], bestellen, tableArray[(i*4) + 1],tableArray[(i*4) + 2],tableArray[(i*4) + 3]);
   }
 }
