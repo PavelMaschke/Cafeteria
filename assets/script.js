@@ -54,6 +54,8 @@ function aufDBpacken() {
   var anzahl = 'x=';
   var neu = 'y=';
 
+  console.log('test');
+
   for (var i = 1; i <= totalRows; i++) { //Alle Reihen durchgehen und die Werte der HTML Tabelle in einen String packen
     anzahl += document.getElementById('p' + i + '0').innerHTML + ',';
   }
