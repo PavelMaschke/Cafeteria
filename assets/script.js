@@ -105,7 +105,7 @@ function hinzufuegen3(text, amount, menge) {
     $("#ta").append(
       '<tr>' +
         '<td>'+ text +'</td>' +
-        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ amount +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
+        '<td><button type=button onclick=buttonRemove('+ a +')>-</button><input type="text" name="' + amount +'" id="'+ aid +'"><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
         '<td class=stck>'+ menge +'</td>' +
       '</tr>'
     );
