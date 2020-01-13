@@ -14,7 +14,7 @@ function createPDF2() {
   var elem = document.getElementsByTagName('button');
 
   for (var i = 0; i < elem.length; i++) {
-    elem[i].parentNode.removeChild(elem);
+    elem[i].parentNode.removeChild(elem[i]);
   }
 
 
