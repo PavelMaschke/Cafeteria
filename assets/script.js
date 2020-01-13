@@ -165,16 +165,16 @@ function hinzufuegenNormal(text, nrmlBestand, menge){
       '<td><button type=button onclick=buttonRemove('+ a +')>-</button><p id='+ aid +'>'+ nrmlBestand +'</p><button type=button onclick=buttonAdd('+ a +')>+</button></td>' +
       '<td class=stck>'+
         '<select id="'+ sid +'">'+
-        '<option value="Stck.">Stck.</option>'+
-        '<option value="Bund">Bund</option>'+
-        '<option value="g">g</option>'+
-        '<option value="Pakete">Pakete</option>'+
-        '<option value="Liter">Liter</option>'+
-        '<option value="x">x</option>'+
-        '<option value="Becher">Becher</option>'+
+          '<option value="Stck.">Stck.</option>'+
+          '<option value="Bund">Bund</option>'+
+          '<option value="g">g</option>'+
+          '<option value="Pakete">Pakete</option>'+
+          '<option value="Liter">Liter</option>'+
+          '<option value="x">x</option>'+
+          '<option value="Becher">Becher</option>'+
         '</select>'+
-      '<button type=button onclick=buttonRemoveRow('+ arow +')>x</button>'+
       '</td>'+
+      '<td><button type=button onclick=buttonRemoveRow('+ arow +')>x</button></td>'+
     '</tr>'
   );
 
