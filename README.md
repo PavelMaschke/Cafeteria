@@ -1,4 +1,2 @@
 # Cafeteria
-hey bois
-
-erster push
+Meine Freunde, wir haben es geschafft!
