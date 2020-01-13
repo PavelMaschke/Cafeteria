@@ -11,14 +11,14 @@ function PDFnone(){
 
 function createPDF2() {
 
+
+  document.body.innerHTML = document.getElementById("ta").innerHTML;
+
   var elem = document.getElementsByTagName('button');
 
   for (var i = 0; i < elem.length; i++) {
     elem[i].parentNode.removeChild(elem[i]);
   }
-
-  document.body.innerHTML = document.getElementById("ta").innerHTML;
-
 
   window.print();
 }
