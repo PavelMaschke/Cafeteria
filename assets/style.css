@@ -90,7 +90,7 @@
     background-color: #f5f5f5;
   }
 
-  table input, table p{
+  table input{
     width: 30px;
     text-align: center;
     margin: 0px;
@@ -311,7 +311,7 @@
     background-color: #f5f5f5;
   }
 
-  table input, table p{
+  table input{
 
     width: 26px;
     text-align: center;
