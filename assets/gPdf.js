@@ -1,6 +1,6 @@
 (function () {
     var
-     form = $('#ta'),
+     form = $('table'),
      cache_width = form.width(),
      a4 = [595.28, 841.89]; // for a4 size paper width and height
 
