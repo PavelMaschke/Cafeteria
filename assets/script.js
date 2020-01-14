@@ -97,7 +97,7 @@ function aufDBpacken() {
   postRequest('/addedRows', neu);
 
   //weiterleitung (muss verzögert sein, da manche browser den oberen Teil sonst nicht ausführen)
-  window.setTimeout('window.location = "/erfolgreich"',100);
+  window.setTimeout('window.location = "/erfolgreich"',200);
 }
 
 //wird ausgeführt wenn beim Normalbestand gespeichert wird
