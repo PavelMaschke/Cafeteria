@@ -119,14 +119,11 @@ function updateNrmlBestand(){
   for (var i = 0; i < deleteRows.length; i++) {
     //jede gelöschte Zeile dem Server melden
     msg += deleteRows[i] + ',';
-
-
   }
-  console.log(msg);
   postRequest('/removerow', msg);
 
   //weiterleitung (muss verzögert sein, da manche browser den oberen Teil sonst nicht ausführen)
-  //window.setTimeout('window.location = "/erfolgreich2"',100);
+  window.setTimeout('window.location = "/erfolgreich2"',100);
 }
 
 //hinzufügen[zahl] fügt Tabellenzeilen in html hinzu. Die zahl steht für die Anzahl der Spalten
