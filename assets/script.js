@@ -118,7 +118,7 @@ function updateNrmlBestand(){
 
   for (var i = 0; i < deleteRows.length; i++) {
     //jede gelöschte Zeile dem Server melden
-    msg += deleteRows[i];
+    msg += deleteRows[i] + ',';
 
 
   }
