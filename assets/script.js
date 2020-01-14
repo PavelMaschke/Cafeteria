@@ -114,10 +114,15 @@ function updateNrmlBestand(){
   //normalbestand zum Server schicken
   postRequest('/updateNrmlBestand', normal);
 
+  var msg = 'x=';
+  
   for (var i = 0; i < deleteRows.length; i++) {
     //jede gelöschte Zeile dem Server melden
-    postRequest('/removerow', 'x=' + deleteRows[i]);
+    msg += deleteRows[i];
+    
+    
   }
+  postRequest('/removerow', msg);
 
   //weiterleitung (muss verzögert sein, da manche browser den oberen Teil sonst nicht ausführen)
   window.setTimeout('window.location = "/erfolgreich2"',100);
