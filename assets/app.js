@@ -143,12 +143,20 @@ app.post('/updateNrmlBestand', urlencodedParser, function(req, res){
 });
 
 app.post('/removerow', urlencodedParser, function(req, res) {
-  let sql = 'DELETE FROM bestand WHERE id='+ req.body.x +';';
+  
+  let msg = req.body.x.split(',');
+  msg.pop();
+  
+  for(var i = 0; i < msg.length; i++){
+    let sql = 'DELETE FROM bestand WHERE id='+ msg[i] +';';
 
-  console.log(sql);
-  db.query(sql, function(err, results) {
-    if (err) throw err;
-  });
+    console.log(sql);
+    db.query(sql, function(err, results) {
+      if (err) throw err;
+    });  
+  }
+  
+  
 
   //Damit id auf der db immer gleichmäßig größer wird:
   fixIDofDB();
