@@ -144,15 +144,20 @@ app.post('/updateNrmlBestand', urlencodedParser, function(req, res){
 
 app.post('/removerow', urlencodedParser, function(req, res) {
   
-
-  console.log(req.body.x);
+  let msg = req.body.x.split(',');
+  msg.pop();
+    
+  console.log(msg);
   
-  let sql = 'DELETE FROM bestand WHERE id='+ req.body.x +';';
+  for(var i = 0; i < msg.length; i++){
+  
+    let sql = 'DELETE FROM bestand WHERE id='+ req.body.x +';';
 
-  console.log(sql);
-  db.query(sql, function(err, results) {
-    if (err) throw err;
-  });  
+    console.log(sql);
+    db.query(sql, function(err, results) {
+      if (err) throw err;
+    });  
+  }
 
   
   
