@@ -126,7 +126,7 @@ function updateNrmlBestand(){
   postRequest('/removerow', msg);
 
   //weiterleitung (muss verzögert sein, da manche browser den oberen Teil sonst nicht ausführen)
-  window.setTimeout('window.location = "/erfolgreich2"',100);
+  //window.setTimeout('window.location = "/erfolgreich2"',100);
 }
 
 //hinzufügen[zahl] fügt Tabellenzeilen in html hinzu. Die zahl steht für die Anzahl der Spalten
