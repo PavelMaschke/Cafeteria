@@ -115,13 +115,14 @@ function updateNrmlBestand(){
   postRequest('/updateNrmlBestand', normal);
 
   var msg = 'x=';
-  
+
   for (var i = 0; i < deleteRows.length; i++) {
     //jede gelöschte Zeile dem Server melden
     msg += deleteRows[i];
-    
-    
+
+
   }
+  console.log(msg);
   postRequest('/removerow', msg);
 
   //weiterleitung (muss verzögert sein, da manche browser den oberen Teil sonst nicht ausführen)
@@ -235,9 +236,4 @@ function postRequest(url, postData){
   request.open(method, url, shouldBeAsync);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send(postData);
-}
-
-function Popup() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
 }

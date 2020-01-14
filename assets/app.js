@@ -143,24 +143,24 @@ app.post('/updateNrmlBestand', urlencodedParser, function(req, res){
 });
 
 app.post('/removerow', urlencodedParser, function(req, res) {
-  
+
   let msg = req.body.x.split(',');
   msg.pop();
-    
+
   console.log(msg);
-  
+
   for(var i = 0; i < msg.length; i++){
-  
+
     let sql = 'DELETE FROM bestand WHERE id='+ req.body.x +';';
 
     console.log(sql);
     db.query(sql, function(err, results) {
       if (err) throw err;
-    });  
+    });
   }
 
-  
-  
+
+
 
   //Damit id auf der db immer gleichmäßig größer wird:
   fixIDofDB();
@@ -194,6 +194,8 @@ function queryArrayToDB(arr){
   });
 }
 
+//damit die id's in der Datenbank immer 1, 2, 3,... verläuft muss AUTO_INCREMENT in der DB resettet werden
+//und neu verteilt werden (Dieses Problem war nicht leicht zu lösen deswegen diese Lösung aus dem Internet)
 function fixIDofDB(){
 
   db.query('SET @num := 0;', function(err, results) {
