@@ -146,6 +146,7 @@ app.post('/removerow', urlencodedParser, function(req, res) {
   
   let msg = req.body.x.split(',');
   msg.pop();
+  console.log(msg);
   
   for(var i = 0; i < msg.length; i++){
     let sql = 'DELETE FROM bestand WHERE id='+ msg[i] +';';
