@@ -151,16 +151,13 @@ app.post('/removerow', urlencodedParser, function(req, res) {
 
   for(var i = 0; i < msg.length; i++){
 
-    let sql = 'DELETE FROM bestand WHERE id='+ req.body.x +';';
+    let sql = 'DELETE FROM bestand WHERE id='+ msg[i] +';';
 
     console.log(sql);
     db.query(sql, function(err, results) {
       if (err) throw err;
     });
   }
-
-
-
 
   //Damit id auf der db immer gleichmäßig größer wird:
   fixIDofDB();
